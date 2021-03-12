@@ -1,4 +1,6 @@
+import React, { useEffect } from "react";
 import "./App.css";
+// components ----------------
 import DataCard from "./Components/DataCard/DataCard";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import LineGraph from "./Components/LineGraph/LineGraph";
@@ -7,10 +9,19 @@ import BarChart from "./Components/BarChart/BarChart";
 import AllTimeData from "./Components/AllTimeData/AllTimeData";
 import Table from "./Components/Table/Table";
 
+// material-ui icons ---------
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 
+// redux ---------------------
+import { connect } from "react-redux";
+import { fetchAllCoinData } from "./Actions/allCoinDataAction";
+
 const App = () => {
+  useEffect(() => {
+    fetchAllCoinData();
+  }, []);
+
   return (
     <div className="App">
       <Sidebar />
@@ -33,4 +44,15 @@ const App = () => {
   );
 };
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    allCoinData: state.allCoinData,
+  };
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchAllCoinData: dispatch(fetchAllCoinData()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
