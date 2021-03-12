@@ -1,7 +1,8 @@
 import React from "react";
+import "./linegraph.css";
 
-function LineGraph() {
-  return <div className="line-graph"></div>;
-}
+const LineGraph = () => {
+  return <div className="lineGraph">Line graph</div>;
+};
 
 export default LineGraph;
