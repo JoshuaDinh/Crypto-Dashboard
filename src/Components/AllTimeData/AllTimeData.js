@@ -1,24 +1,58 @@
 import React from "react";
 import "./allTimeData.css";
+import { connect } from "react-redux";
 
-const AllTimeData = () => {
+const AllTimeData = ({ selectedCoin }) => {
+  // Formats all time date
+  const formatDate = (x) => {
+    return x.split("T").shift();
+  };
+
   return (
     <div className="allTimeData">
       <h4 className="allTimeData-header"> All Time Data</h4>
       <div className="allTime-data-container">
         <div className="allTimeData-item">
-          <p>All Time High: 17,400.36</p>
-          <p>ATH Change %: 15%</p>
-          <p>ATH Date: 5/6/1999</p>
+          <p>
+            <span className="ath">All Time High: </span>
+            {selectedCoin.searchedCoin?.ath}
+          </p>
+          <p>
+            <span className="ath">ATH Change %: </span>
+            {selectedCoin.searchedCoin?.ath_change_percentage}
+          </p>
+          <p>
+            <span className="ath">ATH Date : </span>
+            {selectedCoin.searchedCoin?.ath_date
+              ? formatDate(selectedCoin.searchedCoin.ath_date)
+              : null}
+          </p>
         </div>
         <div className="allTimeData-item">
-          <p>All Time Low: 13,500</p>
-          <p>ATL Change %: -1,000%</p>
-          <p>ATL Date : 4/5/2000</p>
+          <p>
+            <span className="atl">All Time Low: </span>
+            {selectedCoin.searchedCoin?.atl}
+          </p>
+          <p>
+            <span className="atl"> ATL Change %: </span>
+            {selectedCoin.searchedCoin?.atl_change_percentage}
+          </p>
+          <p>
+            <span className="atl"> ATL Date : </span>
+            {selectedCoin.searchedCoin?.atl_date
+              ? formatDate(selectedCoin.searchedCoin.atl_date)
+              : null}
+          </p>
         </div>
       </div>
     </div>
   );
 };
 
-export default AllTimeData;
+const mapStateToProps = (state) => {
+  return {
+    selectedCoin: state.searchCoin,
+  };
+};
+
+export default connect(mapStateToProps)(AllTimeData);

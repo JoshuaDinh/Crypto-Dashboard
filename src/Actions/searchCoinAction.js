@@ -11,5 +11,5 @@ export const fetchSearchedCoin = () => async (dispatch) => {
 `
   )
     .then((response) => response.json())
-    .then((data) => dispatch({ type: FETCH_SEARCHED_COIN, payload: data }));
+    .then((data) => dispatch({ type: FETCH_SEARCHED_COIN, payload: data[0] }));
 };

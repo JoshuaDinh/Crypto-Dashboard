@@ -25,3 +25,17 @@
   justify-content: space-between;
   font-size: 0.9rem;
 }
+
+.allTimeData-item:first-child {
+  color: green;
+}
+.allTimeData-item:last-child {
+  color: red;
+}
+
+.ath {
+  color: black;
+}
+.atl {
+  color: black;
+}

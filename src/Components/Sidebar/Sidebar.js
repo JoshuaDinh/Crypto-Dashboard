@@ -13,10 +13,10 @@ const Sidebar = ({ selectedCoin }) => {
   return (
     <div className="sidebar">
       <div className="sidebar-header">
-        <p>{selectedCoin.searchedCoin[0]?.name}</p>
+        <p>{selectedCoin.searchedCoin?.name}</p>
         <img
           className="sidebar-image"
-          src={selectedCoin.searchedCoin[0]?.image}
+          src={selectedCoin.searchedCoin?.image}
           alt=" #"
         />
       </div>

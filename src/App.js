@@ -30,22 +30,22 @@ const App = ({ selectedCoin, fetchAllCoinData }) => {
         <div className="app-datacard-container">
           <DataCard
             title="Current Price"
-            info={`$ ${selectedCoin?.searchedCoin[0]?.current_price}`}
+            info={`$${selectedCoin.searchedCoin?.current_price}`}
           />
           <DataCard
             icon={<ArrowDownwardIcon className="dataCard-arrow-icon" />}
             title="24hr % Change "
-            info={`${selectedCoin.searchedCoin[0]?.price_change_percentage_24h}%`}
+            info={`${selectedCoin.searchedCoin?.price_change_percentage_24h}%`}
           />
           <DataCard
             highLow="green"
             title="24hr High"
-            info={`$ ${selectedCoin.searchedCoin[0]?.high_24h}`}
+            info={`$ ${selectedCoin.searchedCoin?.high_24h}`}
           />
           <DataCard
             highLow="red"
             title="24hr Low"
-            info={`$ ${selectedCoin.searchedCoin[0]?.low_24h}`}
+            info={`$ ${selectedCoin.searchedCoin?.low_24h}`}
           />
         </div>
         <div className="app-graph-bar-container">
