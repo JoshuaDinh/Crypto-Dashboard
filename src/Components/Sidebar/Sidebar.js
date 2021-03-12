@@ -11,7 +11,7 @@ import SecurityIcon from "@material-ui/icons/Security";
 const Sidebar = () => {
   return (
     <div className="sidebar">
-      <div className="sidebar-header">Joshua Dinh</div>
+      <div className="sidebar-header">Bitcoin</div>
       <SidebarDrawer title="Dashboard" icon={<HomeIcon className="icon" />} />
       <SidebarDrawer
         title="Security"
