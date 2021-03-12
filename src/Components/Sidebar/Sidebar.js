@@ -48,7 +48,7 @@ const Sidebar = ({ selectedCoin }) => {
 
 const mapStateToProps = (state) => {
   return {
-    selectedCoin: state.searchCoin,
+    selectedCoin: state.searchedCoin,
   };
 };
 

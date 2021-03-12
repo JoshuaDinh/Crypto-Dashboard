@@ -63,7 +63,7 @@ const App = ({ selectedCoin, fetchAllCoinData }) => {
 const mapStateToProps = (state) => {
   return {
     allCoinData: state.allCoinData,
-    selectedCoin: state.searchCoin,
+    selectedCoin: state.searchedCoin,
   };
 };
 

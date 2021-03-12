@@ -11,10 +11,15 @@ import { Avatar } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import SettingsIcon from "@material-ui/icons/Settings";
 
-const Searchbar = ({ searchCoin, fetchSearchedCoin, selectedCoin }) => {
+const Searchbar = ({
+  searchCoin,
+  fetchSearchedCoin,
+  selectCoin,
+  selectedCoin,
+}) => {
   useEffect(() => {
-    fetchSearchedCoin();
-  }, []);
+    fetchSearchedCoin(selectedCoin);
+  }, [selectCoin]);
 
   return (
     <div className="searchbar">
@@ -37,7 +42,8 @@ const Searchbar = ({ searchCoin, fetchSearchedCoin, selectedCoin }) => {
 
 const mapStateToProps = (state) => {
   return {
-    selectedCoin: state.searchCoin,
+    selectCoin: state.searchCoin,
+    selectedCoin: state.searchedCoin,
   };
 };
 
