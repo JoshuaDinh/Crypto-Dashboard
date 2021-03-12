@@ -1,14 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./searchbar.css";
-import SearchIcon from "@material-ui/icons/Search";
+
+// Redux-------------------
+import { connect } from "react-redux";
+import { searchCoin } from "../../Actions/searchCoinAction";
+import { fetchSearchedCoin } from "../../Actions/searchCoinAction";
+
+// Material-ui ------------
 import { Avatar } from "@material-ui/core";
+import SearchIcon from "@material-ui/icons/Search";
 import SettingsIcon from "@material-ui/icons/Settings";
 
-const Searchbar = () => {
+const Searchbar = ({ searchCoin, fetchSearchedCoin }) => {
+  useEffect(() => {
+    fetchSearchedCoin();
+  }, []);
+
   return (
     <div className="searchbar">
       <form className="searchbar-form">
-        <input className="searchbar-input" placeholder="Search for a coin.." />
+        <input
+          className="searchbar-input"
+          type="text"
+          placeholder="Search for a coin.."
+          onChange={(e) => searchCoin(e.target.value)}
+        />
         <SearchIcon className="icon" />
       </form>
       <div className="searchbar-icons-container">
@@ -19,4 +35,18 @@ const Searchbar = () => {
   );
 };
 
-export default Searchbar;
+const mapStateToProps = (state) => {
+  return {
+    searchCoin: state.searchCoin,
+    searchedCoin: state.searchedCoin,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    searchCoin: (text) => dispatch(searchCoin(text)),
+    fetchSearchedCoin: () => dispatch(fetchSearchedCoin()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Searchbar);

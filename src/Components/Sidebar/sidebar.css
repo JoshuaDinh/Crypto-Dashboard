@@ -12,6 +12,10 @@
 }
 
 .sidebar-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   font-size: 1.7rem;
   text-align: center;
   min-height: 15%;
@@ -28,13 +32,16 @@
   min-height: 8%;
   max-height: 8%;
   position: relative;
-
   border-bottom: 1px solid transparent;
 }
 
-.sidebar-drawer:hover {
-  border-bottom: 1px solid rgb(202, 196, 196);
+.sidebar-image {
+  height: 3em;
 }
+
+/* .sidebar-drawer:hover {
+  border-bottom: 1px solid rgb(202, 196, 196);
+} */
 
 .sidebar-drawer-container {
   display: flex;
@@ -48,6 +55,7 @@
   content: "";
   position: absolute;
   right: 0;
+  border: 1px solid rgb(202, 196, 196);
   background: rgba(122, 120, 120, 0.5);
   width: 90%;
   height: 75%;

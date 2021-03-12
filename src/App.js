@@ -48,12 +48,13 @@ const App = () => {
 const mapStateToProps = (state) => {
   return {
     allCoinData: state.allCoinData,
+    searchCoin: state.searchCoin,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchAllCoinData: dispatch(fetchAllCoinData()),
+    fetchAllCoinData: () => dispatch(fetchAllCoinData()),
   };
 };
 

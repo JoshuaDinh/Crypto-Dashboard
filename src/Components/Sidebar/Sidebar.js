@@ -11,7 +11,15 @@ import SecurityIcon from "@material-ui/icons/Security";
 const Sidebar = () => {
   return (
     <div className="sidebar">
-      <div className="sidebar-header">Bitcoin</div>
+      <div className="sidebar-header">
+        Bitcoin
+        <img
+          className="sidebar-image"
+          src="https://icons8.com/preloaders/preloaders/847/Bitcoin%20logo%20spinning-128.gif"
+          alt=" #"
+        />
+      </div>
+
       <SidebarDrawer title="Dashboard" icon={<HomeIcon className="icon" />} />
       <SidebarDrawer
         title="Security"
