@@ -38,3 +38,7 @@
     "linegraph linegraph barchart barchart"
     "linegraph linegraph barchart barchart";
 }
+
+.app-table-container {
+  max-height: 700px;
+}

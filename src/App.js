@@ -38,17 +38,19 @@ const App = () => {
           <AllTimeData />
           <BarChart />
         </div>
-        <Table />
+        <div className="app-table-container">
+          <Table />
+        </div>
       </div>
     </div>
   );
 };
-
 const mapStateToProps = (state) => {
   return {
     allCoinData: state.allCoinData,
   };
 };
+
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchAllCoinData: dispatch(fetchAllCoinData()),

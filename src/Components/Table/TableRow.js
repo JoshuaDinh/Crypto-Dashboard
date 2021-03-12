@@ -1,17 +1,36 @@
 import React from "react";
 import "./table.css";
 
-const TableRow = () => {
+const TableRow = ({
+  rank,
+  name,
+  image,
+  price,
+  low,
+  high,
+  priceChange,
+  totalSupply,
+  totalVolumn,
+}) => {
   return (
-    <div className="tableRow">
-      <p className="table-column">1</p>
-      <p className="table-column">57,000</p>
-      <p className="table-column">57,000</p>
-      <p className="table-column">57,000</p>
-      <p className="table-column"> 658%</p>
-      <p className="table-column">3,457,543</p>
-      <p className="table-column">9,872,347</p>
-    </div>
+    <tr className="tableRow">
+      <td className="table-column">{rank}</td>
+      <td className="table-column">{name}</td>
+      <td className="table-column ">
+        <img className="coinSymbol" src={image} alt="" />
+      </td>
+      <td className="table-column">${price}</td>
+      <td className="table-column dailyHigh ">{low}</td>
+      <td className="table-column dailyLow ">{high}</td>
+      <td
+        className="table-column"
+        style={{ color: priceChange >= 0 ? "green" : "red" }}
+      >
+        {priceChange}%
+      </td>
+      <td className="table-column">{totalSupply}</td>
+      <td className="table-column">{totalVolumn}</td>
+    </tr>
   );
 };
 
