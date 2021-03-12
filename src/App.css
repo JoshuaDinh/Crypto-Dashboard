@@ -25,8 +25,8 @@
   margin: 3%;
 }
 .app-graph-bar-container {
-  min-height: 55%;
-  max-height: 55%;
+  min-height: 58%;
+  max-height: 58%;
   margin: 3%;
   display: grid;
   grid-template-columns: 1fr, 1fr, 1fr, 1fr;
@@ -35,7 +35,8 @@
   grid-template-areas:
     "linegraph linegraph ath ath"
     "linegraph linegraph ath ath"
-    "linegraph linegraph barchart barchart"
+    "linegraph linegraph ath ath"
+    "linegraph linegraph ath ath"
     "linegraph linegraph barchart barchart";
 }
 

@@ -1,3 +1,7 @@
+// Constants
+
 export const FETCH_ALL_COIN_DATA = "FETCH_ALL_COIN_DATA";
 export const SEARCH_COIN = "SEARCH_COIN";
 export const FETCH_SEARCHED_COIN = "FETCH_SEARCHED_COIN";
+export const IS_PENDING = "IS_PENDING";
+export const FETCH_LINE_GRAPH_DATA = "FETCH_LINE_GRAPH_DATA";

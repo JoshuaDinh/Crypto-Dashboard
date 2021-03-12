@@ -18,20 +18,28 @@ const DataCard = ({ info, title, icon, highLow, selectedCoin }) => {
       >
         {title}
       </div>
-      <div className="dataCard-info-container">
-        {icon}
-        <div
-          className={`dataCard-info ${
-            highLow === "green"
-              ? "dataCard-high"
-              : highLow === "red"
-              ? "dataCard-low"
-              : null
-          }`}
-        >
-          {info}
+      {selectedCoin.isPending || selectedCoin.searchedCoin === undefined ? (
+        <div className="loading">
+          <div className="loading-dot"></div>
+          <div className="loading-dot"></div>
+          <div className="loading-dot"></div>
         </div>
-      </div>
+      ) : (
+        <div className="dataCard-info-container">
+          {icon}
+          <div
+            className={`dataCard-info ${
+              highLow === "green"
+                ? "dataCard-high"
+                : highLow === "red"
+                ? "dataCard-low"
+                : null
+            }`}
+          >
+            {info}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
@@ -39,7 +47,7 @@ const DataCard = ({ info, title, icon, highLow, selectedCoin }) => {
 const mapStateToProps = (state) => {
   return {
     allCoinData: state.allCoinData,
-    selectedCoin: state.searchCoin,
+    selectedCoin: state.searchedCoin,
   };
 };
 

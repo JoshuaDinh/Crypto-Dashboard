@@ -10,15 +10,23 @@ import SecurityIcon from "@material-ui/icons/Security";
 import { connect } from "react-redux";
 
 const Sidebar = ({ selectedCoin }) => {
+  console.log(selectedCoin.isPending);
+
   return (
     <div className="sidebar">
       <div className="sidebar-header">
-        <p>{selectedCoin.searchedCoin?.name}</p>
-        <img
-          className="sidebar-image"
-          src={selectedCoin.searchedCoin?.image}
-          alt=" #"
-        />
+        {selectedCoin.isPending || selectedCoin.searchedCoin === undefined ? (
+          <div>Loading</div>
+        ) : (
+          <div>
+            <p>{selectedCoin.searchedCoin?.name}</p>
+            <img
+              className="sidebar-image"
+              src={selectedCoin.searchedCoin?.image}
+              alt=" #"
+            />
+          </div>
+        )}
       </div>
 
       <SidebarDrawer title="Dashboard" icon={<HomeIcon className="icon" />} />

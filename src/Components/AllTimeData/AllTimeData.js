@@ -15,7 +15,7 @@ const AllTimeData = ({ selectedCoin }) => {
         <div className="allTimeData-item">
           <p>
             <span className="ath">All Time High: </span>
-            {selectedCoin.searchedCoin?.ath}
+            {` $${selectedCoin.searchedCoin?.ath}`}
           </p>
           <p>
             <span className="ath">ATH Change %: </span>
@@ -31,7 +31,7 @@ const AllTimeData = ({ selectedCoin }) => {
         <div className="allTimeData-item">
           <p>
             <span className="atl">All Time Low: </span>
-            {selectedCoin.searchedCoin?.atl}
+            {` $${selectedCoin.searchedCoin?.atl}`}
           </p>
           <p>
             <span className="atl"> ATL Change %: </span>
