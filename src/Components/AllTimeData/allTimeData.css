@@ -1,6 +1,27 @@
 .allTimeData {
   grid-area: ath;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   box-shadow: 0px 27px 14px -15px rgba(0, 0, 0, 0.46);
   -webkit-box-shadow: 0px 27px 14px -15px rgba(0, 0, 0, 0.46);
   -moz-box-shadow: 0px 27px 14px -15px rgba(0, 0, 0, 0.46);
+}
+
+.allTimeData-header {
+  text-align: center;
+}
+
+.allTime-data-container {
+  display: flex;
+  height: 80%;
+}
+
+.allTimeData-item {
+  width: 50%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 0.9rem;
 }
