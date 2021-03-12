@@ -5,7 +5,37 @@
 
 .app-content {
   position: absolute;
+  top: 0;
   right: 0;
-  border: 1px solid black;
+  min-height: 100vh;
+  max-width: 100vw;
+  height: 100%;
   width: 85%;
+}
+
+.icon {
+  font-size: 2rem !important;
+  color: rgb(143, 142, 142);
+  cursor: pointer;
+}
+
+/* Data-card-container */
+.app-datacard-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 3%;
+}
+.app-graph-bar-container {
+  min-height: 55%;
+  max-height: 55%;
+  margin: 3%;
+  display: grid;
+  grid-template-columns: 1fr, 1fr, 1fr, 1fr;
+  grid-template-rows: 1fr, 1fr 1fr 1fr;
+  grid-gap: 10px;
+  grid-template-areas:
+    "linegraph linegraph ath ath"
+    "linegraph linegraph ath ath"
+    "linegraph linegraph barchart barchart"
+    "linegraph linegraph barchart barchart";
 }

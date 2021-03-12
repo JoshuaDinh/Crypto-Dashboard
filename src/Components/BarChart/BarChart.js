@@ -1,5 +1,8 @@
 import React from "react";
+import "./barchart.css";
 
-export default function BarChart() {
-  return <div className="bar-chart"></div>;
-}
+const BarChart = () => {
+  return <div className="barChart">bar chart</div>;
+};
+
+export default BarChart;

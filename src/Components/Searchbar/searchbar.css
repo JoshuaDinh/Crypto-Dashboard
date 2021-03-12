@@ -1,0 +1,30 @@
+.searchbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(202, 196, 196);
+  min-height: 12%;
+}
+
+.searchbar-form {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  margin-left: 2%;
+  border-radius: 25px;
+  border: 1px solid rgb(202, 196, 196);
+}
+
+.searchbar-input {
+  padding: 1px;
+  width: 90%;
+  border: none;
+  outline: none;
+}
+
+.searchbar-icons-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 15%;
+}

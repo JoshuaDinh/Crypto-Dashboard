@@ -12,29 +12,26 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar-header">Joshua Dinh</div>
-      <SidebarDrawer
-        title="Dashboard"
-        icon={<HomeIcon className="sidebar-drawer-icon" />}
-      />
+      <SidebarDrawer title="Dashboard" icon={<HomeIcon className="icon" />} />
       <SidebarDrawer
         title="Security"
-        icon={<SecurityIcon className="sidebar-drawer-icon" />}
+        icon={<SecurityIcon className="icon" />}
       />
       <SidebarDrawer
         title="Settings"
-        icon={<SettingsApplicationsIcon className="sidebar-drawer-icon" />}
+        icon={<SettingsApplicationsIcon className="icon" />}
       />
       <SidebarDrawer
         title="Sign In"
-        icon={<MeetingRoomIcon className="sidebar-drawer-icon" />}
+        icon={<MeetingRoomIcon className="icon" />}
       />
       <SidebarDrawer
         title="Sign Up"
-        icon={<AssignmentIndIcon className="sidebar-drawer-icon" />}
+        icon={<AssignmentIndIcon className="icon" />}
       />
       <SidebarDrawer
         title="Log Out"
-        icon={<ExitToAppIcon className="sidebar-drawer-icon" />}
+        icon={<ExitToAppIcon className="icon" />}
       />
     </div>
   );
