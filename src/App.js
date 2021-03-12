@@ -30,7 +30,7 @@ const App = ({ selectedCoin, fetchAllCoinData }) => {
         <div className="app-datacard-container">
           <DataCard
             title="Current Price"
-            info={selectedCoin?.searchedCoin[0]?.current_price}
+            info={`$ ${selectedCoin?.searchedCoin[0]?.current_price}`}
           />
           <DataCard
             icon={<ArrowDownwardIcon className="dataCard-arrow-icon" />}
