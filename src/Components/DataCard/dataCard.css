@@ -13,7 +13,7 @@
 .dataCard-info-container {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   width: 100%;
 }
 .dataCard-header {
@@ -26,7 +26,31 @@
 }
 
 .dataCard-arrow-icon {
-  font-size: 2rem !important;
+  font-size: 1.3rem !important;
   color: green;
   grid-area: icon;
+}
+
+.dataCard-high {
+  animation: colorchangehigh 1s ease-in-out infinite alternate-reverse;
+}
+.dataCard-low {
+  animation: colorchangelow 1s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes colorchangehigh {
+  0% {
+    color: grey;
+  }
+  100% {
+    color: green;
+  }
+}
+@keyframes colorchangelow {
+  0% {
+    color: grey;
+  }
+  100% {
+    color: red;
+  }
 }

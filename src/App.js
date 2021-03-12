@@ -17,7 +17,7 @@ import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 import { connect } from "react-redux";
 import { fetchAllCoinData } from "./Actions/allCoinDataAction";
 
-const App = () => {
+const App = ({ selectedCoin, fetchAllCoinData }) => {
   useEffect(() => {
     fetchAllCoinData();
   }, []);
@@ -28,10 +28,25 @@ const App = () => {
       <div className="app-content">
         <Searchbar />
         <div className="app-datacard-container">
-          <DataCard info=" 57,400" />
-          <DataCard info="18%" />
-          <DataCard info="25%" />
-          <DataCard info="s-90%" />
+          <DataCard
+            title="Current Price"
+            info={selectedCoin?.searchedCoin[0]?.current_price}
+          />
+          <DataCard
+            icon={<ArrowDownwardIcon className="dataCard-arrow-icon" />}
+            title="24hr % Change "
+            info={`${selectedCoin.searchedCoin[0]?.price_change_percentage_24h}%`}
+          />
+          <DataCard
+            highLow="green"
+            title="24hr High"
+            info={`$ ${selectedCoin.searchedCoin[0]?.high_24h}`}
+          />
+          <DataCard
+            highLow="red"
+            title="24hr Low"
+            info={`$ ${selectedCoin.searchedCoin[0]?.low_24h}`}
+          />
         </div>
         <div className="app-graph-bar-container">
           <LineGraph />
@@ -48,7 +63,7 @@ const App = () => {
 const mapStateToProps = (state) => {
   return {
     allCoinData: state.allCoinData,
-    searchCoin: state.searchCoin,
+    selectedCoin: state.searchCoin,
   };
 };
 

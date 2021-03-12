@@ -7,15 +7,16 @@ import MeetingRoomIcon from "@material-ui/icons/MeetingRoom";
 import AssignmentIndIcon from "@material-ui/icons/AssignmentInd";
 import SettingsApplicationsIcon from "@material-ui/icons/SettingsApplications";
 import SecurityIcon from "@material-ui/icons/Security";
+import { connect } from "react-redux";
 
-const Sidebar = () => {
+const Sidebar = ({ selectedCoin }) => {
   return (
     <div className="sidebar">
       <div className="sidebar-header">
-        Bitcoin
+        <p>{selectedCoin.searchedCoin[0]?.name}</p>
         <img
           className="sidebar-image"
-          src="https://icons8.com/preloaders/preloaders/847/Bitcoin%20logo%20spinning-128.gif"
+          src={selectedCoin.searchedCoin[0]?.image}
           alt=" #"
         />
       </div>
@@ -45,4 +46,10 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+const mapStateToProps = (state) => {
+  return {
+    selectedCoin: state.searchCoin,
+  };
+};
+
+export default connect(mapStateToProps)(Sidebar);
