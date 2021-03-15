@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./App.css";
-// components ----------------
+// Components ----------------
 import DataCard from "./Components/DataCard/DataCard";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import LineGraph from "./Components/LineGraph/LineGraph";
@@ -9,11 +9,11 @@ import BarChart from "./Components/BarChart/BarChart";
 import AllTimeData from "./Components/AllTimeData/AllTimeData";
 import Table from "./Components/Table/Table";
 
-// material-ui icons ---------
+// Material-ui icons ---------
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 
-// redux ---------------------
+// Redux ---------------------
 import { connect } from "react-redux";
 import { fetchAllCoinData } from "./Actions/allCoinDataAction";
 

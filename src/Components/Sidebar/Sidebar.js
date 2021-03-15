@@ -7,6 +7,7 @@ import MeetingRoomIcon from "@material-ui/icons/MeetingRoom";
 import AssignmentIndIcon from "@material-ui/icons/AssignmentInd";
 import SettingsApplicationsIcon from "@material-ui/icons/SettingsApplications";
 import SecurityIcon from "@material-ui/icons/Security";
+import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 import { connect } from "react-redux";
 
 const Sidebar = ({ selectedCoin }) => {
@@ -16,7 +17,10 @@ const Sidebar = ({ selectedCoin }) => {
     <div className="sidebar">
       <div className="sidebar-header">
         {selectedCoin.isPending || selectedCoin.searchedCoin === undefined ? (
-          <div>Loading</div>
+          <div className="sidebar-header-loading">
+            Search for CryptoCurrencies{" "}
+            <ArrowRightAltIcon className="searchbar-arrow-icon" />
+          </div>
         ) : (
           <div>
             <p>{selectedCoin.searchedCoin?.name}</p>

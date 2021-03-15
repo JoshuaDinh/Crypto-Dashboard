@@ -20,7 +20,7 @@ const BarChart = ({ selectedCoin }) => {
     datasets: [
       {
         label: "%",
-        backgroundColor: "rgba(0, 0, 0, 0.6)",
+        backgroundColor: "rgba(0, 0, 0, 0.77)",
         borderColor: "rgba(0,0,0,1)",
         borderWidth: 1.2,
         data: barData,

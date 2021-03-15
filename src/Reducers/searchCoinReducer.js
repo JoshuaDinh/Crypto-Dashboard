@@ -3,7 +3,7 @@ import { FETCH_SEARCHED_COIN } from "../constants";
 import { IS_PENDING } from "../constants";
 
 export const initialSearchCoinState = {
-  searchCoin: "",
+  searchCoin: null,
   searchedCoin: [],
   isPending: false,
 };
