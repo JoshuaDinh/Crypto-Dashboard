@@ -12,10 +12,12 @@ import Table from "./Components/Table/Table";
 // Material-ui icons ---------
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
 // Redux ---------------------
 import { connect } from "react-redux";
 import { fetchAllCoinData } from "./Actions/allCoinDataAction";
+import NewsCard from "./Components/NewsCard/NewsCard";
 
 const App = ({ selectedCoin, fetchAllCoinData }) => {
   useEffect(() => {
@@ -52,6 +54,19 @@ const App = ({ selectedCoin, fetchAllCoinData }) => {
           <LineGraph />
           <AllTimeData />
           <BarChart />
+        </div>
+        <div className="app-newsCard-container">
+          <div className="app-newsCard-arrow-container">
+            <ArrowForwardIosIcon className="app-newsCard-arrow-icon" />
+          </div>
+          <NewsCard />
+          <NewsCard />
+          <NewsCard />
+          <NewsCard />
+          <NewsCard />
+          <NewsCard />
+          <NewsCard />
+          <NewsCard />
         </div>
         <div className="app-table-container">
           <Table />

@@ -43,3 +43,31 @@
 .app-table-container {
   max-height: 700px;
 }
+
+/* news card */
+.app-newsCard-container {
+  min-height: 55%;
+  margin: 1%;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.app-newsCard-arrow-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  color: white;
+  border-radius: 50px 50px;
+  width: 5%;
+  background: rgb(0, 0, 0, 0.8);
+}
+
+.app-newsCard-arrow-icon {
+  font-size: 2rem !important;
+  cursor: pointer;
+}
