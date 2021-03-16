@@ -8,9 +8,11 @@ import AssignmentIndIcon from "@material-ui/icons/AssignmentInd";
 import SettingsApplicationsIcon from "@material-ui/icons/SettingsApplications";
 import SecurityIcon from "@material-ui/icons/Security";
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
+// Redux-------
+import { displaySignUpModal } from "../../Actions/signUpModalAction";
 import { connect } from "react-redux";
 
-const Sidebar = ({ selectedCoin }) => {
+const Sidebar = ({ selectedCoin, displaySignUpModal }) => {
   console.log(selectedCoin.isPending);
 
   return (
@@ -18,7 +20,7 @@ const Sidebar = ({ selectedCoin }) => {
       <div className="sidebar-header">
         {selectedCoin.isPending || selectedCoin.searchedCoin === undefined ? (
           <div className="sidebar-header-loading">
-            Search for CryptoCurrencies{" "}
+            Search for CryptoCurrencies
             <ArrowRightAltIcon className="searchbar-arrow-icon" />
           </div>
         ) : (
@@ -47,6 +49,7 @@ const Sidebar = ({ selectedCoin }) => {
         icon={<MeetingRoomIcon className="icon" />}
       />
       <SidebarDrawer
+        toggleOption={() => displaySignUpModal(true)}
         title="Sign Up"
         icon={<AssignmentIndIcon className="icon" />}
       />
@@ -61,7 +64,14 @@ const Sidebar = ({ selectedCoin }) => {
 const mapStateToProps = (state) => {
   return {
     selectedCoin: state.searchedCoin,
+    signUpModal: state.signUpModal,
   };
 };
 
-export default connect(mapStateToProps)(Sidebar);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    displaySignUpModal: () => dispatch(displaySignUpModal()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);

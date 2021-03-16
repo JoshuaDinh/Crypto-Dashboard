@@ -5,6 +5,7 @@ import "./searchbar.css";
 import { connect } from "react-redux";
 import { searchCoin } from "../../Actions/searchCoinAction";
 import { fetchSearchedCoin } from "../../Actions/searchCoinAction";
+import { displaySignUpModal } from "../../Actions/signUpModalAction";
 
 // Material-ui ------------
 import { Avatar } from "@material-ui/core";

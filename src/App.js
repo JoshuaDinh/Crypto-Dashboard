@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./App.css";
 // Components ----------------
 import DataCard from "./Components/DataCard/DataCard";
+import SignUpModal from "./Components/SignUpModal/SignUpModal";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import LineGraph from "./Components/LineGraph/LineGraph";
 import Searchbar from "./Components/Searchbar/Searchbar";
@@ -19,13 +20,18 @@ import { connect } from "react-redux";
 import { fetchAllCoinData } from "./Actions/allCoinDataAction";
 import NewsCard from "./Components/NewsCard/NewsCard";
 
-const App = ({ selectedCoin, fetchAllCoinData }) => {
+const App = ({ selectedCoin, fetchAllCoinData, signUpModal }) => {
   useEffect(() => {
     fetchAllCoinData();
   }, []);
 
   return (
     <div className="App">
+      {signUpModal && (
+        <div className="app-signUpModal-container">
+          <SignUpModal />
+        </div>
+      )}
       <Sidebar />
       <div className="app-content">
         <Searchbar />
@@ -82,6 +88,7 @@ const mapStateToProps = (state) => {
   return {
     allCoinData: state.allCoinData,
     selectedCoin: state.searchedCoin,
+    signUpModal: state.signUpModal,
   };
 };
 
