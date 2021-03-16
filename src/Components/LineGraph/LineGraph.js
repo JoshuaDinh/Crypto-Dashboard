@@ -45,18 +45,11 @@ const options = {
 };
 
 const LineGraph = ({ fetchLineGraphData, lineGraphData, selectedCoin }) => {
+  let lineGraphDataArray = [];
+
   useEffect(() => {
     fetchLineGraphData();
   }, [selectedCoin]);
-
-  let lineGraphDataArray = [];
-
-  // if (lineGraphData.prices) {
-  //   lineGraphData.prices.map((data) => {
-  //     lineGraphDataArray.push(data);
-  //   });
-  //   console.log(lineGraphDataArray);
-  // }
 
   const data = {
     labels: ["1", "7", "14", "30"],
@@ -66,7 +59,7 @@ const LineGraph = ({ fetchLineGraphData, lineGraphData, selectedCoin }) => {
         backgroundColor: "rgba(0, 0, 0, 0.77)",
         borderColor: "rgba(0,0,0,1)",
         borderWidth: 1.5,
-        data: [65, 59, 80, 81, 56],
+        data: [1, 2, 3, 4],
       },
     ],
   };
