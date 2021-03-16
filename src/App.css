@@ -46,7 +46,7 @@
 
 /* news card */
 .app-newsCard-container {
-  min-height: 55%;
+  min-height: 57%;
   margin: 1%;
   display: flex;
   align-items: center;
@@ -54,20 +54,30 @@
   position: relative;
 }
 
-.app-newsCard-arrow-container {
+.app-newsCard-left-arrow-container {
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 50%;
-  right: 0;
-  color: white;
+  bottom: 0%;
+  left: 45%;
+  color: black;
   border-radius: 50px 50px;
-  width: 5%;
-  background: rgb(0, 0, 0, 0.8);
+  padding: 5px;
+}
+.app-newsCard-right-arrow-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0%;
+  right: 45%;
+  color: black;
+  border-radius: 50px 50px;
+  padding: 5px;
 }
 
 .app-newsCard-arrow-icon {
-  font-size: 2rem !important;
+  font-size: 3rem !important;
   cursor: pointer;
 }

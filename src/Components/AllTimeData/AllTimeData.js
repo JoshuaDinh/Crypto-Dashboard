@@ -15,33 +15,51 @@ const AllTimeData = ({ selectedCoin }) => {
         <div className="allTimeData-item">
           <p>
             <span className="ath">All Time High: </span>
-            {` $${selectedCoin.searchedCoin?.ath}`}
+            {/* Ternary determines what to display if no coin is selected/searched */}
+            {selectedCoin.searchedCoin ? (
+              ` $${selectedCoin.searchedCoin?.ath}`
+            ) : (
+              <div>...</div>
+            )}
           </p>
           <p>
             <span className="ath">ATH Change %: </span>
-            {selectedCoin.searchedCoin?.ath_change_percentage}
+
+            {selectedCoin.searchedCoin ? (
+              ` $${selectedCoin.searchedCoin?.ath_change_percentage}`
+            ) : (
+              <div>...</div>
+            )}
           </p>
           <p>
             <span className="ath">ATH Date : </span>
             {selectedCoin.searchedCoin?.ath_date
               ? formatDate(selectedCoin.searchedCoin.ath_date)
-              : null}
+              : "..."}
           </p>
         </div>
         <div className="allTimeData-item">
           <p>
             <span className="atl">All Time Low: </span>
-            {` $${selectedCoin.searchedCoin?.atl}`}
+            {selectedCoin.searchedCoin ? (
+              ` $${selectedCoin.searchedCoin?.atl}`
+            ) : (
+              <div>...</div>
+            )}
           </p>
           <p>
             <span className="atl"> ATL Change %: </span>
-            {selectedCoin.searchedCoin?.atl_change_percentage}
+            {selectedCoin.searchedCoin ? (
+              ` $${selectedCoin.searchedCoin?.atl_change_percentage}`
+            ) : (
+              <div>...</div>
+            )}
           </p>
           <p>
             <span className="atl"> ATL Date : </span>
             {selectedCoin.searchedCoin?.atl_date
               ? formatDate(selectedCoin.searchedCoin.atl_date)
-              : null}
+              : "..."}
           </p>
         </div>
       </div>

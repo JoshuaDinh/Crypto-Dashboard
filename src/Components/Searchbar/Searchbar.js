@@ -49,7 +49,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    searchCoin: (text) => dispatch(searchCoin(text)),
+    searchCoin: (text) =>
+      setTimeout(() => {
+        dispatch(searchCoin(text));
+      }, 1500),
     fetchSearchedCoin: () => dispatch(fetchSearchedCoin()),
   };
 };

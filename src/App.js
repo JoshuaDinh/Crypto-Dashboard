@@ -12,8 +12,8 @@ import Table from "./Components/Table/Table";
 // Material-ui icons ---------
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
-
+import NavigateNextIcon from "@material-ui/icons/NavigateNext";
+import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 // Redux ---------------------
 import { connect } from "react-redux";
 import { fetchAllCoinData } from "./Actions/allCoinDataAction";
@@ -56,8 +56,11 @@ const App = ({ selectedCoin, fetchAllCoinData }) => {
           <BarChart />
         </div>
         <div className="app-newsCard-container">
-          <div className="app-newsCard-arrow-container">
-            <ArrowForwardIosIcon className="app-newsCard-arrow-icon" />
+          <div className="app-newsCard-left-arrow-container">
+            <NavigateBeforeIcon className="app-newsCard-arrow-icon icon" />
+          </div>
+          <div className="app-newsCard-right-arrow-container">
+            <NavigateNextIcon className="app-newsCard-arrow-icon icon" />
           </div>
           <NewsCard />
           <NewsCard />

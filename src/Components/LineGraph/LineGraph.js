@@ -44,10 +44,19 @@ const options = {
   },
 };
 
-const LineGraph = ({ fetchLineGraphData }) => {
+const LineGraph = ({ fetchLineGraphData, lineGraphData, selectedCoin }) => {
   useEffect(() => {
     fetchLineGraphData();
-  }, []);
+  }, [selectedCoin]);
+
+  let lineGraphDataArray = [];
+
+  // if (lineGraphData.prices) {
+  //   lineGraphData.prices.map((data) => {
+  //     lineGraphDataArray.push(data);
+  //   });
+  //   console.log(lineGraphDataArray);
+  // }
 
   const data = {
     labels: ["1", "7", "14", "30"],
@@ -78,6 +87,7 @@ const LineGraph = ({ fetchLineGraphData }) => {
 const mapStateToProps = (state) => {
   return {
     lineGraphData: state.lineGraphData,
+    selectedCoin: state.searchCoin,
   };
 };
 const mapDispatchToProps = (dispatch) => {
