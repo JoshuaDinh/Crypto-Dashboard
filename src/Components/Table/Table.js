@@ -1,7 +1,10 @@
 import TableRow from "./TableRow";
 import React from "react";
 import "./table.css";
+// redux ----
 import { connect } from "react-redux";
+// Numeral -----
+import numeral from "numeral";
 
 const Table = ({ allCoinData }) => {
   console.log(allCoinData);
@@ -24,12 +27,12 @@ const Table = ({ allCoinData }) => {
             rank={coin.market_cap_rank}
             name={coin.name}
             image={coin.image}
-            price={coin.current_price}
-            low={coin.low_24h}
-            high={coin.high_24h}
+            price={numeral(coin.current_price).format("0,0")}
+            low={numeral(coin.low_24h).format("0,0")}
+            high={numeral(coin.high_24h).format("0,0")}
             priceChange={coin.price_change_24h}
-            totalSupply={coin.total_supply}
-            totalVolumn={coin.total_volume}
+            totalSupply={numeral(coin.total_supply).format("0,000,000")}
+            totalVolumn={numeral(coin.total_volume).format("0,000,000")}
           />
         );
       })}
