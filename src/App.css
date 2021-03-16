@@ -18,6 +18,19 @@
   cursor: pointer;
 }
 
+.icon:hover {
+  animation: icon 2s infinite ease-in-out alternate-reverse;
+}
+
+@keyframes icon {
+  0% {
+    transform: rotate();
+  }
+  0% {
+    transform: rotate(360deg);
+  }
+}
+
 /* Data-card-container */
 .app-datacard-container {
   display: flex;

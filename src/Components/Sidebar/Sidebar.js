@@ -7,7 +7,7 @@ import MeetingRoomIcon from "@material-ui/icons/MeetingRoom";
 import AssignmentIndIcon from "@material-ui/icons/AssignmentInd";
 import SettingsApplicationsIcon from "@material-ui/icons/SettingsApplications";
 import SecurityIcon from "@material-ui/icons/Security";
-import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
+import ForwardIcon from "@material-ui/icons/Forward";
 // Redux----------
 import { displaySignUpModal } from "../../Actions/authenticationAction.js";
 import { displaySignInModal } from "../../Actions/authenticationAction.js";
@@ -21,8 +21,8 @@ const Sidebar = ({ selectedCoin, displaySignUpModal, displaySignInModal }) => {
       <div className="sidebar-header">
         {selectedCoin.isPending || selectedCoin.searchedCoin === undefined ? (
           <div className="sidebar-header-loading">
-            Search for CryptoCurrencies
-            <ArrowRightAltIcon className="searchbar-arrow-icon" />
+            <ForwardIcon className="searchbar-arrow-icon" />
+            <span> Search for CryptoCurrencies</span>
           </div>
         ) : (
           <div>

@@ -16,10 +16,31 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 1.7rem;
+  font-size: 1.3rem;
   text-align: center;
   min-height: 18%;
   border-bottom: 1px solid rgb(202, 196, 196);
+}
+
+.sidebar-header-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.searchbar-arrow-icon {
+  color: grey;
+  font-size: 3rem !important;
+  animation: forward 3s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes forward {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(80%);
+  }
 }
 
 /* Sidebar-Drawer */

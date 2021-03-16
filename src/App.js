@@ -10,7 +10,6 @@ import Searchbar from "./Components/Searchbar/Searchbar";
 import BarChart from "./Components/BarChart/BarChart";
 import AllTimeData from "./Components/AllTimeData/AllTimeData";
 import Table from "./Components/Table/Table";
-
 // Material-ui icons ---------
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
@@ -20,6 +19,8 @@ import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 import { connect } from "react-redux";
 import { fetchAllCoinData } from "./Actions/allCoinDataAction";
 import NewsCard from "./Components/NewsCard/NewsCard";
+// numeral--------------------
+import numeral from "numeral";
 
 const App = ({ selectedCoin, fetchAllCoinData, signUpModal, signInModal }) => {
   useEffect(() => {
@@ -43,7 +44,9 @@ const App = ({ selectedCoin, fetchAllCoinData, signUpModal, signInModal }) => {
         <div className="app-datacard-container">
           <DataCard
             title="Current Price"
-            info={`$${selectedCoin.searchedCoin?.current_price}`}
+            info={`$${numeral(selectedCoin.searchedCoin?.current_price).format(
+              "0,0"
+            )}`}
           />
           <DataCard
             icon={<ArrowDownwardIcon className="dataCard-arrow-icon" />}
@@ -53,12 +56,16 @@ const App = ({ selectedCoin, fetchAllCoinData, signUpModal, signInModal }) => {
           <DataCard
             highLow="green"
             title="24hr High"
-            info={`$ ${selectedCoin.searchedCoin?.high_24h}`}
+            info={`$ ${numeral(selectedCoin.searchedCoin?.high_24h).format(
+              "0,0"
+            )}`}
           />
           <DataCard
             highLow="red"
             title="24hr Low"
-            info={`$ ${selectedCoin.searchedCoin?.low_24h}`}
+            info={`$ ${numeral(selectedCoin.searchedCoin?.low_24h).format(
+              "0,0"
+            )}`}
           />
         </div>
         <div className="app-graph-bar-container">
