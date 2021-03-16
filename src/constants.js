@@ -6,3 +6,4 @@ export const FETCH_SEARCHED_COIN = "FETCH_SEARCHED_COIN";
 export const IS_PENDING = "IS_PENDING";
 export const FETCH_LINE_GRAPH_DATA = "FETCH_LINE_GRAPH_DATA";
 export const SIGN_UP_MODAL = "SIGN_UP_MODAL";
+export const SIGN_IN_MODAL = "SIGN_IN_MODAL";

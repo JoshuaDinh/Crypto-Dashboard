@@ -19,6 +19,12 @@ const SignUpModal = () => {
           placeholder="Password.."
           type="password"
         />
+        <label>Verify Password*:</label>
+        <input
+          className="signUpModal-input"
+          placeholder="Please Verify Your Password"
+          type="password"
+        />
       </form>
       <p>Or..</p>
       <div className="signUpModal-google">

@@ -8,11 +8,12 @@ import AssignmentIndIcon from "@material-ui/icons/AssignmentInd";
 import SettingsApplicationsIcon from "@material-ui/icons/SettingsApplications";
 import SecurityIcon from "@material-ui/icons/Security";
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
-// Redux-------
-import { displaySignUpModal } from "../../Actions/signUpModalAction";
+// Redux----------
+import { displaySignUpModal } from "../../Actions/authenticationAction.js";
+import { displaySignInModal } from "../../Actions/authenticationAction.js";
 import { connect } from "react-redux";
 
-const Sidebar = ({ selectedCoin, displaySignUpModal }) => {
+const Sidebar = ({ selectedCoin, displaySignUpModal, displaySignInModal }) => {
   console.log(selectedCoin.isPending);
 
   return (
@@ -45,6 +46,7 @@ const Sidebar = ({ selectedCoin, displaySignUpModal }) => {
         icon={<SettingsApplicationsIcon className="icon" />}
       />
       <SidebarDrawer
+        toggleOption={() => displaySignInModal(true)}
         title="Sign In"
         icon={<MeetingRoomIcon className="icon" />}
       />
@@ -54,6 +56,7 @@ const Sidebar = ({ selectedCoin, displaySignUpModal }) => {
         icon={<AssignmentIndIcon className="icon" />}
       />
       <SidebarDrawer
+        toggleOption={() => alert("alert")}
         title="Log Out"
         icon={<ExitToAppIcon className="icon" />}
       />
@@ -71,6 +74,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     displaySignUpModal: () => dispatch(displaySignUpModal()),
+    displaySignInModal: () => dispatch(displaySignInModal()),
   };
 };
 

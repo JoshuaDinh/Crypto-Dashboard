@@ -3,7 +3,8 @@ import { allCoinDataReducer } from "./allCoinDataReducer";
 import { searchCoinReducer } from "./searchCoinReducer";
 import { searchedCoinReducer } from "./searchCoinReducer";
 import { lineGraphDataReducer } from "./lineGraphDataReducer";
-import { signUpModalReducer } from "./signUpModalReducer";
+import { signUpModalReducer } from "./authenticationReducer";
+import { signInModalReducer } from "./authenticationReducer";
 
 export default combineReducers({
   allCoinData: allCoinDataReducer,
@@ -11,4 +12,5 @@ export default combineReducers({
   searchedCoin: searchedCoinReducer,
   lineGraphData: lineGraphDataReducer,
   signUpModal: signUpModalReducer,
+  signInModal: signInModalReducer,
 });

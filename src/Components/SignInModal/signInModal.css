@@ -1,4 +1,4 @@
-.signUpModal {
+.signInModal {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -13,7 +13,7 @@
   background: whitesmoke;
 }
 
-.signUpModal-form {
+.signInModal-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,13 +22,13 @@
   height: 55%;
 }
 
-.signUpModal-input {
+.signInModal-input {
   width: 50%;
   padding: 10px;
   outline: none;
 }
 
-.signUpModal-google {
+.signInModal-google {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,7 +38,7 @@
   cursor: pointer;
 }
 
-.signupModal-google-logo {
+.signInModal-google-logo {
   width: 3.5em;
   margin-left: 2%;
 }
