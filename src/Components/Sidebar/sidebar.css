@@ -30,6 +30,7 @@
 
 .searchbar-arrow-icon {
   color: grey;
+
   font-size: 3rem !important;
   animation: forward 3s ease-in-out infinite alternate-reverse;
 }
