@@ -1,5 +1,7 @@
 import React from "react";
 import "./signInModal.css";
+import { loginUrl } from "../../GoogleAuth";
+
 import googleLogo from "../../images/googleLogo.png";
 
 const SignInModal = () => {
@@ -21,10 +23,10 @@ const SignInModal = () => {
         />
       </form>
       <p>Or..</p>
-      <div className="signInModal-google">
+      <a href={loginUrl} className="signInModal-google">
         <span> Sign In With </span>
         <img className="signInModal-google-logo" src={googleLogo} alt="" />
-      </div>
+      </a>
     </div>
   );
 };
