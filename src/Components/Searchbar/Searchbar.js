@@ -53,7 +53,7 @@ const mapDispatchToProps = (dispatch) => {
     searchCoin: (text) =>
       setTimeout(() => {
         dispatch(searchCoin(text));
-      }, 1500),
+      }, 2000),
     fetchSearchedCoin: () => dispatch(fetchSearchedCoin()),
   };
 };

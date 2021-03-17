@@ -7,7 +7,6 @@ import { connect } from "react-redux";
 import numeral from "numeral";
 
 const Table = ({ allCoinData }) => {
-  console.log(allCoinData);
   return (
     <table className="table">
       <tr className="table-header">

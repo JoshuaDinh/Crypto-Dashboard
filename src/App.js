@@ -18,23 +18,34 @@ import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 // Redux ---------------------
 import { connect } from "react-redux";
 import { fetchAllCoinData } from "./Actions/allCoinDataAction";
+import { fetchNewsData } from "./Actions/newsDataAction";
 import NewsCard from "./Components/NewsCard/NewsCard";
 // numeral--------------------
 import numeral from "numeral";
 
-const App = ({ selectedCoin, fetchAllCoinData, signUpModal, signInModal }) => {
+const App = ({
+  selectedCoin,
+  fetchAllCoinData,
+  signUpModal,
+  signInModal,
+  fetchNewsData,
+  newsData,
+  isPending,
+}) => {
   useEffect(() => {
     fetchAllCoinData();
+    fetchNewsData();
   }, []);
 
+  console.log(newsData);
   return (
     <div className="App">
       {signUpModal ? (
-        <div className="app-signUpModal-container">
+        <div className="app-authentication-container">
           <SignUpModal />
         </div>
       ) : signInModal ? (
-        <div className="app-signUpModal-container">
+        <div className="app-authentication-container">
           <SignInModal />
         </div>
       ) : null}
@@ -73,24 +84,17 @@ const App = ({ selectedCoin, fetchAllCoinData, signUpModal, signInModal }) => {
           <AllTimeData />
           <BarChart />
         </div>
-        <div className="app-newsCard-container">
-          <div className="app-newsCard-left-arrow-container">
-            <NavigateBeforeIcon className="app-newsCard-arrow-icon icon" />
-          </div>
-          <div className="app-newsCard-right-arrow-container">
-            <NavigateNextIcon className="app-newsCard-arrow-icon icon" />
-          </div>
-          <NewsCard />
-          <NewsCard />
-          <NewsCard />
-          <NewsCard />
-          <NewsCard />
-          <NewsCard />
-          <NewsCard />
-          <NewsCard />
-        </div>
         <div className="app-table-container">
           <Table />
+        </div>
+        <div className="app-newsCard-container">
+          <div className="app-newsCard-header-container">
+            <h1 className="app-newsCard-header">See Whats New</h1>
+            <div className="app-newsCard-header-break"></div>
+          </div>
+          {newsData.map((story) => {
+            return <NewsCard />;
+          })}
         </div>
       </div>
     </div>
@@ -102,12 +106,15 @@ const mapStateToProps = (state) => {
     selectedCoin: state.searchedCoin,
     signUpModal: state.signUpModal,
     signInModal: state.signInModal,
+    newsData: state.newsData.newsData,
+    isPending: state.newsData.isPending,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchAllCoinData: () => dispatch(fetchAllCoinData()),
+    fetchNewsData: () => dispatch(fetchNewsData()),
   };
 };
 

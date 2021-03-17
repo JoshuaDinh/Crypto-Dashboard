@@ -1,5 +1,4 @@
-import { IS_PENDING, SEARCH_COIN } from "../constants";
-import { FETCH_SEARCHED_COIN } from "../constants";
+import { IS_PENDING, SEARCH_COIN, FETCH_SEARCHED_COIN } from "../constants";
 
 export const searchCoin = (text) => {
   return { type: SEARCH_COIN, payload: text };

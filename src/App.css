@@ -54,58 +54,59 @@
 }
 
 .app-table-container {
-  max-height: 700px;
 }
 
 /* news card */
 .app-newsCard-container {
-  min-height: 57%;
-  margin: 1%;
+  height: 100%;
+  margin: 3%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5%;
+}
+
+.app-newsCard-header-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  overflow-x: hidden;
+  justify-content: center;
+  border-radius: 25px;
   position: relative;
 }
 
-.app-newsCard-left-arrow-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  bottom: 0%;
-  left: 45%;
-  color: black;
-  border-radius: 50px 50px;
-  padding: 5px;
-}
-.app-newsCard-right-arrow-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  bottom: 0%;
-  right: 45%;
-  color: black;
-  border-radius: 50px 50px;
-  padding: 5px;
+.app-newsCard-header-break {
+  margin-top: 7%;
+  height: 10px;
+  width: 20%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 6%,
+    rgba(207, 207, 207, 1) 97%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  animation: break 3s ease-in-out infinite alternate-reverse;
 }
 
-.app-newsCard-arrow-icon {
-  font-size: 3rem !important;
-  cursor: pointer;
+@keyframes break {
+  0% {
+    width: 20%;
+  }
+  100% {
+    width: 80%;
+  }
+}
+
+.app-newsCard-header {
+  font-size: 3rem;
+  color: rgba(0, 0, 0, 0.77);
 }
 
 /* SignUpModal */
-.app-signUpModal-container {
+.app-authentication-container {
   position: fixed;
   height: 100vh;
   width: 100vw;
-  /* background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 1) 15%,
-    rgba(207, 207, 207, 1) 98%,
-    rgb(219, 219, 219) 100%
-  ); */
-  background: rgba(131, 131, 131, 0.77);
+  background: rgba(0, 0, 0, 0.77);
   z-index: 100;
 }
