@@ -2,7 +2,10 @@ import React, { useEffect } from "react";
 import "./linegraph.css";
 
 // Redux ---------------------
-import { fetchLineGraphData } from "../../Actions/lineGraphAction";
+import {
+  fetchLineGraphData,
+  selectLineGraphDay,
+} from "../../Actions/lineGraphAction";
 import { connect } from "react-redux";
 
 // Chart / Numeral -----------
@@ -44,9 +47,12 @@ const options = {
   },
 };
 
-const LineGraph = ({ fetchLineGraphData, lineGraphData, selectedCoin }) => {
-  let lineGraphDataArray = [];
-
+const LineGraph = ({
+  fetchLineGraphData,
+  lineGraphData,
+  selectedCoin,
+  selectLineGraphDay,
+}) => {
   useEffect(() => {
     fetchLineGraphData();
   }, [selectedCoin]);
@@ -59,7 +65,7 @@ const LineGraph = ({ fetchLineGraphData, lineGraphData, selectedCoin }) => {
         backgroundColor: "rgba(0, 0, 0, 0.77)",
         borderColor: "rgba(0,0,0,1)",
         borderWidth: 1.5,
-        data: [1, 2, 3, 4],
+        data: lineGraphData,
       },
     ],
   };
@@ -67,10 +73,30 @@ const LineGraph = ({ fetchLineGraphData, lineGraphData, selectedCoin }) => {
     <div className="lineGraph">
       <div className="lineGraph-day-container">
         <p className="lineGraph-day-title">Select Chart Day Range:</p>
-        <div className="lineGraph-day-selector">1 Day</div>
-        <div className="lineGraph-day-selector">7 Days</div>
-        <div className="lineGraph-day-selector">14 Days</div>
-        <div className="lineGraph-day-selector">30 Days</div>
+        <div
+          className="lineGraph-day-selector"
+          onClick={() => selectLineGraphDay(1)}
+        >
+          1 Day
+        </div>
+        <div
+          className="lineGraph-day-selector"
+          onClick={() => selectLineGraphDay(7)}
+        >
+          7 Days
+        </div>
+        <div
+          className="lineGraph-day-selector"
+          onClick={() => selectLineGraphDay(14)}
+        >
+          14 Days
+        </div>
+        <div
+          className="lineGraph-day-selector"
+          onClick={() => selectLineGraphDay(30)}
+        >
+          30 Days
+        </div>
       </div>
       <Line data={data} options={options} />
     </div>
@@ -79,13 +105,14 @@ const LineGraph = ({ fetchLineGraphData, lineGraphData, selectedCoin }) => {
 
 const mapStateToProps = (state) => {
   return {
-    lineGraphData: state.lineGraphData,
-    selectedCoin: state.searchCoin,
+    lineGraphData: state.lineGraphData.lineGraphData,
+    selectedCoin: state.searchCoin.searchCoin,
   };
 };
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchLineGraphData: () => dispatch(fetchLineGraphData()),
+    selectLineGraphDay: (number) => dispatch(selectLineGraphDay(number)),
   };
 };
 

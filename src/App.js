@@ -37,7 +37,6 @@ const App = ({
     fetchNewsData();
   }, []);
 
-  console.log(newsData);
   return (
     <div className="App">
       {signUpModal ? (
