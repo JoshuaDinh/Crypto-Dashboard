@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./App.css";
 // Components ----------------
-import DataCard from "./Components/DataCard/DataCard";
+import DataCardContainer from "./Components/DataCard/DataCardContainer";
 import SignUpModal from "./Components/SignUpModal/SignUpModal";
 import SignInModal from "./Components/SignInModal/SignInModal";
 import Sidebar from "./Components/Sidebar/Sidebar";
@@ -10,30 +10,13 @@ import Searchbar from "./Components/Searchbar/Searchbar";
 import BarChart from "./Components/BarChart/BarChart";
 import AllTimeData from "./Components/AllTimeData/AllTimeData";
 import Table from "./Components/Table/Table";
-// Material-ui icons ---------
-import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
-import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
-import NavigateNextIcon from "@material-ui/icons/NavigateNext";
-import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
+import NewsCardContainer from "./Components/NewsCard/NewsCardContainer";
+
 // Redux ---------------------
 import { connect } from "react-redux";
-import { fetchNewsData } from "./Actions/newsDataAction";
-import NewsCard from "./Components/NewsCard/NewsCard";
 // numeral--------------------
-import numeral from "numeral";
-import DataCardContainer from "./Containers/DataCardContainer";
 
-const App = ({
-  selectedCoin,
-  signUpModal,
-  signInModal,
-  fetchNewsData,
-  newsData,
-}) => {
-  // useEffect(() => {
-  //   fetchNewsData();
-  // }, []);
-
+const App = ({ signUpModal, signInModal }) => {
   return (
     <div className="App">
       {signUpModal ? (
@@ -54,30 +37,8 @@ const App = ({
           <AllTimeData />
           <BarChart />
         </div>
-        <div className="app-table-container">
-          <Table />
-        </div>
-        <div className="app-newsCard-container">
-          <div className="app-newsCard-header-container">
-            <h1 className="app-newsCard-header">See Whats New</h1>
-            <div className="app-newsCard-header-break"></div>
-          </div>
-          {newsData.map((story) => {
-            return (
-              <a
-                className="app-newsCard-link"
-                href={story.longURL}
-                target="_blank"
-              >
-                <NewsCard
-                  key={story.id}
-                  title={story.title}
-                  image={story.image}
-                />
-              </a>
-            );
-          })}
-        </div>
+        <Table />
+        <NewsCardContainer />
       </div>
     </div>
   );
@@ -91,10 +52,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchNewsData: () => dispatch(fetchNewsData()),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps)(App);

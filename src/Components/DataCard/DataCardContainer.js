@@ -1,7 +1,7 @@
 import React from "react";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
-import DataCard from "../Components/DataCard/DataCard";
+import DataCard from "./DataCard";
 import numeral from "numeral";
 import { connect } from "react-redux";
 

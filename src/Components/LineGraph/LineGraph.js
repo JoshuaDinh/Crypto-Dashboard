@@ -55,9 +55,12 @@ const LineGraph = ({
   selectLineGraphDay,
   selectedLineGraphDay,
 }) => {
-  // useEffect(() => {
-  //   fetchLineGraphData();
-  // }, [selectedCoin, selectedLineGraphDay]);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      fetchLineGraphData();
+    }, 1300);
+    return () => clearTimeout(timer);
+  }, [selectedCoin, selectedLineGraphDay]);
 
   // Format Labels
   const lineGraphLabels = [];
