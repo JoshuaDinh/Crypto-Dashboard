@@ -39,7 +39,6 @@
 }
 .app-graph-bar-container {
   min-height: 58%;
-  max-height: 58%;
   margin: 3%;
   display: grid;
   grid-template-columns: 1fr, 1fr, 1fr, 1fr;
@@ -113,4 +112,20 @@
   width: 100vw;
   background: rgba(0, 0, 0, 0.77);
   z-index: 100;
+}
+
+@media only screen and (max-width: 1100px) {
+  .app-content {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .app-graph-bar-container {
+    grid-template-areas:
+      "linegraph linegraph linegraph linegraph"
+      "linegraph linegraph linegraph linegraph"
+      "linegraph linegraph linegraph linegraph"
+      "ath ath ath ath"
+      "barchart barchart barchart barchart";
+  }
 }

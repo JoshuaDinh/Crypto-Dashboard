@@ -30,8 +30,8 @@ const Table = ({ allCoinData }) => {
             low={numeral(coin.low_24h).format("0,0")}
             high={numeral(coin.high_24h).format("0,0")}
             priceChange={coin.price_change_24h}
-            totalSupply={numeral(coin.total_supply).format("0,000,000")}
-            totalVolumn={numeral(coin.total_volume).format("0,000,000")}
+            totalSupply={numeral(coin.total_supply).format("0,0a")}
+            totalVolumn={numeral(coin.total_volume).format("0,0a")}
           />
         );
       })}
