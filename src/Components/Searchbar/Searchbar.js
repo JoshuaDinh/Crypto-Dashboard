@@ -20,7 +20,10 @@ const Searchbar = ({
   selectedCoin,
 }) => {
   useEffect(() => {
-    fetchSearchedCoin(selectedCoin);
+    const timer = setTimeout(() => {
+      fetchSearchedCoin(selectedCoin);
+    }, 2000);
+    return () => clearTimeout(timer);
   }, [selectCoin]);
 
   return (
@@ -54,10 +57,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    searchCoin: (text) =>
-      setTimeout(() => {
-        dispatch(searchCoin(text));
-      }, 2000),
+    searchCoin: (text) => dispatch(searchCoin(text)),
     fetchSearchedCoin: () => dispatch(fetchSearchedCoin()),
   };
 };

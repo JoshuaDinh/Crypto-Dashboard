@@ -17,7 +17,6 @@ import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 // Redux ---------------------
 import { connect } from "react-redux";
-import { fetchAllCoinData } from "./Actions/allCoinDataAction";
 import { fetchNewsData } from "./Actions/newsDataAction";
 import NewsCard from "./Components/NewsCard/NewsCard";
 // numeral--------------------
@@ -25,17 +24,14 @@ import numeral from "numeral";
 
 const App = ({
   selectedCoin,
-  fetchAllCoinData,
   signUpModal,
   signInModal,
   fetchNewsData,
   newsData,
-  isPending,
 }) => {
-  useEffect(() => {
-    fetchAllCoinData();
-    fetchNewsData();
-  }, []);
+  // useEffect(() => {
+  //   fetchNewsData();
+  // }, []);
 
   return (
     <div className="App">
@@ -113,18 +109,15 @@ const App = ({
 };
 const mapStateToProps = (state) => {
   return {
-    allCoinData: state.allCoinData,
     selectedCoin: state.searchedCoin,
     signUpModal: state.signUpModal,
     signInModal: state.signInModal,
     newsData: state.newsData.newsData,
-    isPending: state.newsData.isPending,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchAllCoinData: () => dispatch(fetchAllCoinData()),
     fetchNewsData: () => dispatch(fetchNewsData()),
   };
 };

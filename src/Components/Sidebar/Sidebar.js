@@ -15,8 +15,6 @@ import { displaySignInModal } from "../../Actions/authenticationAction.js";
 import { connect } from "react-redux";
 
 const Sidebar = ({ selectedCoin, displaySignUpModal, displaySignInModal }) => {
-  console.log(selectedCoin.isPending);
-
   return (
     <div className="sidebar">
       <div className="sidebar-header">

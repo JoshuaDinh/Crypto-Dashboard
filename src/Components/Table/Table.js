@@ -1,12 +1,17 @@
+import React, { useEffect } from "react";
+
 import TableRow from "./TableRow";
-import React from "react";
 import "./table.css";
 // redux ----
+import { fetchAllCoinData } from "../../Actions/allCoinDataAction";
 import { connect } from "react-redux";
 // Numeral -----
 import numeral from "numeral";
 
-const Table = ({ allCoinData }) => {
+const Table = ({ allCoinData, fetchAllCoinData }) => {
+  // useEffect(() => {
+  //   fetchAllCoinData();
+  // }, []);
   return (
     <table className="table">
       <tr className="table-header">
@@ -45,4 +50,10 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Table);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchAllCoinData: () => dispatch(fetchAllCoinData()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Table);

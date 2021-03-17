@@ -55,9 +55,9 @@ const LineGraph = ({
   selectLineGraphDay,
   selectedLineGraphDay,
 }) => {
-  useEffect(() => {
-    fetchLineGraphData();
-  }, [selectedCoin, selectedLineGraphDay]);
+  // useEffect(() => {
+  //   fetchLineGraphData();
+  // }, [selectedCoin, selectedLineGraphDay]);
 
   // Format Labels
   const lineGraphLabels = [];
@@ -134,13 +134,20 @@ const mapStateToProps = (state) => {
   return {
     lineGraphData: state.lineGraphData.lineGraphData,
     selectedLineGraphDay: state.lineGraphData.selectedLineGraphDay,
-    selectedCoin: state.searchCoin.searchCoin,
+    selectedCoin: state.searchCoin,
   };
 };
+
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchLineGraphData: () => dispatch(fetchLineGraphData()),
-    selectLineGraphDay: (number) => dispatch(selectLineGraphDay(number)),
+    fetchLineGraphData: () =>
+      setTimeout(() => {
+        dispatch(fetchLineGraphData());
+      }, 1000),
+    selectLineGraphDay: (number) =>
+      setTimeout(() => {
+        dispatch(selectLineGraphDay(number));
+      }, 200),
   };
 };
 
