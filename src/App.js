@@ -93,7 +93,19 @@ const App = ({
             <div className="app-newsCard-header-break"></div>
           </div>
           {newsData.map((story) => {
-            return <NewsCard />;
+            return (
+              <a
+                className="app-newsCard-link"
+                href={story.longURL}
+                target="_blank"
+              >
+                <NewsCard
+                  key={story.id}
+                  title={story.title}
+                  image={story.image}
+                />
+              </a>
+            );
           })}
         </div>
       </div>

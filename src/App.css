@@ -102,6 +102,10 @@
   color: rgba(0, 0, 0, 0.77);
 }
 
+.app-newsCard-link {
+  color: black;
+}
+
 /* SignUpModal */
 .app-authentication-container {
   position: fixed;

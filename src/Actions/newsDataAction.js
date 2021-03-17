@@ -2,7 +2,7 @@ import { FETCH_NEWS_DATA, IS_PENDING } from "../constants";
 
 export const fetchNewsData = () => (dispatch) => {
   fetch(
-    "https://bloomberg-market-and-financial-news.p.rapidapi.com/news/list?id=Technology",
+    "https://bloomberg-market-and-financial-news.p.rapidapi.com/news/list?id=cryptocurrencies",
     {
       method: "GET",
       headers: {

@@ -1,27 +1,49 @@
 .newsCard {
   font-size: 0.9rem;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
-  border-radius: 25px;
-  margin: 0 1%;
+  justify-content: space-between;
   cursor: pointer;
+  margin: 0 1%;
+  border-radius: 25px;
+  position: relative;
   border: 1px solid lightgrey;
   box-shadow: 0px 28px 15px -18px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 0px 28px 15px -18px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 28px 15px -18px rgba(0, 0, 0, 0.75);
 }
 
+.newsCard-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 25px 0 25px 0;
+  background: rgba(0, 0, 0, 0.77);
+  opacity: 0;
+}
+.newsCard-overlay:hover {
+  opacity: 1;
+}
+
+.newsCard-overlay-read-more {
+  height: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.newsCard-title {
+  padding: 12px;
+  text-align: center;
+}
+
 .newsCard-image {
   object-fit: contain;
   width: 100%;
   border-radius: 25px 0 25px 0;
-}
-
-.newsCard-info {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  padding: 10px;
 }
