@@ -9,6 +9,7 @@ const SidebarDrawer = ({ title, icon, toggleOption }) => {
       onClick={() => (toggleOption ? toggleOption() : null)}
     >
       <div className="sidebar-drawer-container">
+        <div className="sidebar-drawer-container-overlay"></div>
         <div className="sidebar-drawer-icon">{icon}</div>
         <div className="sidebar-drawer-title">{title}</div>
       </div>

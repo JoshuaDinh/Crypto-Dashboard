@@ -15,17 +15,25 @@ const BarChart = ({ selectedCoin }) => {
       selectedCoin.searchedCoin.price_change_percentage_30d_in_currency
     );
   }
-  const data = {
-    labels: ["1hr", "7days", "14days", "30days"],
-    datasets: [
-      {
-        label: "%",
-        backgroundColor: "rgba(0, 0, 0, 0.77)",
-        borderColor: "rgba(0,0,0,1)",
-        borderWidth: 1.2,
-        data: barData,
-      },
-    ],
+  const data = (canvas) => {
+    const ctx = canvas.getContext("2d");
+
+    let gradient = ctx.createLinearGradient(0, 0, 0, 150);
+    gradient.addColorStop(0, "rgba(0,0,0)");
+    gradient.addColorStop(0.7, "rgba(0,0,0,0.4");
+    gradient.addColorStop(1, "rgba(0,0,0,0.94");
+    return {
+      labels: ["1hr", "7days", "14days", "30days"],
+      datasets: [
+        {
+          label: "%",
+          backgroundColor: gradient,
+          borderColor: "rgba(0,0,0,1)",
+          borderWidth: 1.2,
+          data: barData,
+        },
+      ],
+    };
   };
 
   return (

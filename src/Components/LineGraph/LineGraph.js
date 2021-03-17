@@ -21,6 +21,7 @@ const options = {
       radius: 0,
     },
   },
+  responsive: true,
   maintainAspectRation: false,
   tooltips: {
     mode: "index",
@@ -58,25 +59,34 @@ const LineGraph = ({
     fetchLineGraphData();
   }, [selectedCoin, selectedLineGraphDay]);
 
+  // Format Labels
   const lineGraphLabels = [];
-
   if (lineGraphData) {
     lineGraphData.map((price) => {
       lineGraphLabels.push(numeral(price).format("0,0.00"));
     });
   }
 
-  const data = {
-    labels: lineGraphLabels,
-    datasets: [
-      {
-        label: "Price in USD",
-        backgroundColor: "rgba(0, 0, 0, 0.77)",
-        borderColor: "rgba(0,0,0,1)",
-        borderWidth: 1.5,
-        data: lineGraphData,
-      },
-    ],
+  const data = (canvas) => {
+    const ctx = canvas.getContext("2d");
+
+    let gradient = ctx.createLinearGradient(0, 0, 0, 150);
+    gradient.addColorStop(0, "rgba(0,0,0)");
+    gradient.addColorStop(0.7, "rgba(0,0,0,0.4");
+    gradient.addColorStop(1, "rgba(0,0,0,0.94");
+
+    return {
+      labels: lineGraphLabels,
+      datasets: [
+        {
+          label: "Price in USD",
+          backgroundColor: gradient,
+          borderColor: "rgba(0,0,0,1)",
+          borderWidth: 1.5,
+          data: lineGraphData,
+        },
+      ],
+    };
   };
   return (
     <div className="lineGraph">
