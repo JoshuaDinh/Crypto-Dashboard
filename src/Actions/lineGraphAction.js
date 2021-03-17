@@ -1,4 +1,5 @@
 import { FETCH_LINE_GRAPH_DATA, SELECT_LINE_GRAPH_DAY } from "../constants";
+import numeral from "numeral";
 
 export const fetchLineGraphData = () => (dispatch, getState) => {
   const selectedCoin = getState().searchCoin.searchCoin;
@@ -7,7 +8,7 @@ export const fetchLineGraphData = () => (dispatch, getState) => {
      `)
     .then((response) => response.json())
     .then((data) => {
-      // Returned data is nested arrays / loop through and retrieve price in USD
+      // Returned data are nested arrays / loop through and retrieve price in USD
       let graphDetails = [];
       if (data.prices) {
         data.prices.map((priceData) => graphDetails.push(priceData[1]));

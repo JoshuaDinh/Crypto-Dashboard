@@ -52,13 +52,22 @@ const LineGraph = ({
   lineGraphData,
   selectedCoin,
   selectLineGraphDay,
+  selectedLineGraphDay,
 }) => {
   useEffect(() => {
     fetchLineGraphData();
-  }, [selectedCoin]);
+  }, [selectedCoin, selectedLineGraphDay]);
+
+  const lineGraphLabels = [];
+
+  if (lineGraphData) {
+    lineGraphData.map((price) => {
+      lineGraphLabels.push(numeral(price).format("0,0.00"));
+    });
+  }
 
   const data = {
-    labels: ["1", "7", "14", "30"],
+    labels: lineGraphLabels,
     datasets: [
       {
         label: "Price in USD",
@@ -74,25 +83,33 @@ const LineGraph = ({
       <div className="lineGraph-day-container">
         <p className="lineGraph-day-title">Select Chart Day Range:</p>
         <div
-          className="lineGraph-day-selector"
+          className={`lineGraph-day-selector ${
+            selectedLineGraphDay === 1 && "lineGraphSelected"
+          }`}
           onClick={() => selectLineGraphDay(1)}
         >
           1 Day
         </div>
         <div
-          className="lineGraph-day-selector"
+          className={`lineGraph-day-selector ${
+            selectedLineGraphDay === 7 && "lineGraphSelected"
+          }`}
           onClick={() => selectLineGraphDay(7)}
         >
           7 Days
         </div>
         <div
-          className="lineGraph-day-selector"
+          className={`lineGraph-day-selector ${
+            selectedLineGraphDay === 14 && "lineGraphSelected"
+          }`}
           onClick={() => selectLineGraphDay(14)}
         >
           14 Days
         </div>
         <div
-          className="lineGraph-day-selector"
+          className={`lineGraph-day-selector ${
+            selectedLineGraphDay === 30 && "lineGraphSelected"
+          }`}
           onClick={() => selectLineGraphDay(30)}
         >
           30 Days
@@ -106,6 +123,7 @@ const LineGraph = ({
 const mapStateToProps = (state) => {
   return {
     lineGraphData: state.lineGraphData.lineGraphData,
+    selectedLineGraphDay: state.lineGraphData.selectedLineGraphDay,
     selectedCoin: state.searchCoin.searchCoin,
   };
 };
