@@ -6,8 +6,9 @@ import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import MeetingRoomIcon from "@material-ui/icons/MeetingRoom";
 import AssignmentIndIcon from "@material-ui/icons/AssignmentInd";
 import SettingsApplicationsIcon from "@material-ui/icons/SettingsApplications";
-import SecurityIcon from "@material-ui/icons/Security";
+import TableChartIcon from "@material-ui/icons/TableChart";
 import ForwardIcon from "@material-ui/icons/Forward";
+import AnnouncementIcon from "@material-ui/icons/Announcement";
 // Redux----------
 import { displaySignUpModal } from "../../Actions/authenticationAction.js";
 import { displaySignInModal } from "../../Actions/authenticationAction.js";
@@ -38,8 +39,12 @@ const Sidebar = ({ selectedCoin, displaySignUpModal, displaySignInModal }) => {
 
       <SidebarDrawer title="Dashboard" icon={<HomeIcon className="icon" />} />
       <SidebarDrawer
-        title="Security"
-        icon={<SecurityIcon className="icon" />}
+        title="News"
+        icon={<AnnouncementIcon className="icon" />}
+      />
+      <SidebarDrawer
+        title="Data Table"
+        icon={<TableChartIcon className="icon" />}
       />
       <SidebarDrawer
         title="Settings"
