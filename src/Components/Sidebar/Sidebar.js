@@ -42,10 +42,7 @@ const Sidebar = ({ selectedCoin, displaySignUpModal, displaySignInModal }) => {
         title="News"
         icon={<AnnouncementIcon className="icon" />}
       />
-      <SidebarDrawer
-        title="Data Table"
-        icon={<TableChartIcon className="icon" />}
-      />
+      <SidebarDrawer title="Table" icon={<TableChartIcon className="icon" />} />
       <SidebarDrawer
         title="Settings"
         icon={<SettingsApplicationsIcon className="icon" />}
