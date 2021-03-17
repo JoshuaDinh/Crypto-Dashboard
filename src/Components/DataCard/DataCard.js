@@ -1,8 +1,6 @@
 import React from "react";
 import "./dataCard.css";
 import { connect } from "react-redux";
-import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
-import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 
 const DataCard = ({ info, title, icon, highLow, selectedCoin }) => {
   return (
@@ -18,9 +16,7 @@ const DataCard = ({ info, title, icon, highLow, selectedCoin }) => {
       >
         {title}
       </div>
-      {selectedCoin.isPending ||
-      selectedCoin.searchedCoin === undefined ||
-      null ? (
+      {selectedCoin.isPending || selectedCoin.searchedCoin === undefined ? (
         <div className="loading">
           <div className="loading-dot"></div>
           <div className="loading-dot"></div>
@@ -46,10 +42,4 @@ const DataCard = ({ info, title, icon, highLow, selectedCoin }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    selectedCoin: state.searchedCoin,
-  };
-};
-
-export default connect(mapStateToProps)(DataCard);
+export default DataCard;

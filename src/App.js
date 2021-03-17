@@ -21,6 +21,7 @@ import { fetchNewsData } from "./Actions/newsDataAction";
 import NewsCard from "./Components/NewsCard/NewsCard";
 // numeral--------------------
 import numeral from "numeral";
+import DataCardContainer from "./Containers/DataCardContainer";
 
 const App = ({
   selectedCoin,
@@ -47,33 +48,7 @@ const App = ({
       <Sidebar />
       <div className="app-content">
         <Searchbar />
-        <div className="app-datacard-container">
-          <DataCard
-            title="Current Price"
-            info={`$${numeral(selectedCoin.searchedCoin?.current_price).format(
-              "0,0"
-            )}`}
-          />
-          <DataCard
-            icon={<ArrowDownwardIcon className="dataCard-arrow-icon" />}
-            title="24hr % Change "
-            info={`${selectedCoin.searchedCoin?.price_change_percentage_24h}%`}
-          />
-          <DataCard
-            highLow="green"
-            title="24hr High"
-            info={`$ ${numeral(selectedCoin.searchedCoin?.high_24h).format(
-              "0,0"
-            )}`}
-          />
-          <DataCard
-            highLow="red"
-            title="24hr Low"
-            info={`$ ${numeral(selectedCoin.searchedCoin?.low_24h).format(
-              "0,0"
-            )}`}
-          />
-        </div>
+        <DataCardContainer />
         <div className="app-graph-bar-container">
           <LineGraph />
           <AllTimeData />
