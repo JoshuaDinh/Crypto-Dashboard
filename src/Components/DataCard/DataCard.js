@@ -18,7 +18,9 @@ const DataCard = ({ info, title, icon, highLow, selectedCoin }) => {
       >
         {title}
       </div>
-      {selectedCoin.isPending || selectedCoin.searchedCoin === undefined ? (
+      {selectedCoin.isPending ||
+      selectedCoin.searchedCoin === undefined ||
+      null ? (
         <div className="loading">
           <div className="loading-dot"></div>
           <div className="loading-dot"></div>
@@ -46,7 +48,6 @@ const DataCard = ({ info, title, icon, highLow, selectedCoin }) => {
 
 const mapStateToProps = (state) => {
   return {
-    allCoinData: state.allCoinData,
     selectedCoin: state.searchedCoin,
   };
 };
