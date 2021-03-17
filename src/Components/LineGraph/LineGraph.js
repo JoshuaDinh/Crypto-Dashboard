@@ -74,9 +74,10 @@ const LineGraph = ({
     const ctx = canvas.getContext("2d");
 
     let gradient = ctx.createLinearGradient(0, 0, 0, 150);
-    gradient.addColorStop(0, "rgba(0,0,0)");
-    gradient.addColorStop(0.7, "rgba(0,0,0,0.4");
-    gradient.addColorStop(1, "rgba(0,0,0,0.94");
+
+    gradient.addColorStop(0.7, "rgba(255,255,255, 0.9)");
+    gradient.addColorStop(0.3, "rgba(0,0,0,0.27");
+    gradient.addColorStop(1, "rgba(0,0,0,0.3");
 
     return {
       labels: lineGraphLabels,
@@ -84,7 +85,7 @@ const LineGraph = ({
         {
           label: "Price in USD",
           backgroundColor: gradient,
-          borderColor: "rgba(0,0,0,1)",
+          borderColor: "rgba(0,0,0)",
           borderWidth: 1.5,
           data: lineGraphData,
         },

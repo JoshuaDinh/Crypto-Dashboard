@@ -4,9 +4,9 @@ import { connect } from "react-redux";
 import { fetchNewsData } from "../../Actions/newsDataAction";
 
 const NewsCardContainer = ({ fetchNewsData, newsData }) => {
-  //   useEffect(() => {
-  //     fetchNewsData();
-  //   }, []);
+  useEffect(() => {
+    fetchNewsData();
+  }, []);
 
   return (
     <div className="app-newsCard-container">

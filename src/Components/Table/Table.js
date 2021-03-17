@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-
 import TableRow from "./TableRow";
 import "./table.css";
 // redux ----
@@ -9,9 +8,9 @@ import { connect } from "react-redux";
 import numeral from "numeral";
 
 const Table = ({ allCoinData, fetchAllCoinData }) => {
-  // useEffect(() => {
-  //   fetchAllCoinData();
-  // }, []);
+  useEffect(() => {
+    fetchAllCoinData();
+  }, []);
   return (
     <table className="table">
       <tr className="table-header">
