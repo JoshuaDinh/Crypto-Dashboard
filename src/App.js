@@ -14,6 +14,7 @@ import NewsCardContainer from "./Components/NewsCard/NewsCardContainer";
 
 // Redux ---------------------
 import { connect } from "react-redux";
+import LoadingAnimation from "./Components/LoadingAnimation/LoadingAnimation";
 // numeral--------------------
 
 const App = ({ signUpModal, signInModal }) => {
