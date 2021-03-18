@@ -6,6 +6,7 @@ import { fetchAllCoinData } from "../../Actions/allCoinDataAction";
 import { connect } from "react-redux";
 // Numeral -----
 import numeral from "numeral";
+import { animateScroll } from "react-scroll";
 
 const Table = ({ allCoinData, fetchAllCoinData }) => {
   useEffect(() => {

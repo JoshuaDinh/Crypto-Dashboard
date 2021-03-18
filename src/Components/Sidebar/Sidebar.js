@@ -18,7 +18,12 @@ const Sidebar = ({ selectedCoin, displaySignUpModal, displaySignInModal }) => {
   return (
     <div className="sidebar">
       <div className="sidebar-header">
-        {selectedCoin.searchedCoin ? (
+        {selectedCoin.isPending || selectedCoin.searchedCoin === undefined ? (
+          <div className="sidebar-header-loading">
+            <ForwardIcon className="searchbar-arrow-icon" />
+            <span> Search for CryptoCurrencies</span>
+          </div>
+        ) : (
           <div>
             <p>{selectedCoin.searchedCoin?.name}</p>
             <img
@@ -27,20 +32,19 @@ const Sidebar = ({ selectedCoin, displaySignUpModal, displaySignInModal }) => {
               alt=" #"
             />
           </div>
-        ) : (
-          <div className="sidebar-header-loading">
-            <ForwardIcon className="searchbar-arrow-icon" />
-            <span> Search for CryptoCurrencies</span>
-          </div>
         )}
       </div>
-
       <SidebarDrawer title="Dashboard" icon={<HomeIcon className="icon" />} />
       <SidebarDrawer
+        linkId="newsCard"
         title="News"
         icon={<AnnouncementIcon className="icon" />}
       />
-      <SidebarDrawer title="Table" icon={<TableChartIcon className="icon" />} />
+      <SidebarDrawer
+        linkId="table"
+        title="Table"
+        icon={<TableChartIcon className="icon" />}
+      />
       <SidebarDrawer
         title="Settings"
         icon={<SettingsApplicationsIcon className="icon" />}

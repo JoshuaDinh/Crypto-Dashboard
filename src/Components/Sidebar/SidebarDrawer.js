@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
 import "./sidebar.css";
+import { Link } from "react-scroll";
 
 // toggleOption handles opening passed down dispatchs from Sidebar component
-const SidebarDrawer = ({ title, icon, toggleOption }) => {
+const SidebarDrawer = ({ title, icon, toggleOption, linkId }) => {
   const [active, setActive] = useState(false);
   return (
-    <div
+    <Link
+      to={linkId}
+      spy={true}
+      smooth={true}
+      offset={-70}
+      duration={500}
       className="sidebar-drawer"
       onClick={() => (toggleOption ? toggleOption() : null)}
     >
@@ -19,7 +25,7 @@ const SidebarDrawer = ({ title, icon, toggleOption }) => {
         <div className="sidebar-drawer-icon">{icon}</div>
         <div className="sidebar-drawer-title">{title}</div>
       </div>
-    </div>
+    </Link>
   );
 };
 
