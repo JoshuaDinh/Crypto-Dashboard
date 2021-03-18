@@ -7,6 +7,7 @@ import { signUpModalReducer } from "./authenticationReducer";
 import { signInModalReducer } from "./authenticationReducer";
 import { fetchNewsDataReducer } from "./newsReducer";
 import { selectSidebarLinkReducer } from "./selectSidebarLink";
+import { googleAuthReducer } from "./authTokeReducer";
 
 export default combineReducers({
   allCoinData: allCoinDataReducer,
@@ -17,4 +18,5 @@ export default combineReducers({
   signInModal: signInModalReducer,
   newsData: fetchNewsDataReducer,
   selectSidebarLink: selectSidebarLinkReducer,
+  googleAuthToken: googleAuthReducer,
 });

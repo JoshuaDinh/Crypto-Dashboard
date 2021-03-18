@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 // Components ----------------
 import DataCardContainer from "./Components/DataCard/DataCardContainer";
@@ -14,9 +14,17 @@ import NewsCardContainer from "./Components/NewsCard/NewsCardContainer";
 
 // Redux ---------------------
 import { connect } from "react-redux";
-// numeral--------------------
+import { setAuthToken } from "./Actions/authTokenAction";
+import { getTokenFromUrl } from "./GoogleAuth";
+// Sets authorization token from Google_OAuth
 
-const App = ({ signUpModal, signInModal }) => {
+const App = ({ signUpModal, signInModal, setAuthToken }) => {
+  useEffect(() => {
+    const _token = getTokenFromUrl();
+    if (_token) {
+      setAuthToken(_token);
+    }
+  }, []);
   return (
     <div className="App">
       {signUpModal ? (
@@ -43,13 +51,20 @@ const App = ({ signUpModal, signInModal }) => {
     </div>
   );
 };
+
 const mapStateToProps = (state) => {
   return {
     selectedCoin: state.searchedCoin,
     signUpModal: state.signUpModal,
     signInModal: state.signInModal,
     newsData: state.newsData.newsData,
+    googleAuthToken: state.googleAuthToken,
+  };
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setAuthToken: (text) => dispatch(setAuthToken(text)),
   };
 };
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -37,6 +37,7 @@
 }
 
 .newsCard-title {
+  text-align: center;
   padding: 12px;
   text-align: center;
 }
@@ -45,4 +46,56 @@
   object-fit: contain;
   width: 100%;
   border-radius: 25px 0 25px 0;
+}
+/* 
+/* news card */
+.app-newsCard-container {
+  height: 100%;
+  margin: 3%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5%;
+}
+
+.app-newsCard-header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  border-radius: 25px;
+  position: relative;
+}
+
+.app-newsCard-header-break {
+  margin-top: 7%;
+  height: 10px;
+  width: 20%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 6%,
+    rgba(207, 207, 207, 1) 97%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  animation: break 3s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes break {
+  0% {
+    width: 20%;
+  }
+  100% {
+    width: 80%;
+  }
+}
+
+.app-newsCard-header {
+  font-size: 3rem;
+  color: rgba(0, 0, 0, 0.77);
+}
+
+.app-newsCard-link {
+  color: black;
 }

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import NewsCard from "./NewsCard";
+import "./newsCard.css";
 import { connect } from "react-redux";
 import { fetchNewsData } from "../../Actions/newsDataAction";
 

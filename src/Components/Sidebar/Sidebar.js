@@ -21,10 +21,12 @@ const Sidebar = ({
   displaySignInModal,
   selectSidebarLink,
   selectedLink,
+  googleAuthToken,
 }) => {
   return (
     <div className="sidebar">
       <div className="sidebar-header">
+        {/* If a coin has not been searched or if the search is pending display loading text vs data */}
         {selectedCoin.isPending || selectedCoin.searchedCoin === undefined ? (
           <div className="sidebar-header-loading">
             <ForwardIcon className="searchbar-arrow-icon" />
@@ -67,27 +69,32 @@ const Sidebar = ({
         title="Settings"
         icon={<SettingsApplicationsIcon className="icon" />}
       />
-      <SidebarDrawer
-        selectedLink={selectedLink}
-        selectSidebarLink={() => selectSidebarLink("Sign In")}
-        toggleOption={() => displaySignInModal(true)}
-        title="Sign In"
-        icon={<MeetingRoomIcon className="icon" />}
-      />
-      <SidebarDrawer
-        selectedLink={selectedLink}
-        selectSidebarLink={() => selectSidebarLink("Sign Up")}
-        toggleOption={() => displaySignUpModal(true)}
-        title="Sign Up"
-        icon={<AssignmentIndIcon className="icon" />}
-      />
-      <SidebarDrawer
-        selectedLink={selectedLink}
-        selectSidebarLink={() => selectSidebarLink("Log Out")}
-        toggleOption={() => alert("alert")}
-        title="Log Out"
-        icon={<ExitToAppIcon className="icon" />}
-      />
+      {googleAuthToken ? (
+        <SidebarDrawer
+          selectedLink={selectedLink}
+          selectSidebarLink={() => selectSidebarLink("Log Out")}
+          toggleOption={() => alert("alert")}
+          title="Log Out"
+          icon={<ExitToAppIcon className="icon" />}
+        />
+      ) : (
+        <>
+          <SidebarDrawer
+            selectedLink={selectedLink}
+            selectSidebarLink={() => selectSidebarLink("Sign In")}
+            toggleOption={() => displaySignInModal(true)}
+            title="Sign In"
+            icon={<MeetingRoomIcon className="icon" />}
+          />
+          <SidebarDrawer
+            selectedLink={selectedLink}
+            selectSidebarLink={() => selectSidebarLink("Sign Up")}
+            toggleOption={() => displaySignUpModal(true)}
+            title="Sign Up"
+            icon={<AssignmentIndIcon className="icon" />}
+          />
+        </>
+      )}
     </div>
   );
 };
@@ -97,6 +104,7 @@ const mapStateToProps = (state) => {
     selectedCoin: state.searchedCoin,
     signUpModal: state.signUpModal,
     selectedLink: state.selectSidebarLink,
+    googleAuthToken: state.googleAuthToken,
   };
 };
 
