@@ -5,7 +5,7 @@ import "./searchbar.css";
 import { connect } from "react-redux";
 import { searchCoin } from "../../Actions/searchCoinAction";
 import { fetchSearchedCoin } from "../../Actions/searchCoinAction";
-import { displaySignUpModal } from "../../Actions/authenticationAction";
+import { mobileNav } from "../../Actions/mobileNavAction";
 
 // Material-ui ------------
 import { Avatar } from "@material-ui/core";
@@ -18,6 +18,7 @@ const Searchbar = ({
   fetchSearchedCoin,
   selectCoin,
   selectedCoin,
+  setMobileNav,
 }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -37,7 +38,10 @@ const Searchbar = ({
         />
         <SearchIcon className="icon" />
       </form>
-      <div className="searchbar-menu-icon-container">
+      <div
+        onClick={() => setMobileNav(!mobileNav)}
+        className="searchbar-menu-icon-container"
+      >
         <MenuIcon className="icon" />
       </div>
       <div className="searchbar-icons-container">
@@ -52,6 +56,7 @@ const mapStateToProps = (state) => {
   return {
     selectCoin: state.searchCoin,
     selectedCoin: state.searchedCoin,
+    mobileNav: state.mobileNav,
   };
 };
 
@@ -59,6 +64,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     searchCoin: (text) => dispatch(searchCoin(text)),
     fetchSearchedCoin: () => dispatch(fetchSearchedCoin()),
+    setMobileNav: () => dispatch(mobileNav()),
   };
 };
 

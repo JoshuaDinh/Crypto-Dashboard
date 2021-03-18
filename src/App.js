@@ -11,28 +11,22 @@ import BarChart from "./Components/BarChart/BarChart";
 import AllTimeData from "./Components/AllTimeData/AllTimeData";
 import Table from "./Components/Table/Table";
 import NewsCardContainer from "./Components/NewsCard/NewsCardContainer";
+import MobileNav from "./Components/MobileNav/MobileNav";
 
 // Redux ---------------------
 import { connect } from "react-redux";
 import { setAuthToken } from "./Actions/authTokenAction";
-import { displaySignInModal } from "./Actions/authenticationAction";
-import { displaySignUpModal } from "./Actions/authenticationAction";
+
 // Sets authorization token from Google_OAuth
 import { getTokenFromUrl } from "./GoogleAuth";
 
-const App = ({
-  signUpModal,
-  signInModal,
-  setAuthToken,
-  displaySignInModal,
-  displaySignUpModal,
-}) => {
+const App = ({ signUpModal, signInModal, setAuthToken, mobileNav }) => {
   useEffect(() => {
     const _token = getTokenFromUrl();
     if (_token) {
       setAuthToken(_token);
     }
-  }, []);
+  }, [mobileNav]);
   return (
     <div className="App">
       {signUpModal ? (
@@ -44,7 +38,7 @@ const App = ({
           <SignInModal />
         </div>
       ) : null}
-      <Sidebar />
+      <Sidebar /> {mobileNav && <MobileNav />}
       <div className="app-content">
         <Searchbar />
         <DataCardContainer />
@@ -67,6 +61,7 @@ const mapStateToProps = (state) => {
     signInModal: state.signInModal,
     newsData: state.newsData.newsData,
     googleAuthToken: state.googleAuthToken,
+    mobileNav: state.mobileNav,
   };
 };
 
