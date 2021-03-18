@@ -18,12 +18,7 @@ const Sidebar = ({ selectedCoin, displaySignUpModal, displaySignInModal }) => {
   return (
     <div className="sidebar">
       <div className="sidebar-header">
-        {selectedCoin.isPending || selectedCoin.searchedCoin === undefined ? (
-          <div className="sidebar-header-loading">
-            <ForwardIcon className="searchbar-arrow-icon" />
-            <span> Search for CryptoCurrencies</span>
-          </div>
-        ) : (
+        {selectedCoin.searchedCoin ? (
           <div>
             <p>{selectedCoin.searchedCoin?.name}</p>
             <img
@@ -31,6 +26,11 @@ const Sidebar = ({ selectedCoin, displaySignUpModal, displaySignInModal }) => {
               src={selectedCoin.searchedCoin?.image}
               alt=" #"
             />
+          </div>
+        ) : (
+          <div className="sidebar-header-loading">
+            <ForwardIcon className="searchbar-arrow-icon" />
+            <span> Search for CryptoCurrencies</span>
           </div>
         )}
       </div>
