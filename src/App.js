@@ -12,6 +12,7 @@ import AllTimeData from "./Components/AllTimeData/AllTimeData";
 import Table from "./Components/Table/Table";
 import NewsCardContainer from "./Components/NewsCard/NewsCardContainer";
 import MobileNav from "./Components/MobileNav/MobileNav";
+import OpeningAnimation from "./Components/OpeningAnimation/OpeningAnimation";
 
 // Redux ---------------------
 import { connect } from "react-redux";
@@ -29,6 +30,7 @@ const App = ({ signUpModal, signInModal, setAuthToken, mobileNav }) => {
   }, [mobileNav]);
   return (
     <div className="App">
+      {/* <OpeningAnimation /> */}
       {signUpModal ? (
         <div className="app-authentication-container">
           <SignUpModal />

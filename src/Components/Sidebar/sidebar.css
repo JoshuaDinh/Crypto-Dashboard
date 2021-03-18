@@ -38,6 +38,8 @@
 @keyframes forward {
   0% {
     transform: translateX(0px);
+    color: white;
+    width: 0;
   }
   100% {
     transform: translateX(80%);
