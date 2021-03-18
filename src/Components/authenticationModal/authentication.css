@@ -1,4 +1,4 @@
-.signUpModal {
+.authentication {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -13,7 +13,33 @@
   background: whitesmoke;
 }
 
-.signUpModal-form {
+.authentication-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 15%;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50% 50%;
+  background: whitesmoke;
+  cursor: pointer;
+  opacity: 0;
+  animation: authClose 1s ease-in forwards;
+}
+
+@keyframes authClose {
+  0% {
+    transform: translateY(50%);
+  }
+
+  100% {
+    transform: translateY(-300%);
+    opacity: 1;
+  }
+}
+
+.authentication-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,27 +48,26 @@
   height: 55%;
 }
 
-.signUpModal-input {
+.authentication-input {
   width: 50%;
   padding: 10px;
   outline: none;
-  border: 1px solid rgb(100, 100, 100);
 }
 
-.signUpModal-google {
+.authentication-google {
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid black;
   text-decoration: none;
-  color: rgb(0, 0, 0, 0.77);
+  color: rgb(0, 0, 0);
   padding: 1px;
   width: 50%;
   cursor: pointer;
   border: 1px solid rgb(100, 100, 100);
 }
 
-.signupModal-google-logo {
+.authentication-google-logo {
   width: 3.3em;
   margin-left: 2%;
 }

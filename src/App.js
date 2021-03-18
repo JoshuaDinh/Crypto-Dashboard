@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import "./App.css";
 // Components ----------------
 import DataCardContainer from "./Components/DataCard/DataCardContainer";
-import SignUpModal from "./Components/SignUpModal/SignUpModal";
-import SignInModal from "./Components/SignInModal/SignInModal";
+import SignUpModal from "./Components/authenticationModal/SignUpModal";
+import SignInModal from "./Components/authenticationModal/SignInModal";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import LineGraph from "./Components/LineGraph/LineGraph";
 import Searchbar from "./Components/Searchbar/Searchbar";
@@ -15,10 +15,18 @@ import NewsCardContainer from "./Components/NewsCard/NewsCardContainer";
 // Redux ---------------------
 import { connect } from "react-redux";
 import { setAuthToken } from "./Actions/authTokenAction";
-import { getTokenFromUrl } from "./GoogleAuth";
+import { displaySignInModal } from "./Actions/authenticationAction";
+import { displaySignUpModal } from "./Actions/authenticationAction";
 // Sets authorization token from Google_OAuth
+import { getTokenFromUrl } from "./GoogleAuth";
 
-const App = ({ signUpModal, signInModal, setAuthToken }) => {
+const App = ({
+  signUpModal,
+  signInModal,
+  setAuthToken,
+  displaySignInModal,
+  displaySignUpModal,
+}) => {
   useEffect(() => {
     const _token = getTokenFromUrl();
     if (_token) {
@@ -61,6 +69,7 @@ const mapStateToProps = (state) => {
     googleAuthToken: state.googleAuthToken,
   };
 };
+
 const mapDispatchToProps = (dispatch) => {
   return {
     setAuthToken: (text) => dispatch(setAuthToken(text)),

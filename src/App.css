@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
 }
+.app {
+}
 
 .app-content {
   position: absolute;
@@ -31,6 +33,23 @@
   }
 }
 
+/* graphs */
+
+.app-graph-bar-container {
+  min-height: 58%;
+  margin: 3%;
+  display: grid;
+  grid-template-columns: 1fr, 1fr, 1fr, 1fr;
+  grid-template-rows: 1fr, 1fr 1fr 1fr;
+  grid-gap: 20px;
+  grid-template-areas:
+    "linegraph linegraph ath ath"
+    "linegraph linegraph ath ath"
+    "linegraph linegraph ath ath"
+    "linegraph linegraph ath ath"
+    "linegraph linegraph barchart barchart";
+}
+
 /* SignUpModal */
 .app-authentication-container {
   position: fixed;
@@ -43,15 +62,5 @@
 @media only screen and (max-width: 1100px) {
   .app-content {
     width: 100%;
-  }
-}
-@media only screen and (max-width: 850px) {
-  .app-graph-bar-container {
-    grid-template-areas:
-      "linegraph linegraph linegraph linegraph"
-      "linegraph linegraph linegraph linegraph"
-      "linegraph linegraph linegraph linegraph"
-      "ath ath ath ath"
-      "barchart barchart barchart barchart";
   }
 }

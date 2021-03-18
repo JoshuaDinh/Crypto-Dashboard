@@ -6,7 +6,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   color: rgba(0, 0, 0, 0.77);
-  /* border: 1px solid rgb(126, 126, 126); */
+  border-top: 1px solid rgb(126, 126, 126);
   box-shadow: 0px 7px 14px -2px rgba(0, 0, 0, 0.46);
   -webkit-box-shadow: 0px 7px 14px -2px rgba(0, 0, 0, 0.46);
   -moz-box-shadow: 0px 7px 14px -2px rgba(0, 0, 0, 0.46);
@@ -112,18 +112,4 @@
   display: flex;
   justify-content: space-between;
   margin: 3%;
-}
-.app-graph-bar-container {
-  min-height: 58%;
-  margin: 3%;
-  display: grid;
-  grid-template-columns: 1fr, 1fr, 1fr, 1fr;
-  grid-template-rows: 1fr, 1fr 1fr 1fr;
-  grid-gap: 20px;
-  grid-template-areas:
-    "linegraph linegraph ath ath"
-    "linegraph linegraph ath ath"
-    "linegraph linegraph ath ath"
-    "linegraph linegraph ath ath"
-    "linegraph linegraph barchart barchart";
 }

@@ -47,7 +47,16 @@ const Sidebar = ({
         selectedLink={selectedLink}
         selectSidebarLink={() => selectSidebarLink("Dashboard")}
         title="Dashboard"
+        linkId="dataCard"
         icon={<HomeIcon className="icon" />}
+      />
+
+      <SidebarDrawer
+        selectedLink={selectedLink}
+        selectSidebarLink={() => selectSidebarLink("Table")}
+        linkId="table"
+        title="Table"
+        icon={<TableChartIcon className="icon" />}
       />
       <SidebarDrawer
         selectedLink={selectedLink}
@@ -55,13 +64,6 @@ const Sidebar = ({
         linkId="newsCard"
         title="News"
         icon={<AnnouncementIcon className="icon" />}
-      />
-      <SidebarDrawer
-        selectedLink={selectedLink}
-        selectSidebarLink={() => selectSidebarLink("Table")}
-        linkId="table"
-        title="Table"
-        icon={<TableChartIcon className="icon" />}
       />
       <SidebarDrawer
         selectedLink={selectedLink}

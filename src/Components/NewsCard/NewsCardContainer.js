@@ -6,7 +6,7 @@ import { fetchNewsData } from "../../Actions/newsDataAction";
 
 const NewsCardContainer = ({ fetchNewsData, newsData }) => {
   useEffect(() => {
-    fetchNewsData();
+    // fetchNewsData();
   }, []);
 
   return (
