@@ -3,8 +3,14 @@ import "./sidebar.css";
 import { Link } from "react-scroll";
 
 // toggleOption handles opening passed down dispatchs from Sidebar component
-const SidebarDrawer = ({ title, icon, toggleOption, linkId }) => {
-  const [active, setActive] = useState(false);
+const SidebarDrawer = ({
+  title,
+  icon,
+  toggleOption,
+  linkId,
+  selectedLink,
+  selectSidebarLink,
+}) => {
   return (
     <Link
       to={linkId}
@@ -16,9 +22,9 @@ const SidebarDrawer = ({ title, icon, toggleOption, linkId }) => {
       onClick={() => (toggleOption ? toggleOption() : null)}
     >
       <div
-        onClick={() => setActive(!active)}
+        onClick={() => selectSidebarLink()}
         className={`sidebar-drawer-container ${
-          active && "sidebar-drawer-container-active"
+          selectedLink == title && "sidebar-drawer-container-active"
         }`}
       >
         <div className="sidebar-drawer-container-overlay"></div>

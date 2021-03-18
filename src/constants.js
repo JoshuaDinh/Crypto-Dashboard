@@ -9,3 +9,4 @@ export const SIGN_UP_MODAL = "SIGN_UP_MODAL";
 export const SIGN_IN_MODAL = "SIGN_IN_MODAL";
 export const FETCH_NEWS_DATA = "FETCH_NEWS_DATA";
 export const SELECT_LINE_GRAPH_DAY = " SELECT_LINE_GRAPH_DAY";
+export const SELECTED_LINK = "SELECTED_LINK";

@@ -12,9 +12,16 @@ import AnnouncementIcon from "@material-ui/icons/Announcement";
 // Redux----------
 import { displaySignUpModal } from "../../Actions/authenticationAction.js";
 import { displaySignInModal } from "../../Actions/authenticationAction.js";
+import { selectSidebarLink } from "../../Actions/selectSidebarLink.js";
 import { connect } from "react-redux";
 
-const Sidebar = ({ selectedCoin, displaySignUpModal, displaySignInModal }) => {
+const Sidebar = ({
+  selectedCoin,
+  displaySignUpModal,
+  displaySignInModal,
+  selectSidebarLink,
+  selectedLink,
+}) => {
   return (
     <div className="sidebar">
       <div className="sidebar-header">
@@ -34,32 +41,49 @@ const Sidebar = ({ selectedCoin, displaySignUpModal, displaySignInModal }) => {
           </div>
         )}
       </div>
-      <SidebarDrawer title="Dashboard" icon={<HomeIcon className="icon" />} />
       <SidebarDrawer
+        selectedLink={selectedLink}
+        selectSidebarLink={() => selectSidebarLink("Dashboard")}
+        title="Dashboard"
+        icon={<HomeIcon className="icon" />}
+      />
+      <SidebarDrawer
+        selectedLink={selectedLink}
+        selectSidebarLink={() => selectSidebarLink("News")}
         linkId="newsCard"
         title="News"
         icon={<AnnouncementIcon className="icon" />}
       />
       <SidebarDrawer
+        selectedLink={selectedLink}
+        selectSidebarLink={() => selectSidebarLink("Table")}
         linkId="table"
         title="Table"
         icon={<TableChartIcon className="icon" />}
       />
       <SidebarDrawer
+        selectedLink={selectedLink}
+        selectSidebarLink={() => selectSidebarLink("Settings")}
         title="Settings"
         icon={<SettingsApplicationsIcon className="icon" />}
       />
       <SidebarDrawer
+        selectedLink={selectedLink}
+        selectSidebarLink={() => selectSidebarLink("Sign In")}
         toggleOption={() => displaySignInModal(true)}
         title="Sign In"
         icon={<MeetingRoomIcon className="icon" />}
       />
       <SidebarDrawer
+        selectedLink={selectedLink}
+        selectSidebarLink={() => selectSidebarLink("Sign Up")}
         toggleOption={() => displaySignUpModal(true)}
         title="Sign Up"
         icon={<AssignmentIndIcon className="icon" />}
       />
       <SidebarDrawer
+        selectedLink={selectedLink}
+        selectSidebarLink={() => selectSidebarLink("Log Out")}
         toggleOption={() => alert("alert")}
         title="Log Out"
         icon={<ExitToAppIcon className="icon" />}
@@ -72,6 +96,7 @@ const mapStateToProps = (state) => {
   return {
     selectedCoin: state.searchedCoin,
     signUpModal: state.signUpModal,
+    selectedLink: state.selectSidebarLink,
   };
 };
 
@@ -79,6 +104,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     displaySignUpModal: () => dispatch(displaySignUpModal()),
     displaySignInModal: () => dispatch(displaySignInModal()),
+    selectSidebarLink: (text) => dispatch(selectSidebarLink(text)),
   };
 };
 

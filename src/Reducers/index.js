@@ -6,6 +6,7 @@ import { lineGraphDataReducer } from "./lineGraphDataReducer";
 import { signUpModalReducer } from "./authenticationReducer";
 import { signInModalReducer } from "./authenticationReducer";
 import { fetchNewsDataReducer } from "./newsReducer";
+import { selectSidebarLinkReducer } from "./selectSidebarLink";
 
 export default combineReducers({
   allCoinData: allCoinDataReducer,
@@ -15,4 +16,5 @@ export default combineReducers({
   signUpModal: signUpModalReducer,
   signInModal: signInModalReducer,
   newsData: fetchNewsDataReducer,
+  selectSidebarLink: selectSidebarLinkReducer,
 });
