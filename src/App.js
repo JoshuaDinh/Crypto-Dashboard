@@ -30,7 +30,7 @@ const App = ({ signUpModal, signInModal, setAuthToken, mobileNav }) => {
   }, [mobileNav]);
   return (
     <div className="App">
-      {/* <OpeningAnimation /> */}
+      <OpeningAnimation />
       {signUpModal ? (
         <div className="app-authentication-container">
           <SignUpModal />

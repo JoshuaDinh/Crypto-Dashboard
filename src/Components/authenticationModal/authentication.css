@@ -28,6 +28,16 @@
   animation: authClose 1s ease-in forwards;
 }
 
+.authentication-close:hover {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.3) 3%,
+    rgb(255, 255, 255, 0.6) 60%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+}
+
 @keyframes authClose {
   0% {
     transform: translateY(50%);
