@@ -4,10 +4,25 @@
   flex-direction: column;
   justify-content: space-evenly;
   min-height: 200px;
+  opacity: 0;
   border: 1px solid rgb(126, 126, 126);
   box-shadow: 0px 27px 14px -15px rgba(0, 0, 0, 0.46);
   -webkit-box-shadow: 0px 27px 14px -15px rgba(0, 0, 0, 0.46);
   -moz-box-shadow: 0px 27px 14px -15px rgba(0, 0, 0, 0.46);
+  transform: translateY(8%);
+  animation: delayLoading 1s forwards;
+  animation-delay: 9s;
+}
+
+@keyframes delayLoading {
+  0% {
+    transform: translateY(8%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
 }
 
 .allTimeData-header {
