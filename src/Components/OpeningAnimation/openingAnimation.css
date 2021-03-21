@@ -1,4 +1,4 @@
-.opening-container {
+/* .opening-container {
   position: relative;
   top: 0;
   left: 0;
@@ -7,9 +7,9 @@
   z-index: 10000;
   animation: closeAnimation 2s forwards;
   animation-delay: 6s;
-}
+} */
 
-@keyframes closeAnimation {
+/* @keyframes closeAnimation {
   0% {
     height: 100vh;
   }
@@ -18,19 +18,15 @@
     opacity: 0;
     display: none;
   }
-}
+} */
 
 .opening {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  height: 40%;
-  width: 45%;
-  transform: translate(-50%, -50%);
+  height: 50%;
+  width: 100%;
 }
 
 .opening-loading {

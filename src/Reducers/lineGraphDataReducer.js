@@ -1,4 +1,8 @@
-import { FETCH_LINE_GRAPH_DATA, SELECT_LINE_GRAPH_DAY } from "../constants";
+import {
+  FETCH_LINE_GRAPH_DATA,
+  SELECT_LINE_GRAPH_DAY,
+  IS_PENDING,
+} from "../constants";
 
 export const initialLineGraphState = {
   lineGraphData: [],
@@ -11,6 +15,7 @@ export const lineGraphDataReducer = (state = initialLineGraphState, action) => {
       return { ...state, lineGraphData: action.payload };
     case SELECT_LINE_GRAPH_DAY:
       return { ...state, selectedLineGraphDay: action.payload };
+
     default:
       return state;
   }
