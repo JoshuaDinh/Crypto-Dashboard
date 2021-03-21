@@ -10,7 +10,7 @@
   -webkit-box-shadow: 0px 27px 14px -15px rgba(0, 0, 0, 0.46);
   -moz-box-shadow: 0px 27px 14px -15px rgba(0, 0, 0, 0.46);
   animation: delayLoading 1s forwards;
-  animation-delay: 9.3s;
+  animation-delay: 3.8s;
 }
 
 @keyframes delayLoading {

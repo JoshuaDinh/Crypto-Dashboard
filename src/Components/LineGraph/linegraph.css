@@ -11,7 +11,7 @@
   grid-area: linegraph;
   transform: translateY(8%);
   animation: delayLoading 1s forwards;
-  animation-delay: 8.7s;
+  animation-delay: 3.2s;
 }
 
 @keyframes delayLoading {

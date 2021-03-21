@@ -129,23 +129,24 @@ const LineGraph = ({
           30 Days
         </div>
       </div>
-      {lineGraphData.length > 1 ? (
-        <Line data={data} options={options} />
-      ) : (
-        <div className="opening-bars-container">
-          <div className="opening-bars"></div>
-          <div className="opening-bars"></div>
-          <div className="opening-bars"></div>
-          <div className="opening-bars"></div>
-          <div className="opening-bars"></div>
-          <div className="opening-bars"></div>
-          <div className="opening-bars"></div>
-        </div>
-      )}
+      <Line data={data} options={options} />
     </div>
   );
 };
 
+// {lineGraphData.length > 1 ? (
+//   <Line data={data} options={options} />
+// ) : (
+//   <div className="opening-bars-container">
+//     <div className="opening-bars"></div>
+//     <div className="opening-bars"></div>
+//     <div className="opening-bars"></div>
+//     <div className="opening-bars"></div>
+//     <div className="opening-bars"></div>
+//     <div className="opening-bars"></div>
+//     <div className="opening-bars"></div>
+//   </div>
+// )}
 const mapStateToProps = (state) => {
   return {
     lineGraphData: state.lineGraphData.lineGraphData,
