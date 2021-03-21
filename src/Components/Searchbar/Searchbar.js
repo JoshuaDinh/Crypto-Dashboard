@@ -29,7 +29,7 @@ const Searchbar = ({
 
   return (
     <div className="searchbar">
-      <form className="searchbar-form">
+      <form onSubmit={(e) => e.preventDefault()} className="searchbar-form">
         <input
           className="searchbar-input"
           type="text"
