@@ -9,6 +9,20 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transform: translateX(-100%);
+  opacity: 0;
+  animation: sidebar 2s ease-in forwards;
+  animation-delay: 1s;
+}
+@keyframes sidebar {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
 }
 
 .sidebar-header {
