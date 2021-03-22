@@ -6,7 +6,6 @@ import { fetchAllCoinData } from "../../Actions/allCoinDataAction";
 import { connect } from "react-redux";
 // Numeral -----
 import numeral from "numeral";
-import { animateScroll } from "react-scroll";
 
 const Table = ({ allCoinData, fetchAllCoinData }) => {
   useEffect(() => {
@@ -14,7 +13,7 @@ const Table = ({ allCoinData, fetchAllCoinData }) => {
   }, []);
   return (
     <table className="table">
-      <tr className="table-header">
+      <th className="table-header">
         <th className="table-column">#</th>
         <th className="table-column">Name</th>
         <th className="table-column">Symbol</th>
@@ -25,7 +24,7 @@ const Table = ({ allCoinData, fetchAllCoinData }) => {
         <th className="table-column">Total Supply</th>
         <th className="table-column">Total Volume</th>
         <th className="table-column">Market Cap</th>
-      </tr>
+      </th>
       {allCoinData.map((coin) => {
         return (
           <TableRow
