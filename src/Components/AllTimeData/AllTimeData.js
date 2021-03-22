@@ -19,7 +19,7 @@ const AllTimeData = ({ selectedCoin }) => {
             {selectedCoin.searchedCoin ? (
               ` $${selectedCoin.searchedCoin?.ath}`
             ) : (
-              <p>...</p>
+              <span>...</span>
             )}
           </p>
           <p>
@@ -28,7 +28,7 @@ const AllTimeData = ({ selectedCoin }) => {
             {selectedCoin.searchedCoin ? (
               ` $${selectedCoin.searchedCoin?.ath_change_percentage}`
             ) : (
-              <div>...</div>
+              <span>...</span>
             )}
           </p>
           <p>
@@ -44,7 +44,7 @@ const AllTimeData = ({ selectedCoin }) => {
             {selectedCoin.searchedCoin ? (
               ` $${selectedCoin.searchedCoin?.atl}`
             ) : (
-              <div>...</div>
+              <span>...</span>
             )}
           </p>
           <p>
@@ -52,7 +52,7 @@ const AllTimeData = ({ selectedCoin }) => {
             {selectedCoin.searchedCoin ? (
               ` $${selectedCoin.searchedCoin?.atl_change_percentage}`
             ) : (
-              <div>...</div>
+              <span>...</span>
             )}
           </p>
           <p>

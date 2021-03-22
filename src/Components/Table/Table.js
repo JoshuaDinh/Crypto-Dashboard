@@ -13,34 +13,38 @@ const Table = ({ allCoinData, fetchAllCoinData }) => {
   }, []);
   return (
     <table className="table">
-      <th className="table-header">
-        <th className="table-column">#</th>
-        <th className="table-column">Name</th>
-        <th className="table-column">Symbol</th>
-        <th className="table-column">Price</th>
-        <th className="table-column"> 24hr High</th>
-        <th className="table-column"> 24hr Low</th>
-        <th className="table-column"> 24hr Change %</th>
-        <th className="table-column">Total Supply</th>
-        <th className="table-column">Total Volume</th>
-        <th className="table-column">Market Cap</th>
-      </th>
-      {allCoinData.map((coin) => {
-        return (
-          <TableRow
-            rank={coin.market_cap_rank}
-            name={coin.name}
-            image={coin.image}
-            price={numeral(coin.current_price).format("0,0")}
-            low={numeral(coin.low_24h).format("0,0")}
-            high={numeral(coin.high_24h).format("0,0")}
-            priceChange={coin.price_change_percentage_24h}
-            totalSupply={numeral(coin.total_supply).format("0,0a")}
-            totalVolume={numeral(coin.total_volume).format("0,0a")}
-            marketCap={numeral(coin.market_cap).format("0,0a")}
-          />
-        );
-      })}
+      <thead className="table-header">
+        <tr>
+          <th className="table-column">#</th>
+          <th className="table-column">Name</th>
+          <th className="table-column">Symbol</th>
+          <th className="table-column">Price</th>
+          <th className="table-column"> 24hr High</th>
+          <th className="table-column"> 24hr Low</th>
+          <th className="table-column"> 24hr Change %</th>
+          <th className="table-column">Total Supply</th>
+          <th className="table-column">Total Volume</th>
+          <th className="table-column">Market Cap</th>
+        </tr>
+      </thead>
+      <tbody>
+        {allCoinData.map((coin) => {
+          return (
+            <TableRow
+              rank={coin.market_cap_rank}
+              name={coin.name}
+              image={coin.image}
+              price={numeral(coin.current_price).format("0,0")}
+              low={numeral(coin.low_24h).format("0,0")}
+              high={numeral(coin.high_24h).format("0,0")}
+              priceChange={coin.price_change_percentage_24h}
+              totalSupply={numeral(coin.total_supply).format("0,0a")}
+              totalVolume={numeral(coin.total_volume).format("0,0a")}
+              marketCap={numeral(coin.market_cap).format("0,0a")}
+            />
+          );
+        })}
+      </tbody>
     </table>
   );
 };
