@@ -31,6 +31,7 @@ const Table = ({ allCoinData, fetchAllCoinData }) => {
         {allCoinData.map((coin) => {
           return (
             <TableRow
+              key={coin.id}
               rank={coin.market_cap_rank}
               name={coin.name}
               image={coin.image}

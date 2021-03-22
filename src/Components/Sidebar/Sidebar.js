@@ -68,6 +68,7 @@ const Sidebar = ({
       <SidebarDrawer
         selectedLink={selectedLink}
         selectSidebarLink={() => selectSidebarLink("Settings")}
+        linkId="Settings"
         title="Settings"
         icon={<SettingsApplicationsIcon className="icon" />}
       />
@@ -75,6 +76,7 @@ const Sidebar = ({
         <SidebarDrawer
           selectedLink={selectedLink}
           selectSidebarLink={() => selectSidebarLink("Log Out")}
+          linkId="Log Out"
           toggleOption={() => alert("alert")}
           title="Log Out"
           icon={<ExitToAppIcon className="icon" />}
@@ -84,6 +86,7 @@ const Sidebar = ({
           <SidebarDrawer
             selectedLink={selectedLink}
             selectSidebarLink={() => selectSidebarLink("Sign In")}
+            linkId="Sign In"
             toggleOption={() => displaySignInModal(true)}
             title="Sign In"
             icon={<MeetingRoomIcon className="icon" />}
@@ -91,6 +94,7 @@ const Sidebar = ({
           <SidebarDrawer
             selectedLink={selectedLink}
             selectSidebarLink={() => selectSidebarLink("Sign Up")}
+            linkId="Sign Up"
             toggleOption={() => displaySignUpModal(true)}
             title="Sign Up"
             icon={<AssignmentIndIcon className="icon" />}
