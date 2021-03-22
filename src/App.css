@@ -124,7 +124,7 @@
 .app-pieChart-container {
   display: flex;
   justify-content: space-between;
-  height: 30%;
+  height: 40%;
   width: 94%;
   margin: 3%;
   animation: delayLoading 1s forwards;

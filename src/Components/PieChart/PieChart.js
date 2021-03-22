@@ -37,7 +37,7 @@ const data = {
 const PieChart = () => {
   return (
     <div className="pieChart">
-      <Pie data={data} options={options} height={"100%"} />
+      <Pie data={data} options={options} />
     </div>
   );
 };
