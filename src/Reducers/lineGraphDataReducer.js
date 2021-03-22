@@ -1,8 +1,4 @@
-import {
-  FETCH_LINE_GRAPH_DATA,
-  SELECT_LINE_GRAPH_DAY,
-  IS_PENDING,
-} from "../constants";
+import { FETCH_LINE_GRAPH_DATA, SELECT_LINE_GRAPH_DAY } from "../constants";
 
 export const initialLineGraphState = {
   lineGraphData: [],
