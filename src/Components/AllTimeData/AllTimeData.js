@@ -19,7 +19,7 @@ const AllTimeData = ({ selectedCoin }) => {
             {selectedCoin.searchedCoin ? (
               ` $${selectedCoin.searchedCoin?.ath}`
             ) : (
-              <div>...</div>
+              <p>...</p>
             )}
           </p>
           <p>
