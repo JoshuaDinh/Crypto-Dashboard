@@ -10,7 +10,8 @@ const TableRow = ({
   high,
   priceChange,
   totalSupply,
-  totalVolumn,
+  totalVolume,
+  marketCap,
 }) => {
   return (
     <tr className="tableRow">
@@ -29,7 +30,8 @@ const TableRow = ({
         {priceChange}%
       </td>
       <td className="table-column">{totalSupply}</td>
-      <td className="table-column">{totalVolumn}</td>
+      <td className="table-column">{totalVolume}</td>
+      <td className="table-column">{marketCap}</td>
     </tr>
   );
 };

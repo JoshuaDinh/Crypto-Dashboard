@@ -1,5 +1,6 @@
 import React from "react";
 import { Pie } from "react-chartjs-2";
+import { connect } from "react-redux";
 import "./pieChart.css";
 
 const options = {
@@ -41,4 +42,10 @@ const PieChart = () => {
   );
 };
 
-export default PieChart;
+const mapStateToProps = (state) => {
+  return {
+    allCoinData: state.allCoinData,
+  };
+};
+
+export default connect(mapStateToProps)(PieChart);

@@ -24,6 +24,7 @@ const Table = ({ allCoinData, fetchAllCoinData }) => {
         <th className="table-column"> 24hr Change %</th>
         <th className="table-column">Total Supply</th>
         <th className="table-column">Total Volume</th>
+        <th className="table-column">Market Cap</th>
       </tr>
       {allCoinData.map((coin) => {
         return (
@@ -36,7 +37,8 @@ const Table = ({ allCoinData, fetchAllCoinData }) => {
             high={numeral(coin.high_24h).format("0,0")}
             priceChange={coin.price_change_percentage_24h}
             totalSupply={numeral(coin.total_supply).format("0,0a")}
-            totalVolumn={numeral(coin.total_volume).format("0,0a")}
+            totalVolume={numeral(coin.total_volume).format("0,0a")}
+            marketCap={numeral(coin.market_cap).format("0,0a")}
           />
         );
       })}
