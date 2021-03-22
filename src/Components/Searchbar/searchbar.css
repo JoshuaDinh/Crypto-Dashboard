@@ -6,13 +6,13 @@
   min-height: 12%;
   transform: translateY(-15%);
   opacity: 0;
-  animation: searchbar 1s ease-in forwards;
+  animation: delayLoading 1s forwards;
   animation-delay: 1s;
 }
 
-@keyframes searchbar {
+@keyframes delayLoading {
   0% {
-    transform: translateY(-15%);
+    transform: translateY(8%);
     opacity: 0;
   }
   100% {

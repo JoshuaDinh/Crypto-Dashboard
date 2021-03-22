@@ -3,6 +3,76 @@
   padding: 0;
   font-family: "Didact Gothic", sans-serif;
 }
+.app-initializing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  width: 400px;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  border-radius: 50%;
+  letter-spacing: 0.3rem;
+  font-weight: bolder;
+  position: fixed;
+  color: black;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: initialize 2s ease-in forwards;
+}
+
+@keyframes initialize {
+  0% {
+    opacity: 1;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+    border-top: 3px solid grey;
+    border-bottom: 3px solid grey;
+  }
+}
+
+.app-initializing-letter {
+  animation: animateInitializingLetters 2s infinite;
+}
+@keyframes animateInitializingLetters {
+  0% {
+    color: black;
+  }
+  100% {
+    color: grey;
+  }
+}
+.app-initializing-dot-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 15%;
+  height: 8%;
+}
+
+.app-initializing-dot {
+  background-color: black;
+  height: 0.7rem;
+  width: 0.7rem;
+  /* border-radius: 50%; */
+  animation: initializing-dot 1s forwards infinite;
+}
+
+@keyframes initializing-dot {
+  0% {
+    transform: rotate(0);
+    background-color: black;
+  }
+  100% {
+    transform: rotate(360deg);
+    background-color: grey;
+  }
+}
 
 .app-content {
   position: absolute;
@@ -20,7 +90,7 @@
 }
 
 .icon:hover {
-  animation: icon 2s infinite ease-in-out alternate-reverse;
+  animation: icon 2s infinite ease-in-out;
 }
 
 @keyframes icon {

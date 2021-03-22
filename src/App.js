@@ -30,6 +30,25 @@ const App = ({ signUpModal, signInModal, setAuthToken, mobileNav }) => {
   }, [mobileNav]);
   return (
     <div className="App">
+      <div className="app-initializing-container">
+        <h1 className="app-initializing-letter">I</h1>
+        <h1 className="app-initializing-letter">n</h1>
+        <h1 className="app-initializing-letter">i</h1>
+        <h1 className="app-initializing-letter">t</h1>
+        <h1 className="app-initializing-letter">i</h1>
+        <h1 className="app-initializing-letter">a</h1>
+        <h1 className="app-initializing-letter">l</h1>
+        <h1 className="app-initializing-letter">i</h1>
+        <h1 className="app-initializing-letter">z</h1>
+        <h1 className="app-initializing-letter">i</h1>
+        <h1 className="app-initializing-letter">n</h1>
+        <h1 className="app-initializing-letter">g</h1>
+        <div className="app-initializing-dot-container">
+          <div className="app-initializing-dot"></div>
+          <div className="app-initializing-dot"></div>
+          <div className="app-initializing-dot"></div>
+        </div>
+      </div>
       {signUpModal ? (
         <div className="app-authentication-container">
           <SignUpModal />
