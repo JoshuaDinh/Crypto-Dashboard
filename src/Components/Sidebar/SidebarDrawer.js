@@ -13,9 +13,14 @@ const SidebarDrawer = ({
   mobileNav,
   setMobileNav,
 }) => {
-  const toggleOptionCloseMobile = (mobileNav) => {
-    setMobileNav();
-    toggleOption();
+  // Allows Closing of Mobile Nav when SignIn&SignUp links are clicked / Handles Sidebar toggle Options
+  const toggleOptions = () => {
+    if (toggleOption) {
+      toggleOption();
+    }
+    if (mobileNav) {
+      setMobileNav(!mobileNav);
+    }
   };
   return (
     <Link
@@ -25,15 +30,7 @@ const SidebarDrawer = ({
       offset={-70}
       duration={500}
       className="sidebar-drawer"
-      onClick={
-        (() =>
-          toggleOption
-            ? toggleOption()
-            : mobileNav
-            ? setMobileNav()
-            : toggleOption,
-        mobileNav ? toggleOptionCloseMobile : null)
-      }
+      onClick={() => toggleOptions()}
     >
       <div
         onClick={() => selectSidebarLink()}
