@@ -1,11 +1,13 @@
 import React from "react";
 import PieChart from "./PieChart";
+import numeral from "numeral";
 import { connect } from "react-redux";
 import "./pieChart.css";
 
 const PieChartContainer = ({ allCoinData }) => {
   let marketCapData = [];
   let marketCapLabels = [];
+
   allCoinData.slice(0, 5).map((item) => {
     marketCapData.push(item.market_cap);
     marketCapLabels.push(item.name);

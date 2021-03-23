@@ -161,10 +161,7 @@ const mapDispatchToProps = (dispatch) => {
       setTimeout(() => {
         dispatch(fetchLineGraphData());
       }, 1000),
-    selectLineGraphDay: (number) =>
-      setTimeout(() => {
-        dispatch(selectLineGraphDay(number));
-      }, 200),
+    selectLineGraphDay: (number) => dispatch(selectLineGraphDay(number)),
   };
 };
 

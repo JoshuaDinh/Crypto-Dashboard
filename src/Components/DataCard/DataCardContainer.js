@@ -12,12 +12,19 @@ const DataCardContainer = ({ selectedCoin }) => {
       <DataCard
         title="Current Price"
         info={`$${numeral(selectedCoin.searchedCoin?.current_price).format(
-          "0,0.00"
+          "0,0.0000"
         )}`}
         selectedCoin={selectedCoin}
       />
       <DataCard
-        icon={<ArrowDownwardIcon className="dataCard-arrow-icon" />}
+        // Determines arrow color and position based one positive & negative values
+        icon={
+          selectedCoin.searchedCoin?.price_change_percentage_24h >= 0 ? (
+            <ArrowUpwardIcon className="dataCard-arrow-icon dataCard-high" />
+          ) : (
+            <ArrowDownwardIcon className="dataCard-arrow-icon dataCard-low" />
+          )
+        }
         title="24hr % Change "
         info={`${selectedCoin.searchedCoin?.price_change_percentage_24h}%`}
         selectedCoin={selectedCoin}
