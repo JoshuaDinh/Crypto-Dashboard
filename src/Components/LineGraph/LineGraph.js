@@ -58,7 +58,7 @@ const LineGraph = ({
   useEffect(() => {
     const timer = setTimeout(() => {
       fetchLineGraphData();
-    }, 1500);
+    }, 1200);
     return () => clearTimeout(timer);
   }, [selectedCoin, selectedLineGraphDay]);
 
@@ -130,6 +130,17 @@ const LineGraph = ({
         </div>
       </div>
       <Line data={data} options={options} />
+      {lineGraphData.length < 1 && (
+        <div className="opening-bars-container">
+          <div className="opening-bars"></div>
+          <div className="opening-bars"></div>
+          <div className="opening-bars"></div>
+          <div className="opening-bars"></div>
+          <div className="opening-bars"></div>
+          <div className="opening-bars"></div>
+          <div className="opening-bars"></div>
+        </div>
+      )}
     </div>
   );
 };

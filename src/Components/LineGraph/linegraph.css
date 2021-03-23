@@ -1,6 +1,6 @@
 .lineGraph {
   /* Positioning */
-
+  position: relative;
   /* Display & Box Model */
   grid-area: linegraph;
   display: flex;
@@ -71,9 +71,16 @@
 }
 
 .opening-bars-container {
+  position: absolute;
+  top: 35%;
+
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  height: 50%;
+  width: 60%;
+
+  z-index: 10000;
 }
 
 .opening-bars {
