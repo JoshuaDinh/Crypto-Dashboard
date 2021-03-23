@@ -1,17 +1,26 @@
 .initializing-container {
+  /* Positioning */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+
+  /* Display & Box Model */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 400px;
   width: 400px;
   border-radius: 50%;
+  transform: translate(-50%, -50%);
+
+  /* Color */
+  color: rgb(0, 0, 0);
+
+  /* Text */
   letter-spacing: 0.3rem;
   font-weight: bolder;
-  position: fixed;
-  color: rgb(0, 0, 0);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
+  /* Other */
   animation: initialize 2s ease-in forwards;
 }
 
@@ -26,6 +35,10 @@
 
 .initializing-container::before {
   content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,14 +47,14 @@
   border-top: 3px solid black;
   border-bottom: 3px solid black;
   border-radius: 50%;
+  transform: translate(-50%, -50%);
+
+  color: rgb(0, 0, 0, 0.65);
+
   letter-spacing: 0.3rem;
   font-weight: bolder;
-  position: absolute;
-  color: rgb(0, 0, 0, 0.65);
-  top: 50%;
-  left: 50%;
+
   z-index: 1000;
-  transform: translate(-50%, -50%);
   animation: initializeRotation 2s ease-in forwards;
 }
 

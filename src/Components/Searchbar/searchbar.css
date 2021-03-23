@@ -1,11 +1,20 @@
 .searchbar {
+  /* Position */
+
+  /* Display & Box Model */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: white;
   border-bottom: 1px solid rgb(202, 196, 196);
   min-height: 12%;
   transform: translateY(-15%);
+
+  /* Color */
+  background: rgb(255, 255, 255);
+
+  /* Text */
+
+  /* Other */
   opacity: 0;
   animation: delayLoading 1s forwards;
   animation-delay: 1s;
@@ -33,8 +42,8 @@
 }
 
 .searchbar-input {
-  padding: 1px;
   width: 90%;
+  padding: 1px;
   border: none;
   outline: none;
 }
