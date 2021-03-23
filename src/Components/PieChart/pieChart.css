@@ -32,6 +32,8 @@
   align-items: center;
   height: 15%;
   width: 30%;
+  border: 1px solid rgb(0, 0, 0, 0.66);
+  border-bottom: none;
 
   background: rgb(0, 0, 0);
   background: linear-gradient(
@@ -40,8 +42,6 @@
     rgb(255, 255, 255, 0.6) 60%,
     rgba(0, 0, 0, 0.4) 100%
   );
-
-  font-size: 1.1rem;
 }
 
 /* app-pieChart */

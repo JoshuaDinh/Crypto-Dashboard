@@ -36,6 +36,19 @@
 }
 
 .allTimeData-header {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.3) 3%,
+    rgb(255, 255, 255, 0.6) 60%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  border: 1px solid rgb(0, 0, 0, 0.66);
+  border-top: none;
+
   text-align: center;
 }
 
@@ -49,6 +62,8 @@
   flex-direction: column;
   justify-content: space-between;
   width: 50%;
+  padding: 10px;
+  box-sizing: border-box;
 
   text-align: center;
   font-size: 0.9rem;
