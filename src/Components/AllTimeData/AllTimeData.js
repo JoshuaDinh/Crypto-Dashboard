@@ -1,6 +1,7 @@
 import React from "react";
 import "./allTimeData.css";
 import { connect } from "react-redux";
+import numeral from "numeral";
 
 const AllTimeData = ({ selectedCoin }) => {
   // Formats all time date
@@ -17,7 +18,7 @@ const AllTimeData = ({ selectedCoin }) => {
             <span className="ath">All Time High: </span>
             {/* Ternary determines what to display if no coin is selected/searched */}
             {selectedCoin.searchedCoin ? (
-              ` $${selectedCoin.searchedCoin?.ath}`
+              ` $${numeral(selectedCoin.searchedCoin?.ath).format("0,00.00")}`
             ) : (
               <span>...</span>
             )}
@@ -26,7 +27,9 @@ const AllTimeData = ({ selectedCoin }) => {
             <span className="ath">ATH Change %: </span>
 
             {selectedCoin.searchedCoin ? (
-              ` $${selectedCoin.searchedCoin?.ath_change_percentage}`
+              ` $${numeral(
+                selectedCoin.searchedCoin?.ath_change_percentage
+              ).format("0.00a")}`
             ) : (
               <span>...</span>
             )}
@@ -42,7 +45,7 @@ const AllTimeData = ({ selectedCoin }) => {
           <p>
             <span className="atl">All Time Low: </span>
             {selectedCoin.searchedCoin ? (
-              ` $${selectedCoin.searchedCoin?.atl}`
+              ` $${numeral(selectedCoin.searchedCoin?.atl).format("0,00.00")}`
             ) : (
               <span>...</span>
             )}
@@ -50,7 +53,9 @@ const AllTimeData = ({ selectedCoin }) => {
           <p>
             <span className="atl"> ATL Change %: </span>
             {selectedCoin.searchedCoin ? (
-              ` $${selectedCoin.searchedCoin?.atl_change_percentage}`
+              ` $${numeral(
+                selectedCoin.searchedCoin?.atl_change_percentage
+              ).format("0,0.00")}`
             ) : (
               <span>...</span>
             )}
