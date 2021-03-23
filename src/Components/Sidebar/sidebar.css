@@ -1,19 +1,30 @@
 .sidebar {
-  background: whitesmoke;
-  box-shadow: 7px 0px 16px 0px rgba(0, 0, 0, 0.45);
-  -webkit-box-shadow: 7px 0px 16px 0px rgba(0, 0, 0, 0.45);
-  -moz-box-shadow: 7px 0px 16px 0px rgba(0, 0, 0, 0.45);
-  height: 100vh;
-  width: 14%;
+  /* Position */
   position: fixed;
+
+  /* Display & Box Model */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100vh;
+  width: 14%;
   transform: translateX(-100%);
+  box-shadow: 7px 0px 16px 0px rgba(0, 0, 0, 0.45);
+  -webkit-box-shadow: 7px 0px 16px 0px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 7px 0px 16px 0px rgba(0, 0, 0, 0.45);
+
+  /* Color */
+  background: rgb(245, 245, 245);
+
+  /* Text */
+
+  /* Other */
   opacity: 0;
   animation: sidebar 2s ease-in forwards;
   animation-delay: 1s;
 }
+
+/* Slides Side Bar in when starting app */
 @keyframes sidebar {
   0% {
     transform: translateX(-100%);
@@ -30,10 +41,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 1.3rem;
-  text-align: center;
   min-height: 18%;
   border-bottom: 1px solid rgb(202, 196, 196);
+
+  font-size: 1.3rem;
+  text-align: center;
 }
 
 .sidebar-header-loading {
@@ -46,9 +58,11 @@
   color: grey;
 
   font-size: 3rem !important;
+
   animation: forward 3s ease-in-out infinite alternate-reverse;
 }
 
+/* Animated arrow that points to the searchbar */
 @keyframes forward {
   0% {
     transform: translateX(0px);
@@ -62,10 +76,11 @@
 
 /* Sidebar-Drawer */
 .sidebar-drawer {
+  position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   width: 100%;
   min-height: 8%;
   max-height: 8%;
@@ -77,8 +92,9 @@
 }
 
 .sidebar-drawer-title {
-  z-index: 1;
   width: 43%;
+
+  z-index: 1;
 }
 
 .sidebar-drawer-container {
@@ -86,25 +102,34 @@
   align-items: center;
   justify-content: space-between;
   width: 70%;
-  cursor: pointer;
+
   color: rgb(48, 46, 46);
+
+  cursor: pointer;
 }
 .sidebar-drawer-container:hover {
-  color: black;
-  font-size: 1.1rem;
   width: 100%;
+
+  color: rgb(0, 0, 0);
+
+  font-size: 1.1rem;
 }
 .sidebar-drawer-icon {
-  color: white !important;
+  color: rgb(255, 255, 255) !important;
 }
 
 .sidebar-drawer-container-active {
-  color: black !important;
   position: absolute;
   right: 0;
+
   width: 100%;
   height: 84%;
   border-radius: 1.6em 0 0 1.6em;
+  box-shadow: 0px 24px 19px -17px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 24px 19px -17px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 24px 19px -17px rgba(0, 0, 0, 0.75);
+
+  color: rgb(0, 0, 0) !important;
   background: rgb(0, 0, 0);
   background: linear-gradient(
     90deg,
@@ -112,9 +137,7 @@
     rgb(255, 255, 255, 0.6) 60%,
     rgba(0, 0, 0, 0.4) 100%
   );
-  box-shadow: 0px 24px 19px -17px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 0px 24px 19px -17px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 24px 19px -17px rgba(0, 0, 0, 0.75);
+
   animation: sideDrawer 1s forwards ease-in-out;
 }
 
