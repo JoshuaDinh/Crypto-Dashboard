@@ -47,6 +47,7 @@
     rgba(0, 0, 0, 0.4) 100%
   );
   border-bottom: 1px solid rgb(0, 0, 0, 0.66);
+  box-sizing: border-box;
 
   text-align: center;
 }
