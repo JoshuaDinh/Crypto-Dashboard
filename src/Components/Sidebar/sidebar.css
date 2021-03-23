@@ -55,10 +55,15 @@
 }
 
 .searchbar-arrow-icon {
+  position: absolute;
+  top: 3%;
+  left: 60%;
+
   color: grey;
 
   font-size: 3rem !important;
 
+  z-index: 100;
   animation: forward 3s ease-in-out infinite alternate-reverse;
 }
 
