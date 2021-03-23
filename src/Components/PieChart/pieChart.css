@@ -4,6 +4,8 @@
   justify-content: center;
   height: 100%;
   width: 48%;
+  background: white;
+
   color: rgba(0, 0, 0, 0.77);
   /* opacity: 0; */
   border-top: 1px solid rgb(126, 126, 126);
