@@ -15,26 +15,34 @@ const options = {
   responsive: true,
   maintainAspectRation: false,
 };
-const data = {
-  maintainAspectRatio: false,
-  responsive: true,
-  labels: ["a", "b", "c", "d", "e"],
-  datasets: [
-    {
-      data: [300, 50, 100, 50, 70],
-      backgroundColor: [
-        "rgba(0, 0, 0, 0.8)",
-        "rgba(0, 0, 0, 0.7)",
-        "rgba(0, 0, 0, 0.5)",
-        "rgba(0, 0, 0, 0.3)",
-        "rgba(0, 0, 0, 0.2)",
-      ],
-      hoverBackgroundColor: "black",
-    },
-  ],
-};
 
-const PieChart = () => {
+const PieChart = ({ allCoinData }) => {
+  let pieChartData = [];
+  let pieChartLabels = [];
+
+  allCoinData.slice(0, 5).map((item) => {
+    pieChartData.push(item.market_cap);
+    pieChartLabels.push(item.name);
+  });
+
+  const data = {
+    maintainAspectRatio: false,
+    responsive: true,
+    labels: pieChartLabels,
+    datasets: [
+      {
+        data: pieChartData,
+        backgroundColor: [
+          "rgba(0, 0, 0, 0.85)",
+          "rgba(0, 0, 0, 0.7)",
+          "rgba(0, 0, 0, 0.6)",
+          "rgba(0, 0, 0, 0.5)",
+          "rgba(0, 0, 0, 0.4)",
+        ],
+        hoverBackgroundColor: " rgba(255, 255, 255, 0.9)",
+      },
+    ],
+  };
   return (
     <div className="pieChart">
       <Pie data={data} options={options} />
