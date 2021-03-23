@@ -4,40 +4,64 @@
   align-items: center;
   height: 400px;
   width: 400px;
+  border-radius: 50%;
+  letter-spacing: 0.3rem;
+  font-weight: bolder;
+  position: fixed;
+  color: rgb(0, 0, 0);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: initialize 2s ease-in forwards;
+}
+
+@keyframes initialize {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.initializing-container::before {
+  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  width: 400px;
   border-top: 3px solid black;
   border-bottom: 3px solid black;
   border-radius: 50%;
   letter-spacing: 0.3rem;
   font-weight: bolder;
-  position: fixed;
-  color: black;
+  position: absolute;
+  color: rgb(0, 0, 0, 0.65);
   top: 50%;
   left: 50%;
-
+  z-index: 1000;
   transform: translate(-50%, -50%);
-  animation: initialize 2s ease-in forwards;
-  animation-delay: 1s;
+  animation: initializeRotation 2s ease-in forwards;
 }
 
-@keyframes initialize {
+@keyframes initializeRotation {
   0% {
     transform: translate(-50%, -50%);
     opacity: 1;
-    border-top: 3px solid black;
+    border-top: 3px solid rgb(0, 0, 0, 0.65);
     border-bottom: 3px solid black;
   }
   100% {
     transform: translate(-50%, -50%) rotate(360deg);
     opacity: 0;
-    display: none;
-    border-top: 3px solid grey;
-    border-bottom: 3px solid grey;
+    border-top: 3px solid rgb(0, 0, 0, 0.65);
+    border-bottom: 3px solid rgb(0, 0, 0, 0.65);
   }
 }
 
 .initializing-letter {
-  animation: animateInitializingLetters 2s infinite;
-  animation-delay: 1s;
+  animation: animateInitializingLetters 2s forwards;
 }
 @keyframes animateInitializingLetters {
   0% {
@@ -45,7 +69,6 @@
   }
   100% {
     color: grey;
-    transform: rotate(-360deg);
   }
 }
 
@@ -61,8 +84,7 @@
   background-color: black;
   height: 0.7rem;
   width: 0.7rem;
-  /* border-radius: 50%; */
-  animation: initializing-dot 1s forwards infinite;
+  animation: initializing-dot 1s infinite;
 }
 
 @keyframes initializing-dot {
