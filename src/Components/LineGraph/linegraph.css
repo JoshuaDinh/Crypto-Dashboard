@@ -1,17 +1,25 @@
 .lineGraph {
+  /* Positioning */
+
+  /* Display & Box Model */
+  grid-area: linegraph;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  opacity: 0;
-  background: white;
-
+  transform: translateY(8%);
   border: 1px solid rgb(126, 126, 126);
   box-shadow: 7px 8px 14px -2px rgba(0, 0, 0, 0.46);
   -webkit-box-shadow: 7px 8px 14px -2px rgba(0, 0, 0, 0.46);
   -moz-box-shadow: 7px 8px 14px -2px rgba(0, 0, 0, 0.46);
-  grid-area: linegraph;
-  transform: translateY(8%);
+
+  /* Color */
+  background: rgb(255, 255, 255);
+
+  /* Text */
+
+  /* Other */
+  opacity: 0;
   animation: delayLoading 1s forwards;
   animation-delay: 3.2s;
 }
@@ -35,13 +43,15 @@
 
 .lineGraph-day-selector {
   padding: 9px;
-  cursor: pointer;
-  font-size: 1rem;
   border: 1px solid transparent;
   border-top: 1px solid rgba(0, 0, 0, 0.65);
   box-shadow: 0px 7px 14px -2px rgba(0, 0, 0, 0.46);
   -webkit-box-shadow: 0px 7px 14px -2px rgba(0, 0, 0, 0.46);
   -moz-box-shadow: 0px 7px 14px -2px rgba(0, 0, 0, 0.46);
+
+  font-size: 1rem;
+
+  cursor: pointer;
 }
 .lineGraph-day-selector:hover,
 .lineGraphSelected {
@@ -64,22 +74,23 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  /* min-width: 656px; */
 }
 
 .opening-bars {
+  width: 5%;
+  box-shadow: 8px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 8px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 8px 0px 10px 0px rgba(0, 0, 0, 0.75);
+
   background: rgb(0, 0, 0);
   background: linear-gradient(
     90deg,
     rgba(0, 0, 0, 0.3) 3%,
     rgba(0, 0, 0, 0.4) 100%
   );
-  width: 5%;
-  box-shadow: 8px 0px 10px 0px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 8px 0px 10px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 8px 0px 10px 0px rgba(0, 0, 0, 0.75);
 }
 
+/* Loading Bar Animations */
 .opening-bars:nth-child(1) {
   animation: bars1 2s infinite alternate-reverse;
   animation-delay: 0;

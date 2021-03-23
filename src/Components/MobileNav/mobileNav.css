@@ -1,11 +1,20 @@
 .mobileNav {
-  min-height: 50%;
-  width: 100%;
+  /* Positioning */
   position: absolute;
   top: 10%;
+
+  /* Display & Box Model */
+  display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  display: flex;
+  min-height: 50%;
+  width: 100%;
+
+  /* Color */
   background: rgb(255, 255, 255) !important;
+
+  /* Text */
+
+  /* Other */
   z-index: 100;
 }

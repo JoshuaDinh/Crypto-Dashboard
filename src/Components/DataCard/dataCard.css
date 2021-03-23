@@ -1,19 +1,37 @@
 .dataCard {
-  min-width: 23%;
-  min-height: 140px;
-  text-align: center;
+  /* Positioning */
+
+  /* Display & Box Model */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  background: white;
-  color: rgba(0, 0, 0, 0.77);
-  opacity: 0;
   border-top: 1px solid rgb(126, 126, 126);
   box-shadow: 0px 7px 14px -2px rgba(0, 0, 0, 0.46);
   -webkit-box-shadow: 0px 7px 14px -2px rgba(0, 0, 0, 0.46);
   -moz-box-shadow: 0px 7px 14px -2px rgba(0, 0, 0, 0.46);
+
+  /* Color */
+  background: rgb(255, 255, 255);
+  color: rgba(0, 0, 0, 0.77);
+
+  /* Text */
+  text-align: center;
+
+  /* Other */
+  min-width: 23%;
+  min-height: 140px;
+
+  opacity: 0;
 }
 
+/* Data-card-container */
+.app-datacard-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 3%;
+}
+
+/* Data Card Animations */
 .dataCard:nth-child(1) {
   transform: translateY(8%);
   animation: delayLoading 1s forwards;
@@ -127,6 +145,8 @@
   }
 }
 
+/* Loading */
+
 .loading {
   display: flex;
   justify-content: center;
@@ -136,10 +156,13 @@
 .loading-dot {
   height: 9px;
   width: 9px;
-  border-radius: 25px;
-  background: rgba(0, 0, 0, 0.77);
   margin: 0 1.2%;
+  border-radius: 25px;
+
+  background: rgba(0, 0, 0, 0.77);
 }
+
+/* Loading Animations */
 
 .loading-dot:first-child {
   animation: loading1 2s ease-in-out infinite;
@@ -175,11 +198,4 @@
   95% {
     transform: translateY(-7px);
   }
-}
-
-/* Data-card-container */
-.app-datacard-container {
-  display: flex;
-  justify-content: space-between;
-  margin: 3%;
 }

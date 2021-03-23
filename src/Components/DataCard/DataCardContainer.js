@@ -12,7 +12,7 @@ const DataCardContainer = ({ selectedCoin }) => {
       <DataCard
         title="Current Price"
         info={`$${numeral(selectedCoin.searchedCoin?.current_price).format(
-          "0,0"
+          "0,0.00"
         )}`}
         selectedCoin={selectedCoin}
       />
@@ -25,13 +25,17 @@ const DataCardContainer = ({ selectedCoin }) => {
       <DataCard
         highLow="green"
         title="24hr High"
-        info={`$ ${numeral(selectedCoin.searchedCoin?.high_24h).format("0,0")}`}
+        info={`$ ${numeral(selectedCoin.searchedCoin?.high_24h).format(
+          "0,0.00"
+        )}`}
         selectedCoin={selectedCoin}
       />
       <DataCard
         highLow="red"
         title="24hr Low"
-        info={`$ ${numeral(selectedCoin.searchedCoin?.low_24h).format("0,0")}`}
+        info={`$ ${numeral(selectedCoin.searchedCoin?.low_24h).format(
+          "0,0.00"
+        )}`}
         selectedCoin={selectedCoin}
       />
     </div>

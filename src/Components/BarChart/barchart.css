@@ -1,16 +1,24 @@
 .barChart {
+  /* Positioning */
+
+  /* Display & Box Model */
   grid-area: barchart;
-  height: 100%;
   display: flex;
   justify-content: center;
-  background: white;
-
   align-items: center;
-  opacity: 0;
-  border: 1px solid rgb(126, 126, 126);
+  height: 100%;
+  order: 1px solid rgb(126, 126, 126);
   box-shadow: 0px 27px 14px -15px rgba(0, 0, 0, 0.46);
   -webkit-box-shadow: 0px 27px 14px -15px rgba(0, 0, 0, 0.46);
   -moz-box-shadow: 0px 27px 14px -15px rgba(0, 0, 0, 0.46);
+
+  /* Color  */
+  background: rgb(255, 255, 255);
+
+  /* Text */
+
+  /* Other */
+  opacity: 0;
   animation: delayLoading 1s forwards;
   animation-delay: 3.8s;
 }

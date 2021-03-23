@@ -1,17 +1,25 @@
 .allTimeData {
+  /* Positioning */
+  transform: translateY(8%);
+
+  /* Display & Box Model */
   grid-area: ath;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   min-height: 200px;
-  background: white;
-
-  opacity: 0;
   border: 1px solid rgb(126, 126, 126);
   box-shadow: 0px 27px 14px -15px rgba(0, 0, 0, 0.46);
   -webkit-box-shadow: 0px 27px 14px -15px rgba(0, 0, 0, 0.46);
   -moz-box-shadow: 0px 27px 14px -15px rgba(0, 0, 0, 0.46);
-  transform: translateY(8%);
+
+  /* Color */
+  background: rgb(255, 255, 255);
+
+  /* Text */
+
+  /* Other */
+  opacity: 0;
   animation: delayLoading 1s forwards;
   animation-delay: 3.5s;
 }
@@ -37,11 +45,12 @@
 }
 
 .allTimeData-item {
-  width: 50%;
-  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 50%;
+
+  text-align: center;
   font-size: 0.9rem;
 }
 
