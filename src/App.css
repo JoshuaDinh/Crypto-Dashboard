@@ -49,18 +49,6 @@
     "linegraph linegraph barchart barchart";
 }
 
-/* app-pieChart */
-.app-pieChart-container {
-  display: flex;
-  justify-content: space-between;
-  height: 40%;
-  width: 94%;
-  margin: 3%;
-  animation: delayLoading 1s forwards;
-  animation-delay: 4.1s;
-  opacity: 0;
-}
-
 @keyframes delayLoading {
   0% {
     transform: translateY(8%);

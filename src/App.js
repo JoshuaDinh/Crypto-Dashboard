@@ -21,6 +21,7 @@ import { setAuthToken } from "./Actions/authTokenAction";
 // Sets authorization token from Google_OAuth
 import { getTokenFromUrl } from "./GoogleAuth";
 import PieChart from "./Components/PieChart/PieChart";
+import PieChartContainer from "./Components/PieChart/PieChartContainer";
 
 const App = ({ signUpModal, signInModal, setAuthToken, mobileNav }) => {
   useEffect(() => {
@@ -50,10 +51,7 @@ const App = ({ signUpModal, signInModal, setAuthToken, mobileNav }) => {
           <AllTimeData />
           <BarChart />
         </div>
-        <div className="app-pieChart-container">
-          <PieChart />
-          <PieChart />
-        </div>
+        <PieChartContainer />
         <Table />
         <NewsCardContainer />
       </div>
