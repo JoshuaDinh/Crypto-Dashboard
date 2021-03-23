@@ -10,7 +10,13 @@ const SidebarDrawer = ({
   linkId,
   selectedLink,
   selectSidebarLink,
+  mobileNav,
+  setMobileNav,
 }) => {
+  const toggleOptionCloseMobile = (mobileNav) => {
+    setMobileNav();
+    toggleOption();
+  };
   return (
     <Link
       to={linkId}
@@ -19,7 +25,15 @@ const SidebarDrawer = ({
       offset={-70}
       duration={500}
       className="sidebar-drawer"
-      onClick={() => (toggleOption ? toggleOption() : null)}
+      onClick={
+        (() =>
+          toggleOption
+            ? toggleOption()
+            : mobileNav
+            ? setMobileNav()
+            : toggleOption,
+        mobileNav ? toggleOptionCloseMobile : null)
+      }
     >
       <div
         onClick={() => selectSidebarLink()}

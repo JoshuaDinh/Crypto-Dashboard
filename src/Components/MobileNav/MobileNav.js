@@ -13,6 +13,7 @@ import AnnouncementIcon from "@material-ui/icons/Announcement";
 import { displaySignUpModal } from "../../Actions/authenticationAction.js";
 import { displaySignInModal } from "../../Actions/authenticationAction.js";
 import { selectSidebarLink } from "../../Actions/selectSidebarLink.js";
+import { mobileNav } from "../../Actions/mobileNavAction.js";
 import { connect } from "react-redux";
 
 const MobileNav = ({
@@ -21,6 +22,7 @@ const MobileNav = ({
   selectSidebarLink,
   selectedLink,
   googleAuthToken,
+  setMobileNav,
 }) => {
   return (
     <div className="mobileNav">
@@ -30,6 +32,8 @@ const MobileNav = ({
         title="Dashboard"
         linkId="dataCard"
         icon={<HomeIcon className="icon" />}
+        mobileNav={mobileNav}
+        setMobileNav={() => setMobileNav(!mobileNav)}
       />
       <SidebarDrawer
         selectedLink={selectedLink}
@@ -37,6 +41,8 @@ const MobileNav = ({
         linkId="table"
         title="Table"
         icon={<TableChartIcon className="icon" />}
+        mobileNav={mobileNav}
+        setMobileNav={() => setMobileNav(!mobileNav)}
       />
       <SidebarDrawer
         selectedLink={selectedLink}
@@ -44,12 +50,16 @@ const MobileNav = ({
         linkId="newsCard"
         title="News"
         icon={<AnnouncementIcon className="icon" />}
+        mobileNav={mobileNav}
+        setMobileNav={() => setMobileNav(!mobileNav)}
       />
       <SidebarDrawer
         selectedLink={selectedLink}
         selectSidebarLink={() => selectSidebarLink("Settings")}
         title="Settings"
         icon={<SettingsApplicationsIcon className="icon" />}
+        mobileNav={mobileNav}
+        setMobileNav={() => setMobileNav(!mobileNav)}
       />
       {googleAuthToken ? (
         <SidebarDrawer
@@ -58,6 +68,8 @@ const MobileNav = ({
           toggleOption={() => alert("alert")}
           title="Log Out"
           icon={<ExitToAppIcon className="icon" />}
+          mobileNav={mobileNav}
+          setMobileNav={() => setMobileNav(!mobileNav)}
         />
       ) : (
         <>
@@ -67,6 +79,8 @@ const MobileNav = ({
             toggleOption={() => displaySignInModal(true)}
             title="Sign In"
             icon={<MeetingRoomIcon className="icon" />}
+            mobileNav={mobileNav}
+            setMobileNav={() => setMobileNav(!mobileNav)}
           />
           <SidebarDrawer
             selectedLink={selectedLink}
@@ -74,6 +88,8 @@ const MobileNav = ({
             toggleOption={() => displaySignUpModal(true)}
             title="Sign Up"
             icon={<AssignmentIndIcon className="icon" />}
+            mobileNav={mobileNav}
+            setMobileNav={() => setMobileNav(!mobileNav)}
           />
         </>
       )}
@@ -96,6 +112,7 @@ const mapDispatchToProps = (dispatch) => {
     displaySignUpModal: () => dispatch(displaySignUpModal()),
     displaySignInModal: () => dispatch(displaySignInModal()),
     selectSidebarLink: (text) => dispatch(selectSidebarLink(text)),
+    setMobileNav: () => dispatch(mobileNav()),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(MobileNav);
