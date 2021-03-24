@@ -9,30 +9,28 @@ const PieChartContainer = ({ allCoinData }) => {
   let marketCapData = [];
   let marketCapLabels = [];
 
-  allCoinData.slice(0, 5).map((item) => {
+  const sortMarketCap = allCoinData.slice(0, 5).map((item) => {
     marketCapData.push(item.market_cap);
     marketCapLabels.push(item.name);
   });
 
-  // Sorts Array From Highest To Lowest By Volume
+  // Sorts Total Volume Data From Highest To Lowest By Volume
   let volumeData = [...allCoinData];
   let totalVolumeData = [];
   let totalVolumeLabels = [];
 
-  allCoinData.map((item) => {
+  const sortVolume = allCoinData.map((item) => {
     volumeData.sort(function (a, b) {
       return b.total_volume - a.total_volume;
     });
   });
 
-  if (volumeData) {
-    volumeData.slice(0, 5).map((item) => {
-      totalVolumeData.push(item.total_volume);
-      totalVolumeLabels.push(item.name);
-    });
-  }
+  const createVolumeArr = volumeData.slice(0, 5).map((item) => {
+    totalVolumeData.push(item.total_volume);
+    totalVolumeLabels.push(item.name);
+  });
 
-  // Market Cap Data & Configurations For Pie Chart
+  // Market Cap Data & Configurations
   const marketCap = (canvas) => {
     const ctx = canvas.getContext("2d");
 
@@ -60,7 +58,7 @@ const PieChartContainer = ({ allCoinData }) => {
     };
   };
 
-  // Market Cap Data & Configurations For Pie Chart
+  //Total Volume Data & Configurations
   const totalVolume = (canvas) => {
     const ctx = canvas.getContext("2d");
 
@@ -88,8 +86,53 @@ const PieChartContainer = ({ allCoinData }) => {
     };
   };
 
+  // Sorts Price Data From Highest To Lowest By Volume
+  let priceData = [...allCoinData];
+  let currentPrices = [];
+  let priceLabels = [];
+
+  const sortPrice = allCoinData.map((item) => {
+    priceData.sort(function (a, b) {
+      return b.current_price - a.current_price;
+    });
+  });
+
+  const createPriceArr = priceData.slice(0, 5).map((item) => {
+    currentPrices.push(item.current_price);
+    priceLabels.push(item.name);
+  });
+  //Current Price Data & Configurations
+  const currentPrice = (canvas) => {
+    const ctx = canvas.getContext("2d");
+
+    let gradient = ctx.createLinearGradient(0, 0, 0, 240);
+    gradient.addColorStop(0.7, "rgba(255,255,255, 0.6)");
+    gradient.addColorStop(0.3, "rgba(0,0,0,0.37");
+    gradient.addColorStop(1, "rgba(0,0,0,0.46");
+    return {
+      maintainAspectRatio: false,
+      responsive: true,
+      labels: priceLabels,
+      datasets: [
+        {
+          data: currentPrices,
+          backgroundColor: [
+            "rgba(0, 0, 0, 0.4)",
+            "rgba(0, 0, 0, 0.5)",
+            "rgba(0, 0, 0, 0.6)",
+            "rgba(0, 0, 0, 0.7)",
+            "rgba(0, 0, 0, 0.8)",
+          ],
+          hoverBackgroundColor: gradient,
+        },
+      ],
+    };
+  };
+
   return (
     <div className="pieChartContainer">
+      <PieChart pieChartTitle="Price" data={currentPrice} />
+      <PieChart pieChartTitle="24hr Change" data={marketCap} />
       <PieChart pieChartTitle="Market Cap" data={marketCap} />
       <PieChart pieChartTitle="Volume" data={totalVolume} />
     </div>
