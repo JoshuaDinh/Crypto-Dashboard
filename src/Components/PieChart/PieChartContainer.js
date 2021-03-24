@@ -14,7 +14,7 @@ const PieChartContainer = ({ allCoinData }) => {
     marketCapLabels.push(item.name);
   });
 
-  // Sorts Total Volume Data From Highest To Lowest By Volume
+  // Sorts Data From Highest To Lowest By Volume
   let volumeData = [...allCoinData];
   let totalVolumeData = [];
   let totalVolumeLabels = [];
@@ -86,7 +86,7 @@ const PieChartContainer = ({ allCoinData }) => {
     };
   };
 
-  // Sorts Price Data From Highest To Lowest By Volume
+  // Sorts Data From Highest To Lowest By Price
   let priceData = [...allCoinData];
   let currentPrices = [];
   let priceLabels = [];
@@ -128,11 +128,53 @@ const PieChartContainer = ({ allCoinData }) => {
       ],
     };
   };
+  // Sorts Data From Highest To Lowest By Circulating Supply
+  let supplyData = [...allCoinData];
+  let circulatingSupply = [];
+  let supplyLabels = [];
+
+  const sortSupply = allCoinData.map((item) => {
+    supplyData.sort(function (a, b) {
+      return b.current_price - a.current_price;
+    });
+  });
+
+  const createSupplyArr = supplyData.slice(0, 5).map((item) => {
+    circulatingSupply.push(item.circulating_supply);
+    supplyLabels.push(item.name);
+  });
+  // Circulating Supply Data & Configurations
+  const supply = (canvas) => {
+    const ctx = canvas.getContext("2d");
+
+    let gradient = ctx.createLinearGradient(0, 0, 0, 240);
+    gradient.addColorStop(0.7, "rgba(255,255,255, 0.6)");
+    gradient.addColorStop(0.3, "rgba(0,0,0,0.37");
+    gradient.addColorStop(1, "rgba(0,0,0,0.46");
+    return {
+      maintainAspectRatio: false,
+      responsive: true,
+      labels: supplyLabels,
+      datasets: [
+        {
+          data: circulatingSupply,
+          backgroundColor: [
+            "rgba(0, 0, 0, 0.8)",
+            "rgba(0, 0, 0, 0.7)",
+            "rgba(0, 0, 0, 0.6)",
+            "rgba(0, 0, 0, 0.5)",
+            "rgba(0, 0, 0, 0.4)",
+          ],
+          hoverBackgroundColor: gradient,
+        },
+      ],
+    };
+  };
 
   return (
     <div className="pieChartContainer">
       <PieChart pieChartTitle="Price" data={currentPrice} />
-      <PieChart pieChartTitle="24hr Change" data={marketCap} />
+      <PieChart pieChartTitle="Circulating Supply" data={supply} />
       <PieChart pieChartTitle="Market Cap" data={marketCap} />
       <PieChart pieChartTitle="Volume" data={totalVolume} />
     </div>
