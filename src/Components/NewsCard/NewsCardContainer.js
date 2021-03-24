@@ -3,6 +3,7 @@ import NewsCard from "./NewsCard";
 import "./newsCard.css";
 import { connect } from "react-redux";
 import { fetchNewsData } from "../../Actions/newsDataAction";
+import Title from "../Title/Title";
 
 const NewsCardContainer = ({ fetchNewsData, newsData }) => {
   useEffect(() => {
@@ -12,8 +13,7 @@ const NewsCardContainer = ({ fetchNewsData, newsData }) => {
   return (
     <div className="app-newsCard-container">
       <div className="app-newsCard-header-container">
-        <h1 className="app-newsCard-header">See Whats New</h1>
-        <div className="app-newsCard-header-break"></div>
+        <Title title="See Whats New" />
       </div>
       {newsData.map((story) => {
         return (
