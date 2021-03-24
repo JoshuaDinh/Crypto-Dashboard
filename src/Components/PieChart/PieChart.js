@@ -17,7 +17,7 @@ const options = {
   maintainAspectRation: false,
 };
 
-const PieChart = ({ data, pieChartTitle }) => {
+const PieChart = ({ pieChartTitle, data }) => {
   return (
     <div className="pieChart">
       <Pie data={data} options={options} />
