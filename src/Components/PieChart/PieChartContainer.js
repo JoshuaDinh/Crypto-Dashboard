@@ -3,6 +3,7 @@ import PieChart from "./PieChart";
 import numeral from "numeral";
 import { connect } from "react-redux";
 import "./pieChart.css";
+import Title from "../Title/Title";
 
 const PieChartContainer = ({ allCoinData }) => {
   // Remove Top 5 By Market Cap From List
@@ -129,19 +130,19 @@ const PieChartContainer = ({ allCoinData }) => {
     };
   };
   // Sorts Data From Highest To Lowest By Circulating Supply
-  let supplyData = [...allCoinData];
-  let circulatingSupply = [];
-  let supplyLabels = [];
+  let priceChange = [...allCoinData];
+  let priceChanges = [];
+  let priceChangeLabels = [];
 
   const sortSupply = allCoinData.map((item) => {
-    supplyData.sort(function (a, b) {
+    priceChange.sort(function (a, b) {
       return b.current_price - a.current_price;
     });
   });
 
-  const createSupplyArr = supplyData.slice(0, 5).map((item) => {
-    circulatingSupply.push(item.circulating_supply);
-    supplyLabels.push(item.name);
+  const createPricechangeArr = priceChange.slice(0, 5).map((item) => {
+    priceChanges.push(item.price_change_percentage_24);
+    priceChangeLabels.push(item.name);
   });
   // Circulating Supply Data & Configurations
   const supply = (canvas) => {
@@ -154,10 +155,10 @@ const PieChartContainer = ({ allCoinData }) => {
     return {
       maintainAspectRatio: false,
       responsive: true,
-      labels: supplyLabels,
+      labels: priceChangeLabels,
       datasets: [
         {
-          data: circulatingSupply,
+          data: priceChanges,
           backgroundColor: [
             "rgba(0, 0, 0, 0.8)",
             "rgba(0, 0, 0, 0.7)",
@@ -173,8 +174,9 @@ const PieChartContainer = ({ allCoinData }) => {
 
   return (
     <div className="pieChartContainer">
+      <Title title="Top 5 On The Charts" />
       <PieChart pieChartTitle="Price" data={currentPrice} />
-      <PieChart pieChartTitle="Circulating Supply" data={supply} />
+      {/* <PieChart pieChartTitle="Circulating Supply" data={supply} /> */}
       <PieChart pieChartTitle="Market Cap" data={marketCap} />
       <PieChart pieChartTitle="Volume" data={totalVolume} />
     </div>
