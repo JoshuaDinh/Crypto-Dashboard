@@ -1,19 +1,10 @@
 .table {
-  /* Position */
-
-  /* Display & Box Model */
-
   min-width: 94%;
   margin: 3%;
   border: 1px solid rgb(126, 126, 126);
   box-shadow: 21px 2px 14px -15px rgba(0, 0, 0, 0.46);
   -webkit-box-shadow: 21px 2px 14px -15px rgba(0, 0, 0, 0.46);
   -moz-box-shadow: 21px 2px 14px -15px rgba(0, 0, 0, 0.46);
-  /* Color */
-
-  /* Text */
-
-  /* Other */
   animation: delayLoading 1s forwards;
   animation-delay: 4.4s;
   opacity: 0;

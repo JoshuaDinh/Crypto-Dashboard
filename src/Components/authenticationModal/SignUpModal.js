@@ -35,8 +35,8 @@ const SignUpModal = ({ setSignUpModal }) => {
       </form>
       <p>Or..</p>
       <a href={loginUrl} className="authentication-google">
+        <img className="authentication-google-logo" src={googleLogo} alt="" />{" "}
         <span> Sign In With </span>
-        <img className="authentication-google-logo" src={googleLogo} alt="" />
       </a>
     </div>
   );

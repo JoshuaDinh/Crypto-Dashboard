@@ -50,7 +50,13 @@ const Sidebar = ({
         linkId="dataCard"
         icon={<HomeIcon className="icon" />}
       />
-
+      <SidebarDrawer
+        selectedLink={selectedLink}
+        selectSidebarLink={() => selectSidebarLink("Top 5")}
+        linkId="pieChartContainer"
+        title="Top 5"
+        icon={<AnnouncementIcon className="icon" />}
+      />
       <SidebarDrawer
         selectedLink={selectedLink}
         selectSidebarLink={() => selectSidebarLink("Table")}

@@ -1,8 +1,5 @@
 .allTimeData {
-  /* Positioning */
   transform: translateY(8%);
-
-  /* Display & Box Model */
   grid-area: ath;
   display: flex;
   flex-direction: column;
@@ -12,13 +9,7 @@
   box-shadow: 0px 27px 14px -15px rgba(0, 0, 0, 0.46);
   -webkit-box-shadow: 0px 27px 14px -15px rgba(0, 0, 0, 0.46);
   -moz-box-shadow: 0px 27px 14px -15px rgba(0, 0, 0, 0.46);
-
-  /* Color */
   background: rgb(255, 255, 255);
-
-  /* Text */
-
-  /* Other */
   opacity: 0;
   animation: delayLoading 1s forwards;
   animation-delay: 3.5s;
@@ -48,7 +39,6 @@
   );
   border-bottom: 1px solid rgb(0, 0, 0, 0.66);
   box-sizing: border-box;
-
   text-align: center;
 }
 

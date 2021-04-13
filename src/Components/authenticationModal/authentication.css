@@ -1,10 +1,7 @@
 .authentication {
-  /* Positioning */
   position: absolute;
   top: 50%;
   left: 50%;
-
-  /* Display & Box Model */
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -13,28 +10,19 @@
   height: 50%;
   width: 40%;
   transform: translate(-50%, -50%);
-
-  /* Color */
   background: rgb(245, 245, 245);
-
-  /* Text */
-
-  /* Other */
 }
 
 .authentication-close {
   position: absolute;
   top: 15%;
-
   display: flex;
   align-items: center;
   justify-content: center;
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50% 50%;
-
   background: whitesmoke;
-
   cursor: pointer;
   opacity: 0;
   animation: authClose 1s ease-in forwards;
@@ -69,6 +57,8 @@
   width: 50%;
   padding: 10px;
   border: 1px solid rgb(100, 100, 100);
+  border-radius: 5px;
+
   box-sizing: border-box;
 
   outline: none;
@@ -77,22 +67,25 @@
 .authentication-google {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   border: 1px solid black;
-  padding: 1px;
-  width: 50%;
+  padding: 4px;
+  width: 48%;
   border: 1px solid rgb(100, 100, 100);
-
+  border-radius: 5px;
+  background: rgb(212, 208, 208);
   color: rgb(0, 0, 0);
-
   text-decoration: none;
-
   cursor: pointer;
 }
 
+.authentication-google > span {
+  width: 100%;
+  text-align: center;
+}
+
 .authentication-google-logo {
-  width: 3.3em;
-  margin-left: 2%;
+  width: 1.6em;
 }
 
 /* Media quieries */

@@ -12,7 +12,7 @@ const DataCardContainer = ({ selectedCoin }) => {
       <DataCard
         title="Current Price"
         info={`$${numeral(selectedCoin.searchedCoin?.current_price).format(
-          "0,0.0000"
+          "0,0.00"
         )}`}
         selectedCoin={selectedCoin}
       />

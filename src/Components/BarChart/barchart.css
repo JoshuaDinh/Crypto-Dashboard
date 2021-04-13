@@ -1,7 +1,4 @@
 .barChart {
-  /* Positioning */
-
-  /* Display & Box Model */
   grid-area: barchart;
   display: flex;
   justify-content: center;
@@ -11,13 +8,7 @@
   box-shadow: 0px 27px 14px -15px rgba(0, 0, 0, 0.46);
   -webkit-box-shadow: 0px 27px 14px -15px rgba(0, 0, 0, 0.46);
   -moz-box-shadow: 0px 27px 14px -15px rgba(0, 0, 0, 0.46);
-
-  /* Color  */
   background: rgb(255, 255, 255);
-
-  /* Text */
-
-  /* Other */
   opacity: 0;
   animation: delayLoading 1s forwards;
   animation-delay: 3.8s;

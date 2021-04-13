@@ -1,7 +1,4 @@
 .dataCard {
-  /* Positioning */
-
-  /* Display & Box Model */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -9,18 +6,11 @@
   box-shadow: 0px 7px 14px -2px rgba(0, 0, 0, 0.46);
   -webkit-box-shadow: 0px 7px 14px -2px rgba(0, 0, 0, 0.46);
   -moz-box-shadow: 0px 7px 14px -2px rgba(0, 0, 0, 0.46);
-
-  /* Color */
   background: rgb(255, 255, 255);
   color: rgba(0, 0, 0, 0.77);
-
-  /* Text */
   text-align: center;
-
-  /* Other */
   min-width: 23%;
   min-height: 140px;
-
   opacity: 0;
 }
 
