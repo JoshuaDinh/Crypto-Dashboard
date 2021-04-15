@@ -20,7 +20,6 @@ import { setAuthToken } from "./Actions/authTokenAction";
 
 // Sets authorization token from Google_OAuth
 import { getTokenFromUrl } from "./GoogleAuth";
-import PieChart from "./Components/PieChart/PieChart";
 import PieChartContainer from "./Components/PieChart/PieChartContainer";
 
 const App = ({ signUpModal, signInModal, setAuthToken, mobileNav }) => {
@@ -29,7 +28,8 @@ const App = ({ signUpModal, signInModal, setAuthToken, mobileNav }) => {
     if (_token) {
       setAuthToken(_token);
     }
-  }, [mobileNav]);
+  }, []);
+
   return (
     <div className="App">
       <OpeningAnimation />

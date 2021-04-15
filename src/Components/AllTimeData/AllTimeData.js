@@ -24,10 +24,10 @@ const AllTimeData = ({ selectedCoin }) => {
             )}
           </p>
           <p>
-            <span className="ath">ATH Change %: </span>
+            <span className="ath">ATH Change: </span>
 
             {selectedCoin.searchedCoin ? (
-              ` $${numeral(
+              ` % ${numeral(
                 selectedCoin.searchedCoin?.ath_change_percentage
               ).format("0.00a")}`
             ) : (
@@ -51,11 +51,11 @@ const AllTimeData = ({ selectedCoin }) => {
             )}
           </p>
           <p>
-            <span className="atl"> ATL Change %: </span>
+            <span className="atl"> ATL Change: </span>
             {selectedCoin.searchedCoin ? (
-              ` $${numeral(
+              ` % ${numeral(
                 selectedCoin.searchedCoin?.atl_change_percentage
-              ).format("0,0.00")}`
+              ).format("0,0")}`
             ) : (
               <span>...</span>
             )}
