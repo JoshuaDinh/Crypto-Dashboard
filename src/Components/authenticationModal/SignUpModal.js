@@ -31,13 +31,14 @@ const SignUpModal = ({ setSignUpModal }) => {
           className="authentication-input"
           placeholder="Please Verify Your Password"
           type="password"
-        />
+        />{" "}
+        <div className="authenticate-button">Sign Up</div>
       </form>
-      <p>Or..</p>
+      {/* <p>Or..</p>
       <a href={loginUrl} className="authentication-google">
         <img className="authentication-google-logo" src={googleLogo} alt="" />{" "}
         <span> Sign In With </span>
-      </a>
+      </a> */}
     </div>
   );
 };

@@ -26,12 +26,13 @@ const SignInModal = ({ setSignInModal }) => {
           placeholder="Password.."
           type="password"
         />
+        <div className="authenticate-button">Sign In</div>
+        <p>Or..</p>
+        <a href={loginUrl} className="authentication-google">
+          <img className="authentication-google-logo" src={googleLogo} alt="" />{" "}
+          <span> Sign In With Google</span>
+        </a>
       </form>
-      <p>Or..</p>
-      <a href={loginUrl} className="authentication-google">
-        <img className="authentication-google-logo" src={googleLogo} alt="" />{" "}
-        <span> Sign In With </span>
-      </a>
     </div>
   );
 };
