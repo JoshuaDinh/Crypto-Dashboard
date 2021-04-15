@@ -1,9 +1,4 @@
-import {
-  FETCH_LINE_GRAPH_DATA,
-  SELECT_LINE_GRAPH_DAY,
-  IS_PENDING,
-} from "../constants";
-import numeral from "numeral";
+import { FETCH_LINE_GRAPH_DATA, SELECT_LINE_GRAPH_DAY } from "../constants";
 
 export const fetchLineGraphData = () => (dispatch, getState) => {
   const selectedCoin = getState().searchCoin.searchCoin;

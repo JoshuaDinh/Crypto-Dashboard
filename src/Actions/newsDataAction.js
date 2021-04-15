@@ -1,4 +1,4 @@
-import { FETCH_NEWS_DATA, IS_PENDING } from "../constants";
+import { FETCH_NEWS_DATA } from "../constants";
 
 export const fetchNewsData = () => (dispatch) => {
   fetch(
@@ -20,6 +20,5 @@ export const fetchNewsData = () => (dispatch) => {
         }
       });
       dispatch({ type: FETCH_NEWS_DATA, payload: storiesArray });
-      dispatch({ type: IS_PENDING, payload: false });
     });
 };
