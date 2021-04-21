@@ -16,7 +16,6 @@ import MenuIcon from "@material-ui/icons/Menu";
 const Searchbar = ({
   searchCoin,
   fetchSearchedCoin,
-  selectCoin,
   selectedCoin,
   setMobileNav,
 }) => {
