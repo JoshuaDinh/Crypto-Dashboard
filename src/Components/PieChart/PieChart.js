@@ -1,7 +1,6 @@
 import React from "react";
 import { Pie } from "react-chartjs-2";
-import numeral from "numeral";
-import { connect } from "react-redux";
+
 import "./pieChart.css";
 
 const options = {

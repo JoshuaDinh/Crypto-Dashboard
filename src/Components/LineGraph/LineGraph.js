@@ -60,7 +60,7 @@ const LineGraph = ({
       fetchLineGraphData();
     }, 1200);
     return () => clearTimeout(timer);
-  }, [selectedCoin, selectedLineGraphDay]);
+  }, [selectedCoin, selectedLineGraphDay, fetchLineGraphData]);
 
   // Format Labels
   const lineGraphLabels = [];
@@ -75,9 +75,14 @@ const LineGraph = ({
 
     let gradient = ctx.createLinearGradient(0, 0, 0, 240);
 
-    gradient.addColorStop(0.7, "rgba(255,255,255, 0.6)");
-    gradient.addColorStop(0.3, "rgba(0,0,0,0.37");
-    gradient.addColorStop(1, "rgba(0,0,0,0.46");
+    gradient.addColorStop(0.4, "rgba(0,0,0, 0.9");
+    gradient.addColorStop(0.6, "rgba(0,0,0,0.8");
+    gradient.addColorStop(0.8, "rgba(0,0,0,0.6");
+    gradient.addColorStop(1, "rgba(0,0,0,0.4");
+
+    // gradient.addColorStop(0.7, "rgba(255,255,255, 0.6)");
+    // gradient.addColorStop(0.3, "rgba(0,0,0,0.37");
+    // gradient.addColorStop(1, "rgba(0,0,0,0.46");
 
     return {
       labels: lineGraphLabels,
@@ -145,19 +150,6 @@ const LineGraph = ({
   );
 };
 
-// {lineGraphData.length > 1 ? (
-//   <Line data={data} options={options} />
-// ) : (
-//   <div className="opening-bars-container">
-//     <div className="opening-bars"></div>
-//     <div className="opening-bars"></div>
-//     <div className="opening-bars"></div>
-//     <div className="opening-bars"></div>
-//     <div className="opening-bars"></div>
-//     <div className="opening-bars"></div>
-//     <div className="opening-bars"></div>
-//   </div>
-// )}
 const mapStateToProps = (state) => {
   return {
     lineGraphData: state.lineGraphData.lineGraphData,

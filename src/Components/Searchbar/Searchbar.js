@@ -25,7 +25,7 @@ const Searchbar = ({
       fetchSearchedCoin(selectedCoin);
     }, 2000);
     return () => clearTimeout(timer);
-  }, [selectCoin]);
+  }, [selectedCoin, fetchSearchedCoin]);
 
   return (
     <div className="searchbar">

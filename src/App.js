@@ -28,7 +28,7 @@ const App = ({ signUpModal, signInModal, setAuthToken, mobileNav }) => {
     if (_token) {
       setAuthToken(_token);
     }
-  }, []);
+  }, [setAuthToken]);
 
   return (
     <div className="App">

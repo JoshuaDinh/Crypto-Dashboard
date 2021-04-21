@@ -1,6 +1,5 @@
 import React from "react";
 import "./dataCard.css";
-import { connect } from "react-redux";
 
 const DataCard = ({ info, title, icon, highLow, selectedCoin }) => {
   return (
@@ -16,7 +15,7 @@ const DataCard = ({ info, title, icon, highLow, selectedCoin }) => {
       >
         {title}
       </div>
-      {selectedCoin.isPending || selectedCoin.searchedCoin == undefined ? (
+      {selectedCoin.isPending || selectedCoin.searchedCoin === undefined ? (
         <div className="loading">
           <div className="loading-dot"></div>
           <div className="loading-dot"></div>

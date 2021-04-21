@@ -7,7 +7,6 @@ import MeetingRoomIcon from "@material-ui/icons/MeetingRoom";
 import AssignmentIndIcon from "@material-ui/icons/AssignmentInd";
 import SettingsApplicationsIcon from "@material-ui/icons/SettingsApplications";
 import TableChartIcon from "@material-ui/icons/TableChart";
-import ForwardIcon from "@material-ui/icons/Forward";
 import AnnouncementIcon from "@material-ui/icons/Announcement";
 // Redux----------
 import { displaySignUpModal } from "../../Actions/authenticationAction.js";

@@ -17,7 +17,12 @@ const NewsCardContainer = ({ fetchNewsData, newsData }) => {
       </div>
       {newsData.map((story) => {
         return (
-          <a className="app-newsCard-link" href={story.longURL} target="_blank">
+          <a
+            className="app-newsCard-link"
+            href={story.longURL}
+            target="_blank"
+            rel="noreferrer"
+          >
             <NewsCard key={story.id} title={story.title} image={story.image} />
           </a>
         );

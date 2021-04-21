@@ -1,4 +1,3 @@
-import { AccordionActions } from "@material-ui/core";
 import { SELECTED_LINK } from "../constants";
 
 export const selectSidebarLink = (text) => {

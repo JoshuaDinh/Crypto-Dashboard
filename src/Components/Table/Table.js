@@ -10,7 +10,8 @@ import numeral from "numeral";
 const Table = ({ allCoinData, fetchAllCoinData }) => {
   useEffect(() => {
     fetchAllCoinData();
-  }, []);
+  }, [fetchAllCoinData]);
+
   return (
     <table className="table">
       <thead className="table-header">

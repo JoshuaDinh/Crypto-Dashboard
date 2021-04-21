@@ -1,6 +1,5 @@
 import { SEARCH_COIN } from "../constants";
 import { FETCH_SEARCHED_COIN } from "../constants";
-import { IS_PENDING } from "../constants";
 
 export const initialSearchCoinState = {
   searchCoin: null,
@@ -15,6 +14,7 @@ export const searchCoinReducer = (state = initialSearchCoinState, action) => {
       return state;
   }
 };
+
 export const searchedCoinReducer = (state = initialSearchCoinState, action) => {
   switch (action.type) {
     case FETCH_SEARCHED_COIN:

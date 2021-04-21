@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./sidebar.css";
 import { Link } from "react-scroll";
 
@@ -36,7 +36,7 @@ const SidebarDrawer = ({
       <div
         onClick={() => selectSidebarLink()}
         className={`sidebar-drawer-container ${
-          selectedLink == title && "sidebar-drawer-container-active"
+          selectedLink === title && "sidebar-drawer-container-active"
         }`}
       >
         <div className="sidebar-drawer-container-overlay"></div>

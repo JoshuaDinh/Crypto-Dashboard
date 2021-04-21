@@ -1,6 +1,5 @@
 import React from "react";
 import PieChart from "./PieChart";
-import numeral from "numeral";
 import { connect } from "react-redux";
 import "./pieChart.css";
 import Title from "../Title/Title";
@@ -144,34 +143,6 @@ const PieChartContainer = ({ allCoinData }) => {
     priceChanges.push(item.price_change_percentage_24);
     priceChangeLabels.push(item.name);
   });
-  // Circulating Supply Data & Configurations
-  const supply = (canvas) => {
-    const ctx = canvas.getContext("2d");
-
-    let gradient = ctx.createLinearGradient(0, 0, 0, 240);
-    gradient.addColorStop(0.7, "rgba(255,255,255, 0.6)");
-    gradient.addColorStop(0.3, "rgba(0,0,0,0.37");
-    gradient.addColorStop(1, "rgba(0,0,0,0.46");
-    return {
-      maintainAspectRatio: false,
-      responsive: true,
-      labels: priceChangeLabels,
-      datasets: [
-        {
-          data: priceChanges,
-          backgroundColor: [
-            "rgba(0, 0, 0, 0.8)",
-            "rgba(0, 0, 0, 0.7)",
-            "rgba(0, 0, 0, 0.6)",
-            "rgba(0, 0, 0, 0.5)",
-            "rgba(0, 0, 0, 0.4)",
-          ],
-          hoverBackgroundColor: gradient,
-        },
-      ],
-    };
-  };
-
   return (
     <div className="pieChartContainer">
       <Title title="Top 5 On The Charts" />
