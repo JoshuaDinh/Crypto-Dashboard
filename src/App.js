@@ -18,6 +18,9 @@ import OpeningAnimation from "./Components/OpeningAnimation/OpeningAnimation";
 import { connect } from "react-redux";
 import { setAuthToken } from "./Actions/authTokenAction";
 
+// Router
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 // Sets authorization token from Google_OAuth
 import { getTokenFromUrl } from "./GoogleAuth";
 import PieChartContainer from "./Components/PieChart/PieChartContainer";
@@ -31,31 +34,37 @@ const App = ({ signUpModal, signInModal, setAuthToken, mobileNav }) => {
   }, [setAuthToken]);
 
   return (
-    <div className="App">
-      <OpeningAnimation />
-      {signUpModal ? (
-        <div className="app-authentication-container">
-          <SignUpModal />
-        </div>
-      ) : signInModal ? (
-        <div className="app-authentication-container">
-          <SignInModal />
-        </div>
-      ) : null}
-      <Sidebar /> {mobileNav && <MobileNav />}
-      <div className="app-content">
-        <Searchbar />
-        <DataCardContainer />
-        <div className="app-graph-bar-container">
-          <LineGraph />
-          <AllTimeData />
-          <BarChart />
-        </div>
-        <PieChartContainer />
-        <Table />
-        <NewsCardContainer />
-      </div>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/crypto">
+          <div className="App">
+            <OpeningAnimation />
+            {signUpModal ? (
+              <div className="app-authentication-container">
+                <SignUpModal />
+              </div>
+            ) : signInModal ? (
+              <div className="app-authentication-container">
+                <SignInModal />
+              </div>
+            ) : null}
+            <Sidebar /> {mobileNav && <MobileNav />}
+            <div className="app-content">
+              <Searchbar />
+              <DataCardContainer />
+              <div className="app-graph-bar-container">
+                <LineGraph />
+                <AllTimeData />
+                <BarChart />
+              </div>
+              <PieChartContainer />
+              <Table />
+              <NewsCardContainer />
+            </div>
+          </div>
+        </Route>
+      </Switch>
+    </Router>
   );
 };
 
