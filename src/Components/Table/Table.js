@@ -37,8 +37,8 @@ const Table = ({ allCoinData, fetchAllCoinData }) => {
               name={coin.name}
               image={coin.image}
               price={numeral(coin.current_price).format("0,0")}
-              low={numeral(coin.low_24h).format("0,0")}
-              high={numeral(coin.high_24h).format("0,0")}
+              low={numeral(coin.low_24h).format("0,0.00")}
+              high={numeral(coin.high_24h).format("0,0.00")}
               priceChange={coin.price_change_percentage_24h}
               totalSupply={numeral(coin.total_supply).format("0,0a")}
               totalVolume={numeral(coin.total_volume).format("0,0a")}
