@@ -38,6 +38,7 @@ const PieChartContainer = ({ allCoinData }) => {
     gradient.addColorStop(0.7, "rgba(255,255,255, 0.6)");
     gradient.addColorStop(0.3, "rgba(0,0,0,0.37");
     gradient.addColorStop(1, "rgba(0,0,0,0.46");
+
     return {
       maintainAspectRatio: false,
       responsive: true,
@@ -46,11 +47,11 @@ const PieChartContainer = ({ allCoinData }) => {
         {
           data: marketCapData,
           backgroundColor: [
-            "rgba(0, 0, 0, 0.8)",
+            "rgba(0, 0, 0)",
+            "rgba(0, 0, 0, 0.9)",
             "rgba(0, 0, 0, 0.7)",
-            "rgba(0, 0, 0, 0.6)",
             "rgba(0, 0, 0, 0.5)",
-            "rgba(0, 0, 0, 0.4)",
+            "rgba(0, 0, 0, 0.3)",
           ],
           hoverBackgroundColor: gradient,
         },
@@ -74,11 +75,11 @@ const PieChartContainer = ({ allCoinData }) => {
         {
           data: totalVolumeData,
           backgroundColor: [
-            "rgba(0, 0, 0, 0.4)",
-            "rgba(0, 0, 0, 0.5)",
-            "rgba(0, 0, 0, 0.6)",
+            "rgba(0, 0, 0)",
+            "rgba(0, 0, 0, 0.9)",
             "rgba(0, 0, 0, 0.7)",
-            "rgba(0, 0, 0, 0.8)",
+            "rgba(0, 0, 0, 0.5)",
+            "rgba(0, 0, 0, 0.3)",
           ],
           hoverBackgroundColor: gradient,
         },
@@ -117,11 +118,11 @@ const PieChartContainer = ({ allCoinData }) => {
         {
           data: currentPrices,
           backgroundColor: [
-            "rgba(0, 0, 0, 0.4)",
-            "rgba(0, 0, 0, 0.5)",
-            "rgba(0, 0, 0, 0.6)",
+            "rgba(0, 0, 0)",
+            "rgba(0, 0, 0, 0.9)",
             "rgba(0, 0, 0, 0.7)",
-            "rgba(0, 0, 0, 0.8)",
+            "rgba(0, 0, 0, 0.5)",
+            "rgba(0, 0, 0, 0.3)",
           ],
           hoverBackgroundColor: gradient,
         },
@@ -147,7 +148,6 @@ const PieChartContainer = ({ allCoinData }) => {
     <div className="pieChartContainer">
       <Title title="Top 5 On The Charts" />
       <PieChart pieChartTitle="Price" data={currentPrice} />
-      {/* <PieChart pieChartTitle="Circulating Supply" data={supply} /> */}
       <PieChart pieChartTitle="Market Cap" data={marketCap} />
       <PieChart pieChartTitle="Volume" data={totalVolume} />
     </div>
