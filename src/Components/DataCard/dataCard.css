@@ -45,49 +45,16 @@
   animation-delay: 2.3s;
 }
 
-@keyframes delayLoading {
-  0% {
-    transform: translateY(8%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-}
-
 .dataCard:nth-child(3) {
   transform: translateY(8%);
   animation: delayLoading 1s forwards;
   animation-delay: 2.6s;
 }
 
-@keyframes delayLoading {
-  0% {
-    transform: translateY(8%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-}
-
 .dataCard:nth-child(4) {
   transform: translateY(8%);
   animation: delayLoading 1s forwards;
   animation-delay: 2.9s;
-}
-
-@keyframes delayLoading {
-  0% {
-    transform: translateY(8%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0%);
-    opacity: 1;
-  }
 }
 
 .dataCard-info-container {
@@ -144,25 +111,24 @@
 }
 
 .loading-dot {
-  height: 0.4rem;
-  width: 0.4rem;
+  height: 0.6rem;
+  width: 0.6rem;
   margin: 0 1.2%;
   border-radius: 25px;
-
   background: rgba(0, 0, 0, 0.77);
 }
 
 /* Loading Animations */
 
 .loading-dot:first-child {
-  animation: loading1 2s ease-in-out infinite;
+  animation: loading1 3s ease-in-out infinite;
 }
 
 .loading-dot:nth-child(2) {
-  animation: loading2 2s ease-in-out infinite;
+  animation: loading2 3s ease-in-out infinite;
 }
 .loading-dot:nth-child(3) {
-  animation: loading2 2s ease-in-out infinite;
+  animation: loading2 3s ease-in-out infinite;
 }
 
 @keyframes loading1 {
@@ -170,7 +136,7 @@
   }
 
   35% {
-    transform: translateY(-7px);
+    background: rgba(0, 0, 0, 0.4);
   }
 }
 @keyframes loading2 {
@@ -178,7 +144,7 @@
   }
 
   70% {
-    transform: translateY(-7px);
+    background: rgba(0, 0, 0, 0.3);
   }
 }
 @keyframes loading3 {
@@ -186,6 +152,6 @@
   }
 
   95% {
-    transform: translateY(-7px);
+    background: rgba(0, 0, 0, 0.3);
   }
 }

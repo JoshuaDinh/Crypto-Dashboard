@@ -105,9 +105,7 @@
   cursor: pointer;
 }
 .sidebar-drawer-container:hover {
-  width: 100%;
   color: rgb(0, 0, 0);
-  font-size: 1.1rem;
 }
 .sidebar-drawer-icon {
   color: rgb(255, 255, 255) !important;

@@ -9,7 +9,6 @@
 * {
   margin: 0;
   padding: 0;
-
   font-family: "Didact Gothic", sans-serif;
 }
 
@@ -17,7 +16,6 @@
   position: absolute;
   top: 0;
   right: 0;
-
   height: 100%;
   width: 85%;
   max-width: 100vw;
@@ -25,9 +23,7 @@
 
 .icon {
   color: rgba(0, 0, 0, 0.65);
-
   font-size: 2rem !important;
-
   cursor: pointer;
 }
 
@@ -75,12 +71,9 @@
 /* SignUpModal */
 .app-authentication-container {
   position: fixed;
-
   height: 100%;
   width: 100%;
-
   background: rgba(0, 0, 0, 0.77);
-
   z-index: 100;
 }
 
