@@ -13,6 +13,7 @@ import Table from "./Components/Table/Table";
 import NewsCardContainer from "./Components/NewsCard/NewsCardContainer";
 import MobileNav from "./Components/MobileNav/MobileNav";
 import OpeningAnimation from "./Components/OpeningAnimation/OpeningAnimation";
+import Title from "./Components/Title/Title";
 
 // Redux ---------------------
 import { connect } from "react-redux";

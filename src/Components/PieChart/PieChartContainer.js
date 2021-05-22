@@ -145,12 +145,14 @@ const PieChartContainer = ({ allCoinData }) => {
     priceChangeLabels.push(item.name);
   });
   return (
-    <div className="pieChartContainer">
+    <>
       <Title title="Top 5 On The Charts" />
-      <PieChart pieChartTitle="Price" data={currentPrice} />
-      <PieChart pieChartTitle="Market Cap" data={marketCap} />
-      <PieChart pieChartTitle="Volume" data={totalVolume} />
-    </div>
+      <div className="pieChartContainer">
+        <PieChart pieChartTitle="Price" data={currentPrice} />
+        <PieChart pieChartTitle="Market Cap" data={marketCap} />
+        <PieChart pieChartTitle="Volume" data={totalVolume} />
+      </div>
+    </>
   );
 };
 
