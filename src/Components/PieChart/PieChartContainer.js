@@ -146,7 +146,7 @@ const PieChartContainer = ({ allCoinData }) => {
   });
   return (
     <>
-      <Title title="Top 5 On The Charts" />
+      {/* <Title title="Top 5 On The Charts" /> */}
       <div className="pieChartContainer">
         <PieChart pieChartTitle="Price" data={currentPrice} />
         <PieChart pieChartTitle="Market Cap" data={marketCap} />

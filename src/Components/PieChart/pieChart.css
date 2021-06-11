@@ -35,6 +35,7 @@
 /* app-pieChart */
 .pieChartContainer {
   display: flex;
+  flex-direction: column;
   grid-gap: 5%;
   margin: 5% 3%;
   box-sizing: border-box;

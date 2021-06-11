@@ -29,7 +29,7 @@ const Table = ({ allCoinData, fetchAllCoinData }) => {
         </tr>
       </thead>
       <tbody className="table-body">
-        {allCoinData.slice(0, 50).map((coin) => {
+        {allCoinData.slice(0, 100).map((coin) => {
           return (
             <TableRow
               key={coin.id}

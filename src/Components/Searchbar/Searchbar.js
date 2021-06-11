@@ -18,11 +18,12 @@ const Searchbar = ({
   fetchSearchedCoin,
   selectedCoin,
   setMobileNav,
+  allCoinData,
 }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       fetchSearchedCoin(selectedCoin);
-    }, 2000);
+    }, 1500);
     return () => clearTimeout(timer);
   }, [selectedCoin, fetchSearchedCoin]);
 
@@ -31,12 +32,19 @@ const Searchbar = ({
       <form onSubmit={(e) => e.preventDefault()} className="searchbar-form">
         <input
           className="searchbar-input"
+          list={"coins"}
           type="text"
           placeholder="Search for a coin.."
           onChange={(e) => searchCoin(e.target.value)}
         />
+        <datalist id="coins">
+          {allCoinData?.map((item) => {
+            return <option value={item.id}>{item.id}</option>;
+          })}
+        </datalist>
         <SearchIcon className="icon" />
       </form>
+
       <div
         onClick={() => setMobileNav(!mobileNav)}
         className="searchbar-menu-icon-container"
@@ -55,7 +63,7 @@ const mapStateToProps = (state) => {
   return {
     selectCoin: state.searchCoin,
     selectedCoin: state.searchedCoin,
-    mobileNav: state.mobileNav,
+    allCoinData: state.allCoinData,
   };
 };
 

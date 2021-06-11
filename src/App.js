@@ -26,7 +26,13 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { getTokenFromUrl } from "./GoogleAuth";
 import PieChartContainer from "./Components/PieChart/PieChartContainer";
 
-const App = ({ signUpModal, signInModal, setAuthToken, mobileNav }) => {
+const App = ({
+  signUpModal,
+  signInModal,
+  setAuthToken,
+  mobileNav,
+  allCoinData,
+}) => {
   useEffect(() => {
     const _token = getTokenFromUrl();
     if (_token) {
@@ -49,8 +55,17 @@ const App = ({ signUpModal, signInModal, setAuthToken, mobileNav }) => {
                 <SignInModal />
               </div>
             ) : null}
-            <Sidebar /> {mobileNav && <MobileNav />}
             <div className="app-content">
+              {/* <input list={"coins"}></input>{" "}
+              {
+                <datalist id="coins">
+                  <select>
+                    {allCoinData?.map((item) => {
+                      return <option value={item.id}>{item.id}</option>;
+                    })}
+                  </select>
+                </datalist>
+              } */}
               <Searchbar />
               <DataCardContainer />
               <div className="app-graph-bar-container">
@@ -58,9 +73,8 @@ const App = ({ signUpModal, signInModal, setAuthToken, mobileNav }) => {
                 <AllTimeData />
                 <BarChart />
               </div>
-              <PieChartContainer />
               <Table />
-              <NewsCardContainer />
+              {/* <NewsCardContainer /> */}
             </div>
           </div>
         </Route>
@@ -72,11 +86,12 @@ const App = ({ signUpModal, signInModal, setAuthToken, mobileNav }) => {
 const mapStateToProps = (state) => {
   return {
     selectedCoin: state.searchedCoin,
-    signUpModal: state.signUpModal,
-    signInModal: state.signInModal,
-    newsData: state.newsData.newsData,
+    // signUpModal: state.signUpModal,
+    // signInModal: state.signInModal,
+    // newsData: state.newsData.newsData,
     googleAuthToken: state.googleAuthToken,
     mobileNav: state.mobileNav,
+    allCoinData: state.allCoinData,
   };
 };
 
