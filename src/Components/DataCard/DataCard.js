@@ -15,13 +15,7 @@ const DataCard = ({ info, title, icon, highLow, selectedCoin }) => {
       >
         {title}
       </div>
-      {selectedCoin.isPending || selectedCoin.searchedCoin === undefined ? (
-        <div className="loading">
-          <div className="loading-dot"></div>
-          <div className="loading-dot"></div>
-          <div className="loading-dot"></div>
-        </div>
-      ) : (
+      {!selectedCoin.searchedCoin == undefined ? (
         <div className="dataCard-info-container">
           {icon}
           <div
@@ -35,6 +29,12 @@ const DataCard = ({ info, title, icon, highLow, selectedCoin }) => {
           >
             {info}
           </div>
+        </div>
+      ) : (
+        <div className="loading">
+          <div className="loading-dot"></div>
+          <div className="loading-dot"></div>
+          <div className="loading-dot"></div>
         </div>
       )}
     </div>

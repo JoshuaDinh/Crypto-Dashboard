@@ -17,7 +17,6 @@
   /* Other */
   opacity: 0;
   animation: delayLoading 1s forwards;
-  animation-delay: 1s;
 }
 
 @keyframes delayLoading {

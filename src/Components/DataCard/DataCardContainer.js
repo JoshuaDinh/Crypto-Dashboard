@@ -7,6 +7,8 @@ import "./dataCard.css";
 import { connect } from "react-redux";
 
 const DataCardContainer = ({ selectedCoin }) => {
+  console.log(selectedCoin);
+
   return (
     <div className="app-datacard-container">
       <DataCard

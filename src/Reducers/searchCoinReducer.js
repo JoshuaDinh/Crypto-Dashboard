@@ -2,7 +2,7 @@ import { SEARCH_COIN } from "../constants";
 import { FETCH_SEARCHED_COIN } from "../constants";
 
 export const initialSearchCoinState = {
-  searchCoin: null,
+  searchCoin: 0,
   searchedCoin: [],
 };
 

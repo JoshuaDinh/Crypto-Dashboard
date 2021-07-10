@@ -25,7 +25,7 @@
 .dataCard:nth-child(1) {
   transform: translateY(8%);
   animation: delayLoading 1s forwards;
-  animation-delay: 2s;
+  animation-delay: 0.5s;
 }
 
 @keyframes delayLoading {
@@ -42,19 +42,19 @@
 .dataCard:nth-child(2) {
   transform: translateY(8%);
   animation: delayLoading 1s forwards;
-  animation-delay: 2.3s;
+  animation-delay: 1s;
 }
 
 .dataCard:nth-child(3) {
   transform: translateY(8%);
   animation: delayLoading 1s forwards;
-  animation-delay: 2.6s;
+  animation-delay: 1.5s;
 }
 
 .dataCard:nth-child(4) {
   transform: translateY(8%);
   animation: delayLoading 1s forwards;
-  animation-delay: 2.9s;
+  animation-delay: 2s;
 }
 
 .dataCard-info-container {

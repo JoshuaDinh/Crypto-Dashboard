@@ -7,9 +7,7 @@ import { searchCoin, fetchSearchedCoin } from "../../Actions/searchCoinAction";
 // import { fetchSearchedCoin } from "../../Actions/searchCoinAction";
 
 // Material-ui ------------
-import { Avatar } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
-import SettingsIcon from "@material-ui/icons/Settings";
 import MenuIcon from "@material-ui/icons/Menu";
 
 const Searchbar = ({
@@ -45,10 +43,6 @@ const Searchbar = ({
 
       <div className="searchbar-menu-icon-container">
         <MenuIcon className="icon" />
-      </div>
-      <div className="searchbar-icons-container">
-        <Avatar />
-        <SettingsIcon className="icon" />
       </div>
     </div>
   );
