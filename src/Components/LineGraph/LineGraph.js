@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./linegraph.css";
 
 // Redux ---------------------
@@ -55,6 +55,8 @@ const LineGraph = ({
   selectLineGraphDay,
   selectedLineGraphDay,
 }) => {
+  const [graphView, setGraphView] = useState(false);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       fetchLineGraphData();
@@ -94,15 +96,25 @@ const LineGraph = ({
     };
   };
   return (
-    <div className="lineGraph">
+    <div className={`lineGraph ${graphView && "lineGraph-active"}`}>
       <div className="lineGraph-day-container">
-        <p className="lineGraph-day-title">Select Chart Day Range:</p>
-        <select onChange={(value) => selectLineGraphDay(value)}>
-          <option value={1}>1</option>
-          <option value="7">7</option>
-          <option value={14}>14 </option>
-          <option value={30}>30 </option>
-        </select>
+        <div className="lineGraph-day-range">
+          <p>Select Chart Day Range:</p>
+          <select onChange={(e) => selectLineGraphDay(e.target.value)}>
+            <option value="1">1</option>
+            <option value="7">7</option>
+            <option value="14">14 </option>
+            <option selected value="30">
+              30
+            </option>
+          </select>
+        </div>
+        <p
+          className="lineGraph-full-screen"
+          onClick={() => setGraphView(!graphView)}
+        >
+          {!graphView ? "View Full Graph" : "Exit"}
+        </p>
       </div>
       <Line data={data} options={options} />
     </div>
