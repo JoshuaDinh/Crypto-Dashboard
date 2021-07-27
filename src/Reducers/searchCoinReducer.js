@@ -2,7 +2,7 @@ import { SEARCH_COIN } from "../constants";
 import { FETCH_SEARCHED_COIN } from "../constants";
 
 export const initialSearchCoinState = {
-  searchCoin: 0,
+  searchCoin: null,
   searchedCoin: [],
 };
 
@@ -19,7 +19,6 @@ export const searchedCoinReducer = (state = initialSearchCoinState, action) => {
   switch (action.type) {
     case FETCH_SEARCHED_COIN:
       return { ...state, searchedCoin: action.payload };
-
     default:
       return state;
   }
