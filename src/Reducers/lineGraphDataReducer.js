@@ -2,7 +2,7 @@ import { FETCH_LINE_GRAPH_DATA, SELECT_LINE_GRAPH_DAY } from "../constants";
 
 export const initialLineGraphState = {
   lineGraphData: [],
-  selectedLineGraphDay: 30,
+  selectedLineGraphDay: 7,
   isPending: true,
 };
 

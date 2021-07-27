@@ -1,5 +1,4 @@
 import React from "react";
-import Loading from "../Loading/Loading";
 import "./dataCard.css";
 
 const DataCard = ({ info, title, icon, highLow }) => {

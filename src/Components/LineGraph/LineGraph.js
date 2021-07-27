@@ -62,13 +62,13 @@ const LineGraph = ({
       fetchLineGraphData();
     }, 1200);
     return () => clearTimeout(timer);
-  }, [selectedCoin, selectedLineGraphDay]);
+  }, [selectedCoin, selectedLineGraphDay, fetchLineGraphData]);
 
   // Format Labels
   const lineGraphLabels = [];
   if (lineGraphData) {
     lineGraphData.map((price) => {
-      lineGraphLabels.push(numeral(price).format("0,0.00"));
+      return lineGraphLabels.push(numeral(price).format("0,0.00"));
     });
   }
 
@@ -101,12 +101,9 @@ const LineGraph = ({
         <div className="lineGraph-day-range">
           <p>Select Chart Day Range:</p>
           <select onChange={(e) => selectLineGraphDay(e.target.value)}>
-            <option value="1">1</option>
             <option value="7">7</option>
             <option value="14">14 </option>
-            <option selected value="30">
-              30
-            </option>
+            <option value="30">30</option>
           </select>
         </div>
         <p
@@ -135,14 +132,5 @@ const mapDispatchToProps = (dispatch) => {
     selectLineGraphDay: (number) => dispatch(selectLineGraphDay(number)),
   };
 };
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     fetchLineGraphData: () =>
-//       setTimeout(() => {
-//         dispatch(fetchLineGraphData());
-//       }, 1000),
-//     selectLineGraphDay: (number) => dispatch(selectLineGraphDay(number)),
-//   };
-// };
 
 export default connect(mapStateToProps, mapDispatchToProps)(LineGraph);

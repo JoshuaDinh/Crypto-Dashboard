@@ -4,7 +4,6 @@ import "./searchbar.css";
 // Redux-------------------
 import { connect } from "react-redux";
 import { searchCoin, fetchSearchedCoin } from "../../Actions/searchCoinAction";
-// import { fetchSearchedCoin } from "../../Actions/searchCoinAction";
 
 // Material-ui ------------
 import SearchIcon from "@material-ui/icons/Search";
@@ -20,15 +19,15 @@ const Searchbar = ({ setCoin, coinInputValue, fetchSearchedCoin }) => {
       }
     }, 1500);
     return () => clearTimeout(timer);
-  }, [coinInputValue]);
+  }, [coinInputValue, fetchSearchedCoin]);
 
   return (
     <div className="searchbar">
       <form onSubmit={(e) => e.preventDefault()} className="searchbar-form">
         <input
           className="searchbar-input"
-          list={"coins"}
           type="text"
+          value={coinInputValue.searchCoin}
           placeholder="Search for a coin.."
           onChange={(e) => setCoin(e.target.value)}
         />

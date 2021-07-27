@@ -18,7 +18,7 @@
       transparent 59%
     ),
     radial-gradient(at 82% 65%, hsl(225, 0%, 100%) 0, transparent 55%);
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .icon {
