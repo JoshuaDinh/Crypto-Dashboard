@@ -3,9 +3,7 @@
   max-height: 100%;
   border-radius: 15px;
   border: 1px solid rgb(126, 126, 126);
-  box-shadow: 21px 2px 14px -15px rgba(0, 0, 0, 0.46);
-  -webkit-box-shadow: 21px 2px 14px -15px rgba(0, 0, 0, 0.46);
-  -moz-box-shadow: 21px 2px 14px -15px rgba(0, 0, 0, 0.46);
+  background: rgb(245, 245, 245, 0.8);
   overflow-y: scroll;
 }
 
@@ -47,10 +45,13 @@ tbody {
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  /* width: 100%; */
-  min-height: 25px;
   border-bottom: 1px solid rgb(202, 196, 196);
+  border-top: 1px solid rgb(202, 196, 196);
   font-size: 0.8rem;
+}
+.tableRow:hover {
+  background: rgb(44, 44, 44, 0.6);
+  color: white;
 }
 
 .coinSymbol {

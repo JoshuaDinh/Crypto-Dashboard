@@ -37,12 +37,12 @@ const AllTimeData = ({ selectedCoin }) => {
       />
       <DataCard
         title="ATH Change"
-        highLow="green"
+        highLow="red"
         info={
           selectedCoin.searchedCoin ? (
-            ` % ${numeral(
-              selectedCoin.searchedCoin?.ath_change_percentage
-            ).format("0,0")}`
+            `${numeral(selectedCoin.searchedCoin?.ath_change_percentage).format(
+              "0,0"
+            )}%`
           ) : (
             <Loading />
           )
@@ -50,12 +50,12 @@ const AllTimeData = ({ selectedCoin }) => {
       />
       <DataCard
         title="ATL Change"
-        highLow="red"
+        highLow="green"
         info={
           selectedCoin.searchedCoin ? (
-            ` % ${numeral(
+            `+${numeral(
               selectedCoin.searchedCoin?.atl_change_percentage
-            ).format("0,0")}`
+            ).format("0,0")}%`
           ) : (
             <Loading />
           )

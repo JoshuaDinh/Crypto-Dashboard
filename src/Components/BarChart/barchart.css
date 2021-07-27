@@ -4,10 +4,9 @@
   align-items: center;
   border-radius: 15px;
   border: 1px solid rgb(126, 126, 126);
-  box-shadow: 0px 27px 14px -15px rgba(0, 0, 0, 0.46);
-  -webkit-box-shadow: 0px 27px 14px -15px rgba(0, 0, 0, 0.46);
-  -moz-box-shadow: 0px 27px 14px -15px rgba(0, 0, 0, 0.46);
-  background: rgb(255, 255, 255);
+  background: rgb(245, 245, 245, 0.8);
+
+  border-radius: 12px;
 }
 
 .chartjs-render-monitor {
