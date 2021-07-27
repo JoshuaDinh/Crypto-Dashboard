@@ -1,13 +1,26 @@
 .table {
-  max-height: 92%;
-  overflow-y: scroll;
+  position: relative;
+  max-height: 100%;
+  border-radius: 15px;
   border: 1px solid rgb(126, 126, 126);
   box-shadow: 21px 2px 14px -15px rgba(0, 0, 0, 0.46);
   -webkit-box-shadow: 21px 2px 14px -15px rgba(0, 0, 0, 0.46);
   -moz-box-shadow: 21px 2px 14px -15px rgba(0, 0, 0, 0.46);
+  overflow-y: scroll;
 }
+
+.table::-webkit-scrollbar {
+  width: 0 !important;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+}
+
+table {
+  width: 100%;
+}
+
 thead {
-  position: sticky;
+  font-size: 0.8rem;
 }
 
 thead,
@@ -21,7 +34,6 @@ tr {
 .table-column {
   width: 100%;
   padding: 5px 0;
-  justify-content: flex-start;
 }
 
 tbody {
