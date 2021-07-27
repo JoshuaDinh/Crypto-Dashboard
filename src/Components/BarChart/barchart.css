@@ -2,10 +2,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 0.4;
+  border-radius: 15px;
   border: 1px solid rgb(126, 126, 126);
   box-shadow: 0px 27px 14px -15px rgba(0, 0, 0, 0.46);
   -webkit-box-shadow: 0px 27px 14px -15px rgba(0, 0, 0, 0.46);
   -moz-box-shadow: 0px 27px 14px -15px rgba(0, 0, 0, 0.46);
   background: rgb(255, 255, 255);
+}
+
+.chartjs-render-monitor {
+  height: 100%;
 }
