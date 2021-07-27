@@ -1,58 +1,11 @@
 .allTimeData {
-  display: flex;
-  flex-direction: column;
-  flex: 0.6;
-  margin-right: 15px;
-  border: 1px solid rgb(126, 126, 126);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  grid-gap: 15px;
+  border-radius: 15px;
   box-shadow: 0px 27px 14px -15px rgba(0, 0, 0, 0.46);
   -webkit-box-shadow: 0px 27px 14px -15px rgba(0, 0, 0, 0.46);
   -moz-box-shadow: 0px 27px 14px -15px rgba(0, 0, 0, 0.46);
   background: rgb(255, 255, 255);
-}
-
-.allTimeData-header {
-  display: flex;
-  justify-content: center;
-  background: rgb(0, 0, 0);
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.4) 1%,
-    rgb(255, 255, 255, 0.3) 50%,
-    rgba(0, 0, 0, 0.4) 100%
-  );
-  border-bottom: 1px solid rgb(0, 0, 0, 0.66);
-  box-sizing: border-box;
-  text-align: center;
-}
-
-.allTime-data-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 100%;
-}
-
-.allTimeData-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  height: 100%;
-  box-sizing: border-box;
-
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-.allTimeData-item:first-child {
-  color: green;
-}
-.allTimeData-item:last-child {
-  color: red;
-}
-
-.ath {
-  color: black;
-}
-.atl {
-  color: black;
 }
