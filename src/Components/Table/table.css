@@ -48,8 +48,14 @@ tbody {
   border-bottom: 1px solid rgb(202, 196, 196);
   border-top: 1px solid rgb(202, 196, 196);
   font-size: 0.8rem;
+  cursor: pointer;
 }
+
 .tableRow:hover {
+  background: rgb(44, 44, 44, 0.6);
+  color: white;
+}
+.tableRow-active {
   background: rgb(44, 44, 44, 0.6);
   color: white;
 }
