@@ -13,13 +13,14 @@
   font-family: "Didact Gothic", sans-serif;
 }
 
-.app-content {
-  /* position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%; */
+.App {
+  display: flex;
+  justify-content: space-between;
+  max-height: 100vh;
   max-width: 100vw;
-  height: 100vh;
+  padding: 1%;
+
+  overflow: hidden;
 }
 
 .icon {
@@ -28,62 +29,18 @@
   cursor: pointer;
 }
 
-.icon:hover {
-  animation: icon 2s infinite ease-in-out;
+.app-left-container {
+  padding: 1%;
 }
-
-@keyframes icon {
-  0% {
-    transform: rotate();
-  }
-  0% {
-    transform: rotate(360deg);
-  }
+.app-right-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%;
+  padding: 1%;
 }
-
-/* graphs */
-
-.app-graph-bar-container {
-  display: grid;
-  grid-template-columns: 1fr, 1fr, 1fr, 1fr;
-  grid-template-rows: 1fr, 1fr, 1fr;
-  grid-gap: 20px;
-  grid-template-areas:
-    "linegraph linegraph ath ath"
-    "linegraph linegraph barchart barchart"
-    "linegraph linegraph barchart barchart";
-  max-width: 97%;
-  margin: 0 auto;
-}
-
-@keyframes delayLoading {
-  0% {
-    transform: translateY(8%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-}
-
-.app-table-pie-container {
+.app-flex-container {
   display: flex;
   justify-content: space-evenly;
-  border: 1px solid red;
-}
-
-/* SignUpModal */
-.app-authentication-container {
-  position: fixed;
-  height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.77);
-  z-index: 100;
-}
-
-@media only screen and (max-width: 1100px) {
-  .app-content {
-    width: 100%;
-  }
 }

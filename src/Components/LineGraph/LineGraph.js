@@ -131,7 +131,7 @@ const LineGraph = ({
         </div>
       </div>
       <Line data={data} options={options} />
-      {lineGraphData.length < 1 && (
+      {/* {lineGraphData.length < 1 && (
         <div className="opening-bars-container">
           <div className="opening-bars"></div>
           <div className="opening-bars"></div>
@@ -141,7 +141,7 @@ const LineGraph = ({
           <div className="opening-bars"></div>
           <div className="opening-bars"></div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

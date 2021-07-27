@@ -7,7 +7,6 @@ import Searchbar from "./Components/Searchbar/Searchbar";
 import BarChart from "./Components/BarChart/BarChart";
 import AllTimeData from "./Components/AllTimeData/AllTimeData";
 import Table from "./Components/Table/Table";
-import OpeningAnimation from "./Components/OpeningAnimation/OpeningAnimation";
 
 // Redux ---------------------
 import { connect } from "react-redux";
@@ -21,15 +20,17 @@ const App = () => {
       <Switch>
         <Route path="/crypto">
           <div className="App">
-            <div className="app-content">
+            <div className="app-left-container">
               <Searchbar />
+              <Table />
+            </div>
+            <div className="app-right-container">
               <DataCardContainer />
-              <div className="app-graph-bar-container">
-                <LineGraph />
+              <div className="app-flex-container">
                 <AllTimeData />
                 <BarChart />
-              </div>
-              <Table />
+              </div>{" "}
+              <LineGraph />
             </div>
           </div>
         </Route>

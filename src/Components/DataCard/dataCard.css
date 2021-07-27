@@ -10,51 +10,14 @@
   color: rgba(0, 0, 0, 0.77);
   text-align: center;
   min-width: 23%;
-  min-height: 140px;
-  opacity: 0;
+  min-height: 100px;
 }
 
 /* Data-card-container */
 .app-datacard-container {
   display: flex;
   justify-content: space-between;
-  margin: 3%;
-}
-
-/* Data Card Animation */
-.dataCard:nth-child(1) {
-  transform: translateY(8%);
-  animation: delayLoading 1s forwards;
-  animation-delay: 0.5s;
-}
-
-@keyframes delayLoading {
-  0% {
-    transform: translateY(8%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-}
-
-.dataCard:nth-child(2) {
-  transform: translateY(8%);
-  animation: delayLoading 1s forwards;
-  animation-delay: 1s;
-}
-
-.dataCard:nth-child(3) {
-  transform: translateY(8%);
-  animation: delayLoading 1s forwards;
-  animation-delay: 1.5s;
-}
-
-.dataCard:nth-child(4) {
-  transform: translateY(8%);
-  animation: delayLoading 1s forwards;
-  animation-delay: 2s;
+  /* padding: 25px; */
 }
 
 .dataCard-info-container {
@@ -68,12 +31,11 @@
 }
 
 .dataCard-info {
-  font-size: 1.6rem;
-  grid-area: info;
+  font-size: 1.3rem;
 }
 
 .dataCard-arrow-icon {
-  font-size: 1.3rem !important;
+  font-size: 1rem !important;
   grid-area: icon;
 }
 

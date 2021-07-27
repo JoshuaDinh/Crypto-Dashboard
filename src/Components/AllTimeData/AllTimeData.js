@@ -15,7 +15,7 @@ const AllTimeData = ({ selectedCoin }) => {
       <div className="allTime-data-container">
         <div className="allTimeData-item">
           <p>
-            <span className="ath">All Time High: </span>
+            <span className="ath">ATH: </span>
             {/* Ternary determines what to display if no coin is selected/searched */}
             {selectedCoin.searchedCoin ? (
               ` $${numeral(selectedCoin.searchedCoin?.ath).format("0,00.00")}`
@@ -43,7 +43,7 @@ const AllTimeData = ({ selectedCoin }) => {
         </div>
         <div className="allTimeData-item">
           <p>
-            <span className="atl">All Time Low: </span>
+            <span className="atl">ATL: </span>
             {selectedCoin.searchedCoin ? (
               ` $${numeral(selectedCoin.searchedCoin?.atl).format("0,00.00")}`
             ) : (

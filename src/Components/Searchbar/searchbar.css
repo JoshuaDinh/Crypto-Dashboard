@@ -1,39 +1,17 @@
 .searchbar {
-  /* Position */
-
-  /* Display & Box Model */
   display: flex;
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid rgb(126, 126, 126);
   min-height: 8vh;
   transform: translateY(-15%);
-
-  /* Color */
   background: rgb(255, 255, 255);
-
-  /* Text */
-
-  /* Other */
-  opacity: 0;
-  animation: delayLoading 1s forwards;
-}
-
-@keyframes delayLoading {
-  0% {
-    transform: translateY(8%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0%);
-    opacity: 1;
-  }
 }
 
 .searchbar-form {
   display: flex;
   justify-content: center;
-  width: 50%;
+  width: 100%;
   margin-left: 2%;
   border-radius: 25px;
   padding: 3px;

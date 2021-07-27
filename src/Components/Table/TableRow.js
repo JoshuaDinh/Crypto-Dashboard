@@ -21,8 +21,8 @@ const TableRow = ({
         <img className="coinSymbol" src={image} alt="" />
       </td>
       <td className="table-column">${price}</td>
-      <td className="table-column dailyHigh ">{low}</td>
-      <td className="table-column dailyLow ">{high}</td>
+      <td className="table-column dailyHigh ">${low}</td>
+      <td className="table-column dailyLow ">${high}</td>
       <td
         className="table-column"
         style={{ color: priceChange >= 0 ? "green" : "red" }}
