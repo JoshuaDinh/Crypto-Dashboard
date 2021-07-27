@@ -10,7 +10,7 @@ import { searchCoin, fetchSearchedCoin } from "../../Actions/searchCoinAction";
 import SearchIcon from "@material-ui/icons/Search";
 import MenuIcon from "@material-ui/icons/Menu";
 
-const Searchbar = ({ setCoinInput, coinInputValue, fetchSearchedCoin }) => {
+const Searchbar = ({ setCoin, coinInputValue, fetchSearchedCoin }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       try {
@@ -30,7 +30,7 @@ const Searchbar = ({ setCoinInput, coinInputValue, fetchSearchedCoin }) => {
           list={"coins"}
           type="text"
           placeholder="Search for a coin.."
-          onChange={(e) => setCoinInput(e.target.value)}
+          onChange={(e) => setCoin(e.target.value)}
         />
         <SearchIcon className="icon" />
       </form>
@@ -49,7 +49,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    setCoinInput: (text) => dispatch(searchCoin(text)),
+    setCoin: (text) => dispatch(searchCoin(text)),
     fetchSearchedCoin: () => dispatch(fetchSearchedCoin()),
   };
 };

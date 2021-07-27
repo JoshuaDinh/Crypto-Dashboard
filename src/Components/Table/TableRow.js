@@ -12,9 +12,10 @@ const TableRow = ({
   totalSupply,
   totalVolume,
   marketCap,
+  setCoin,
 }) => {
   return (
-    <tr className="tableRow">
+    <tr className="tableRow" onClick={setCoin}>
       <td className="table-column">{rank}</td>
       <td className="table-column">{name}</td>
       <td className="table-column ">

@@ -1,13 +1,14 @@
-import React, { useEffect } from "react";
+import React, { Fragment, useEffect } from "react";
 import TableRow from "./TableRow";
 import "./table.css";
 // redux ----
 import { fetchAllCoinData } from "../../Actions/allCoinDataAction";
+import { searchCoin } from "../../Actions/searchCoinAction";
 import { connect } from "react-redux";
 // Numeral -----
 import numeral from "numeral";
 
-const Table = ({ allCoinData, fetchAllCoinData }) => {
+const Table = ({ allCoinData, fetchAllCoinData, setCoin }) => {
   useEffect(() => {
     fetchAllCoinData();
   }, [fetchAllCoinData]);
@@ -33,6 +34,7 @@ const Table = ({ allCoinData, fetchAllCoinData }) => {
           {allCoinData.slice(0, 100).map((coin) => {
             return (
               <TableRow
+                setCoin={() => setCoin(coin.id)}
                 key={coin.id}
                 rank={coin.market_cap_rank}
                 name={coin.name}
@@ -64,6 +66,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchAllCoinData: () => dispatch(fetchAllCoinData()),
+    setCoin: (text) => dispatch(searchCoin(text)),
   };
 };
 
