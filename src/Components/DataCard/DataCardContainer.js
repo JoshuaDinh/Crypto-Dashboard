@@ -7,15 +7,12 @@ import "./dataCard.css";
 import { connect } from "react-redux";
 
 const DataCardContainer = ({ selectedCoin }) => {
-  console.log(selectedCoin);
-
   return (
     <div className="app-datacard-container">
       <DataCard
         title="Current Price"
-        info={`$${numeral(selectedCoin.searchedCoin?.current_price).format(
-          "0,0.00"
-        )}`}
+        info={`$
+        ${numeral(selectedCoin.searchedCoin?.current_price).format("0,0.00")}`}
         selectedCoin={selectedCoin}
       />
       <DataCard
@@ -28,23 +25,25 @@ const DataCardContainer = ({ selectedCoin }) => {
           )
         }
         title="24hr % Change "
-        info={`${selectedCoin.searchedCoin?.price_change_percentage_24h}%`}
+        info={`${
+          selectedCoin.searchedCoin?.price_change_percentage_24h
+            ? selectedCoin.searchedCoin?.price_change_percentage_24h
+            : "0"
+        }%`}
         selectedCoin={selectedCoin}
       />
       <DataCard
         highLow="green"
         title="24hr High"
-        info={`$ ${numeral(selectedCoin.searchedCoin?.high_24h).format(
-          "0,0.00"
-        )}`}
+        info={`$ 
+        ${numeral(selectedCoin.searchedCoin?.high_24h).format("0,0.00")}`}
         selectedCoin={selectedCoin}
       />
       <DataCard
         highLow="red"
         title="24hr Low"
-        info={`$ ${numeral(selectedCoin.searchedCoin?.low_24h).format(
-          "0,0.00"
-        )}`}
+        info={`$ 
+        ${numeral(selectedCoin.searchedCoin?.low_24h).format("0,0.00")}`}
         selectedCoin={selectedCoin}
       />
     </div>

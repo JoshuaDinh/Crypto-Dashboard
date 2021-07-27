@@ -1,7 +1,8 @@
 import React from "react";
+import Loading from "../Loading/Loading";
 import "./dataCard.css";
 
-const DataCard = ({ info, title, icon, highLow, selectedCoin }) => {
+const DataCard = ({ info, title, icon, highLow }) => {
   return (
     <div className="dataCard">
       <div
@@ -15,28 +16,20 @@ const DataCard = ({ info, title, icon, highLow, selectedCoin }) => {
       >
         {title}
       </div>
-      {selectedCoin.searchedCoin === undefined ? (
-        <div className="loading">
-          <div className="loading-dot"></div>
-          <div className="loading-dot"></div>
-          <div className="loading-dot"></div>
+      <div className="dataCard-info-container">
+        {icon}
+        <div
+          className={`dataCard-info ${
+            highLow === "green"
+              ? "dataCard-high"
+              : highLow === "red"
+              ? "dataCard-low"
+              : null
+          }`}
+        >
+          {info}
         </div>
-      ) : (
-        <div className="dataCard-info-container">
-          {icon}
-          <div
-            className={`dataCard-info ${
-              highLow === "green"
-                ? "dataCard-high"
-                : highLow === "red"
-                ? "dataCard-low"
-                : null
-            }`}
-          >
-            {info}
-          </div>
-        </div>
-      )}
+      </div>
     </div>
   );
 };

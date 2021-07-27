@@ -60,7 +60,7 @@ const LineGraph = ({
       fetchLineGraphData();
     }, 1200);
     return () => clearTimeout(timer);
-  }, [selectedCoin, selectedLineGraphDay, fetchLineGraphData]);
+  }, [selectedCoin, selectedLineGraphDay]);
 
   // Format Labels
   const lineGraphLabels = [];
@@ -97,51 +97,14 @@ const LineGraph = ({
     <div className="lineGraph">
       <div className="lineGraph-day-container">
         <p className="lineGraph-day-title">Select Chart Day Range:</p>
-        <div
-          className={`lineGraph-day-selector ${
-            selectedLineGraphDay === 1 && "lineGraphSelected"
-          }`}
-          onClick={() => selectLineGraphDay(1)}
-        >
-          1 Day
-        </div>
-        <div
-          className={`lineGraph-day-selector ${
-            selectedLineGraphDay === 7 && "lineGraphSelected"
-          }`}
-          onClick={() => selectLineGraphDay(7)}
-        >
-          7 Days
-        </div>
-        <div
-          className={`lineGraph-day-selector ${
-            selectedLineGraphDay === 14 && "lineGraphSelected"
-          }`}
-          onClick={() => selectLineGraphDay(14)}
-        >
-          14 Days
-        </div>
-        <div
-          className={`lineGraph-day-selector ${
-            selectedLineGraphDay === 30 && "lineGraphSelected"
-          }`}
-          onClick={() => selectLineGraphDay(30)}
-        >
-          30 Days
-        </div>
+        <select onChange={(value) => selectLineGraphDay(value)}>
+          <option value={1}>1</option>
+          <option value="7">7</option>
+          <option value={14}>14 </option>
+          <option value={30}>30 </option>
+        </select>
       </div>
       <Line data={data} options={options} />
-      {/* {lineGraphData.length < 1 && (
-        <div className="opening-bars-container">
-          <div className="opening-bars"></div>
-          <div className="opening-bars"></div>
-          <div className="opening-bars"></div>
-          <div className="opening-bars"></div>
-          <div className="opening-bars"></div>
-          <div className="opening-bars"></div>
-          <div className="opening-bars"></div>
-        </div>
-      )} */}
     </div>
   );
 };
@@ -156,12 +119,18 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchLineGraphData: () =>
-      setTimeout(() => {
-        dispatch(fetchLineGraphData());
-      }, 1000),
+    fetchLineGraphData: () => dispatch(fetchLineGraphData()),
     selectLineGraphDay: (number) => dispatch(selectLineGraphDay(number)),
   };
 };
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     fetchLineGraphData: () =>
+//       setTimeout(() => {
+//         dispatch(fetchLineGraphData());
+//       }, 1000),
+//     selectLineGraphDay: (number) => dispatch(selectLineGraphDay(number)),
+//   };
+// };
 
 export default connect(mapStateToProps, mapDispatchToProps)(LineGraph);

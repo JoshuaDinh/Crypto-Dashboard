@@ -10,18 +10,17 @@ import { searchCoin, fetchSearchedCoin } from "../../Actions/searchCoinAction";
 import SearchIcon from "@material-ui/icons/Search";
 import MenuIcon from "@material-ui/icons/Menu";
 
-const Searchbar = ({
-  searchCoin,
-  fetchSearchedCoin,
-  selectedCoin,
-  allCoinData,
-}) => {
+const Searchbar = ({ setCoinInput, coinInputValue, fetchSearchedCoin }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
-      fetchSearchedCoin(selectedCoin);
+      try {
+        fetchSearchedCoin(coinInputValue);
+      } catch (err) {
+        alert(err);
+      }
     }, 1500);
     return () => clearTimeout(timer);
-  }, [selectedCoin, fetchSearchedCoin]);
+  }, [coinInputValue]);
 
   return (
     <div className="searchbar">
@@ -31,16 +30,10 @@ const Searchbar = ({
           list={"coins"}
           type="text"
           placeholder="Search for a coin.."
-          onChange={(e) => searchCoin(e.target.value)}
+          onChange={(e) => setCoinInput(e.target.value)}
         />
-        <datalist id="coins">
-          {allCoinData?.map((item) => {
-            return <option value={item.id}>{item.id}</option>;
-          })}
-        </datalist>
         <SearchIcon className="icon" />
       </form>
-
       <div className="searchbar-menu-icon-container">
         <MenuIcon className="icon" />
       </div>
@@ -50,15 +43,13 @@ const Searchbar = ({
 
 const mapStateToProps = (state) => {
   return {
-    selectCoin: state.searchCoin,
-    selectedCoin: state.searchedCoin,
-    allCoinData: state.allCoinData,
+    coinInputValue: state.searchCoin,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    searchCoin: (text) => dispatch(searchCoin(text)),
+    setCoinInput: (text) => dispatch(searchCoin(text)),
     fetchSearchedCoin: () => dispatch(fetchSearchedCoin()),
   };
 };

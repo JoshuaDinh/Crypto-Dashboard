@@ -51,7 +51,7 @@ const BarChart = ({ selectedCoin }) => {
           title: {
             display: true,
             text: "Price Change % / USD",
-            fontSize: 20,
+            fontSize: 10,
           },
           legend: {
             display: true,

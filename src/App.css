@@ -1,11 +1,3 @@
-/* ------Css Format----- */
-
-/* Position */
-/* Display & Box Model */
-/* Color */
-/* Text */
-/* Other */
-
 * {
   margin: 0;
   padding: 0;
@@ -19,28 +11,34 @@
   max-height: 100vh;
   max-width: 100vw;
   padding: 1%;
-
   overflow: hidden;
 }
 
 .icon {
-  color: rgba(0, 0, 0, 0.65);
   font-size: 2rem !important;
   cursor: pointer;
 }
 
 .app-left-container {
   padding: 1%;
+  width: 40%;
 }
+
 .app-right-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 60%;
   padding: 1%;
+  width: 60%;
 }
-.app-flex-container {
+.app-flex-container-top {
   display: flex;
-  justify-content: space-evenly;
+  height: 35%;
+  width: 100%;
+}
+.app-flex-container-bottom {
+  display: flex;
+  justify-content: space-between;
+  height: 52%;
   width: 100%;
 }

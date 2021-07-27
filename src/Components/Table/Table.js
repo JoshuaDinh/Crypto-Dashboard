@@ -21,11 +21,11 @@ const Table = ({ allCoinData, fetchAllCoinData }) => {
             <th className="table-column">Name</th>
             <th className="table-column">Symbol</th>
             <th className="table-column">Price</th>
-            <th className="table-column"> 24hr High</th>
-            <th className="table-column"> 24hr Low</th>
-            <th className="table-column"> 24hr Change %</th>
-            <th className="table-column">Total Supply</th>
-            <th className="table-column">Total Volume</th>
+            <th className="table-column">High</th>
+            <th className="table-column">Low</th>
+            <th className="table-column">%</th>
+            <th className="table-column">Supply</th>
+            <th className="table-column">Volume</th>
             <th className="table-column">Market Cap</th>
           </tr>
         </thead>

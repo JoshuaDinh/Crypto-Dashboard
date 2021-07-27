@@ -21,16 +21,18 @@ const App = () => {
         <Route path="/crypto">
           <div className="App">
             <div className="app-left-container">
-              <Searchbar />
               <Table />
             </div>
             <div className="app-right-container">
-              <DataCardContainer />
-              <div className="app-flex-container">
-                <AllTimeData />
+              <Searchbar />
+              <div className="app-flex-container-top">
+                <DataCardContainer />
                 <BarChart />
-              </div>{" "}
-              <LineGraph />
+              </div>
+              <div className="app-flex-container-bottom">
+                <LineGraph />
+                <AllTimeData />
+              </div>
             </div>
           </div>
         </Route>
