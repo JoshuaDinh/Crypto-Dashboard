@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./searchbar.css";
-
+import bcIcon from "../../images/bcIcon.png";
 // Redux-------------------
 import { connect } from "react-redux";
 import { searchCoin, fetchSearchedCoin } from "../../Actions/searchCoinAction";
@@ -18,8 +18,19 @@ const Searchbar = ({ setCoin, coinInput, fetchSearchedCoin, selectedCoin }) => {
   const handleInput = (e) => {
     setCoin(e.toLowerCase());
   };
+
+  console.log(selectedCoin);
   return (
     <div className="searchbar">
+      {selectedCoin.searchedCoin.image ? (
+        <img
+          src={selectedCoin.searchedCoin.image}
+          className="searchbar-coin-avatar"
+        />
+      ) : (
+        <img src={bcIcon} className="searchbar-coin-avatar" />
+      )}
+
       <form onSubmit={(e) => onSubmit(e, coinInput)} className="searchbar-form">
         <input
           className="searchbar-input"
