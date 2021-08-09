@@ -122,7 +122,7 @@ const mapStateToProps = (state) => {
   return {
     lineGraphData: state.lineGraphData.lineGraphData,
     selectedLineGraphDay: state.lineGraphData.selectedLineGraphDay,
-    selectedCoin: state.searchCoin,
+    selectedCoin: state.searchedCoin,
   };
 };
 
