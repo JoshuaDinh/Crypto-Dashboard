@@ -17,7 +17,7 @@ const AllTimeData = ({ selectedCoin }) => {
         title="All Time High"
         highLow="green"
         info={
-          selectedCoin.searchedCoin ? (
+          selectedCoin.searchedCoin.ath ? (
             ` $${numeral(selectedCoin.searchedCoin?.ath).format("0,00.00")}`
           ) : (
             <Loading />
@@ -28,7 +28,7 @@ const AllTimeData = ({ selectedCoin }) => {
         title="All Time Low"
         highLow="red"
         info={
-          selectedCoin.searchedCoin ? (
+          selectedCoin.searchedCoin.atl ? (
             ` $${numeral(selectedCoin.searchedCoin?.atl).format("0,00.00")}`
           ) : (
             <Loading />
@@ -39,7 +39,7 @@ const AllTimeData = ({ selectedCoin }) => {
         title="ATH Change"
         highLow="red"
         info={
-          selectedCoin.searchedCoin ? (
+          selectedCoin.searchedCoin.ath_change_percentage ? (
             `${numeral(selectedCoin.searchedCoin?.ath_change_percentage).format(
               "0,0"
             )}%`
@@ -52,7 +52,7 @@ const AllTimeData = ({ selectedCoin }) => {
         title="ATL Change"
         highLow="green"
         info={
-          selectedCoin.searchedCoin ? (
+          selectedCoin.searchedCoin.atl_change_percentage ? (
             `+${numeral(
               selectedCoin.searchedCoin?.atl_change_percentage
             ).format("0,0")}%`
