@@ -41,10 +41,4 @@ const App = () => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    selectedCoin: state.searchedCoin,
-  };
-};
-
-export default connect(mapStateToProps)(App);
+export default App;

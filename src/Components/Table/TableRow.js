@@ -12,10 +12,15 @@ const TableRow = ({
   totalSupply,
   totalVolume,
   marketCap,
+  fetchCoinData,
   setCoin,
 }) => {
+  const setCoinData = () => {
+    setCoin();
+    fetchCoinData();
+  };
   return (
-    <tr className="tableRow" onClick={setCoin}>
+    <tr className="tableRow" onClick={setCoinData}>
       <td className="table-column">{rank}</td>
       <td className="table-column">{name}</td>
       <td className="table-column ">
