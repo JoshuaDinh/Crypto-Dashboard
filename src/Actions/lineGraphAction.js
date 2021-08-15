@@ -18,7 +18,7 @@ export const fetchLineGraphData = () => async (dispatch, getState) => {
     let graphDetails = [];
     if (data.prices) {
       data.prices.map((priceData) => graphDetails.push(priceData[1]));
-      await dispatch({ type: FETCH_LINE_GRAPH_DATA, payload: graphDetails });
+      await dispatch({ type: FETCH_LINE_GRAPH_DATA, payload: graphDetails,  });
     }
   } catch (err) {
     alert(err);
