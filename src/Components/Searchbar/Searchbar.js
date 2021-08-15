@@ -25,10 +25,11 @@ const Searchbar = ({ setCoin, coinInput, fetchSearchedCoin, selectedCoin }) => {
       {selectedCoin.searchedCoin.image ? (
         <img
           src={selectedCoin.searchedCoin.image}
+          alt="#"
           className="searchbar-coin-avatar"
         />
       ) : (
-        <img src={bcIcon} className="searchbar-coin-avatar" />
+        <img src={bcIcon} alt="#" className="searchbar-coin-avatar" />
       )}
 
       <form onSubmit={(e) => onSubmit(e, coinInput)} className="searchbar-form">

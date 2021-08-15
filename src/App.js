@@ -8,9 +8,6 @@ import BarChart from "./Components/BarChart/BarChart";
 import AllTimeData from "./Components/AllTimeData/AllTimeData";
 import Table from "./Components/Table/Table";
 
-// Redux ---------------------
-import { connect } from "react-redux";
-
 // Router
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 

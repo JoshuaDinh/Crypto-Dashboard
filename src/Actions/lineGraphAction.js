@@ -14,7 +14,7 @@ export const fetchLineGraphData = () => async (dispatch, getState) => {
     }
 
     const data = await response.json();
-    // Returned data are nested arrays / loop through and retrieve price in USD
+    // Returned data = nested arrays / loop through and retrieve price in USD
     let graphDetails = [];
     if (data.prices) {
       data.prices.map((priceData) => graphDetails.push(priceData[1]));
