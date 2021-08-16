@@ -11,8 +11,6 @@
   height: 100vh;
   width: 100vw;
   padding: 1%;
-  background-color: #101013;
-
   background: #334d50; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to bottom,
@@ -51,6 +49,6 @@
 .app-flex-container-bottom {
   display: flex;
   justify-content: space-between;
-  height: 52%;
+  height: 50%;
   width: 100%;
 }
