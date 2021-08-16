@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid rgb(245, 245, 245, 0.8);
   min-height: 8vh;
   transform: translateY(-15%);
 }
@@ -10,7 +9,6 @@
 .searchbar-coin-avatar {
   height: 3em;
   width: 3em;
-  object-fit: contain;
   border-radius: 999px;
 }
 
@@ -19,7 +17,7 @@
   justify-content: center;
   width: 100%;
   margin-left: 2%;
-  border-radius: 15px;
+  border-radius: 5px;
   padding: 3px;
   background: rgb(245, 245, 245, 0.8);
   border: 1px solid rgb(126, 126, 126);

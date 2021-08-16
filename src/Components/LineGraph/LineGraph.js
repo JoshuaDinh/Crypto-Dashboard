@@ -77,10 +77,10 @@ const LineGraph = ({
 
     let gradient = ctx.createLinearGradient(0, 0, 0, 240);
 
-    gradient.addColorStop(0.4, "rgba(0,0,0, 0.9");
-    gradient.addColorStop(0.6, "rgba(0,0,0,0.8");
-    gradient.addColorStop(0.8, "rgba(0,0,0,0.6");
-    gradient.addColorStop(1, "rgba(0,0,0,0.3");
+    gradient.addColorStop(0.4, "rgb(51, 77, 80,0.9)");
+    gradient.addColorStop(0.5, "rgb(51, 77, 80,0.7)");
+    gradient.addColorStop(0.8, "rgb(203, 202, 165,0.6)");
+    gradient.addColorStop(1, "rgb(203, 202, 165,0.5)");
 
     return {
       labels: lineGraphLabels,

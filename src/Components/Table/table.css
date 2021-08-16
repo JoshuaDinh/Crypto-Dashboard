@@ -1,7 +1,7 @@
 .table {
   position: relative;
   max-height: 100%;
-  border-radius: 15px;
+  border-radius: 5px;
   border: 1px solid rgb(126, 126, 126);
   background: rgb(245, 245, 245, 0.8);
   overflow-y: scroll;
@@ -52,7 +52,7 @@ tbody {
 }
 
 .tableRow:hover {
-  background: rgb(44, 44, 44, 0.6);
+  background: rgb(51, 77, 80, 0.6);
   color: white;
 }
 .tableRow-active {
