@@ -15,7 +15,6 @@ const AllTimeData = ({ selectedCoin }) => {
     <div className="allTimeData">
       <DataCard
         title="All Time High"
-        highLow="green"
         info={
           selectedCoin.searchedCoin.ath ? (
             ` $${numeral(selectedCoin.searchedCoin?.ath).format("0,00.00")}`
@@ -26,7 +25,6 @@ const AllTimeData = ({ selectedCoin }) => {
       />
       <DataCard
         title="All Time Low"
-        highLow="red"
         info={
           selectedCoin.searchedCoin.atl ? (
             ` $${numeral(selectedCoin.searchedCoin?.atl).format("0,00.00")}`
@@ -37,7 +35,6 @@ const AllTimeData = ({ selectedCoin }) => {
       />
       <DataCard
         title="ATH Change"
-        highLow="red"
         info={
           selectedCoin.searchedCoin.ath_change_percentage ? (
             `${numeral(selectedCoin.searchedCoin?.ath_change_percentage).format(
@@ -50,7 +47,6 @@ const AllTimeData = ({ selectedCoin }) => {
       />
       <DataCard
         title="ATL Change"
-        highLow="green"
         info={
           selectedCoin.searchedCoin.atl_change_percentage ? (
             `+${numeral(
@@ -63,7 +59,6 @@ const AllTimeData = ({ selectedCoin }) => {
       />
       <DataCard
         title="ATH Date"
-        highLow="green"
         info={
           selectedCoin.searchedCoin?.ath_date ? (
             formatDate(selectedCoin.searchedCoin.ath_date)
@@ -74,7 +69,6 @@ const AllTimeData = ({ selectedCoin }) => {
       />
       <DataCard
         title="ATL Date"
-        highLow="red"
         info={
           selectedCoin.searchedCoin?.ath_date ? (
             formatDate(selectedCoin.searchedCoin.atl_date)

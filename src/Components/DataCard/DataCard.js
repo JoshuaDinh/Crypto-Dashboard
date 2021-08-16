@@ -17,17 +17,7 @@ const DataCard = ({ info, title, icon, highLow }) => {
       </div>
       <div className="dataCard-info-container">
         {icon}
-        <div
-          className={`dataCard-info ${
-            highLow === "green"
-              ? "dataCard-high"
-              : highLow === "red"
-              ? "dataCard-low"
-              : null
-          }`}
-        >
-          {info}
-        </div>
+        <div className="dataCard-info ">{info}</div>
       </div>
     </div>
   );
