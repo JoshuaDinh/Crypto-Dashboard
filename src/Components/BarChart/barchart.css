@@ -6,10 +6,20 @@
   border: 1px solid rgb(126, 126, 126);
   background: rgb(245, 245, 245, 0.8);
   border-radius: 12px;
+  width: 100%;
 }
 
 .chartjs-render-monitor {
   height: 100%;
   color: rgb(203, 202, 165);
   color: rgb(51, 77, 80);
+}
+
+@media screen and (max-width: 1100px) {
+  .chartjs-render-monitor {
+    max-height: 200px;
+  }
+  .barChart {
+    margin: 10px 0;
+  }
 }
