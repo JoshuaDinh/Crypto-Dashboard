@@ -5,10 +5,15 @@
   font-family: "Didact Gothic", sans-serif;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .App {
   display: flex;
   justify-content: space-between;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   width: 100vw;
   padding: 1%;
   background: #334d50; /* fallback for old browsers */
@@ -30,7 +35,6 @@
 }
 
 .app-left-container {
-  padding: 1%;
   width: 40%;
 }
 
@@ -38,17 +42,34 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1%;
+  padding: 0 1%;
   width: 60%;
 }
 .app-flex-container-top {
   display: flex;
-  height: 35%;
   width: 100%;
 }
 .app-flex-container-bottom {
   display: flex;
   justify-content: space-between;
-  height: 50%;
-  width: 100%;
+}
+
+@media screen and (max-width: 1100px) {
+  .App {
+    flex-direction: column-reverse;
+  }
+
+  .app-right-container {
+    width: 100%;
+  }
+  .app-left-container {
+    padding: 1%;
+    width: 100%;
+  }
+  .app-flex-container-top {
+    flex-direction: column;
+  }
+  .app-flex-container-bottom {
+    flex-direction: column-reverse;
+  }
 }

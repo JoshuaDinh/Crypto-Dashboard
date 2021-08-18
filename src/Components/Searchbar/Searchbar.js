@@ -7,7 +7,6 @@ import { searchCoin, fetchSearchedCoin } from "../../Actions/searchCoinAction";
 
 // Material-ui ------------
 import SearchIcon from "@material-ui/icons/Search";
-import MenuIcon from "@material-ui/icons/Menu";
 
 const Searchbar = ({ setCoin, coinInput, fetchSearchedCoin, selectedCoin }) => {
   const onSubmit = (e, coinInput) => {
@@ -19,7 +18,6 @@ const Searchbar = ({ setCoin, coinInput, fetchSearchedCoin, selectedCoin }) => {
     setCoin(e.toLowerCase());
   };
 
-  console.log(selectedCoin);
   return (
     <div className="searchbar">
       {selectedCoin.searchedCoin.image ? (
@@ -42,9 +40,6 @@ const Searchbar = ({ setCoin, coinInput, fetchSearchedCoin, selectedCoin }) => {
         />
         <SearchIcon className="icon" />
       </form>
-      <div className="searchbar-menu-icon-container">
-        <MenuIcon className="icon" />
-      </div>
     </div>
   );
 };
