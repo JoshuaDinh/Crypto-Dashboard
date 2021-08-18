@@ -1,6 +1,7 @@
 {
   "name": "Crypto",
   "version": "0.1.0",
+  "homepage": "www.joshuadinh.teh/crypto-coins",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.3",

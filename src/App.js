@@ -15,7 +15,7 @@ const App = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/">
+        <Route path="/crypto-coins">
           <div className="App">
             <div className="app-left-container">
               <Table />
