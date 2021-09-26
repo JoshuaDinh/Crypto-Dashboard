@@ -31,6 +31,10 @@
   outline: none;
 }
 
+.icon {
+  color: rgb(51, 77, 80);
+}
+
 .searchbar-icons-container {
   display: flex;
   align-items: center;

@@ -16,17 +16,7 @@ body {
   height: 100%;
   width: 100vw;
   padding: 1%;
-  background: #334d50; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to bottom,
-    #cbcaa5,
-    #334d50
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to bottom,
-    #cbcaa5,
-    #334d50
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: whitesmoke;
 }
 
 .icon {
@@ -41,7 +31,7 @@ body {
 .app-right-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 0 1%;
   width: 60%;
 }
